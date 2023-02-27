@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('equipo', function (Blueprint $table) {
             $table->comment('');
-            $table->integer('id', true);
+            $table->string('id_equipo', 15)->primary();
             $table->string('nombre', 50);
             $table->string('abreviatura', 32);
             $table->string('descripcion')->nullable();
