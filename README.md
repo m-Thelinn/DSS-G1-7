@@ -19,7 +19,7 @@ git pull
 7. Para realizar un commit hacemos `git commit -m "mensaje"`
 8. Para subir los cambios a vuestra rama en remoto hacemos `git push`
 
-### 9. AVISAR POR EL GRUPO DE QUE HABEIS SUBIDO CAMBIOS A VUESTRA RAMA
+### AVISAR POR EL GRUPO DE QUE HABEIS SUBIDO CAMBIOS A VUESTRA RAMA
 
 ## OBJETIVOS:
 
