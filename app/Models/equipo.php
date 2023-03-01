@@ -11,4 +11,5 @@ class Equipo
     private $foto;
     private $pais;
     private $division;
+    private $jugadores = array(10);
 }
