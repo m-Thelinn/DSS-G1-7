@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('usuario', function (Blueprint $table) {
-            $table->foreign(['equipo'], 'usuario_equipo_id_equipo_fk')->references(['id_equipo'])->on('equipo')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+        Schema::table('user', function (Blueprint $table) {
+            $table->foreign(['team_id'], 'user_team_id_fk')->references(['id'])->on('team')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('usuario', function (Blueprint $table) {
-            $table->dropForeign('usuario_equipo_id_equipo_fk');
+        Schema::table('user', function (Blueprint $table) {
+            $table->dropForeign('user_team_id_fk');
         });
     }
 };

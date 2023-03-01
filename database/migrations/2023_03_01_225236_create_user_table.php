@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->comment('');
-            $table->string('dni', 15)->primary();
+            $table->integer('id')->primary();
             $table->string('nick', 50);
             $table->string('nombre', 50);
             $table->string('apellidos', 50);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->integer('rol')->comment('0 = nada, 1 = jugador, 2 =  coach, 3 = manager');
             $table->string('telefono', 20);
             $table->boolean('is_admin')->comment('1 = admin');
-            $table->string('equipo', 15)->nullable()->index('equipo');
+            $table->integer('team_id')->nullable()->index('user_team_id_fk');
         });
     }
 
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('user');
     }
 };

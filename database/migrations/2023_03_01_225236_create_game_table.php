@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('partido', function (Blueprint $table) {
+        Schema::create('game', function (Blueprint $table) {
             $table->comment('');
-            $table->string('id_partido', 15)->primary();
+            $table->integer('id')->primary();
             $table->date('fecha');
             $table->timestamp('hora');
             $table->integer('formato')->comment('1 = b01, 2 = b03, 3=b05');
             $table->integer('resultado')->comment('0 = proximamente, 1 = local, 2 = visitante, 3 = empate');
-            $table->string('equipo_local', 15)->index('equipo1');
-            $table->string('equipo_visitante', 15)->index('equipo2');
+            $table->integer('local_id')->index('game_team_id_fk');
+            $table->integer('visitante_id')->index('game_team_id_fk2');
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('partido');
+        Schema::dropIfExists('game');
     }
 };
