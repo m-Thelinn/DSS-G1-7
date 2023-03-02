@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'lastname',
+        'nickname',
+        'phone',
+        'country',
+        'rol',
+        'is_admin',
     ];
 
     /**
@@ -41,4 +47,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function team() {
+        return $this->belongsTo(Team::class);
+    }
 }

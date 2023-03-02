@@ -5,22 +5,6 @@
 > 3. Demian Calvo Rodríguez
 > 4. Julio César Bastidas Sánchez
 
-## INTRUCCIONES DE USO DE RAMAS
-1. Antes de empezar a trabajar, para bajar los cambios desde GitHub, realizamos en la rama LOCAL DEVEL :
-```
-git checkout devel
-git pull
-```
-2. Para ver en que rama estamos hacemos `git branch`. Cambiamos a vuestra rama mediante `git checkout NOMBRE`.
-3. Traemos a la rama los cambios de devel mediante `git merge devel`.
-4. AHORA EMPEZAMOS A TRABAJAR EN LOCAL (INTENTAR TRABAJAR EN FICHEROS DINSTINTOS PARA NO TENER CONFLITOS)
-5. Una vez terminado el trabajo, hacemos `git status` para ver los cambios que han sucedido y estan pendientes de subir al github.
-6. Para subir TODOS los cambios, hacemos `git add .`
-7. Para realizar un commit hacemos `git commit -m "mensaje"`
-8. Para subir los cambios a vuestra rama en remoto hacemos `git push`
-
-### AVISAR POR EL GRUPO DE QUE HABEIS SUBIDO CAMBIOS A VUESTRA RAMA
-
 ## OBJETIVOS:
 
 El objetivo del proyecto (bautizado como VALCheck) es el desarrollo de una aplicación web para la gestión de equipos y competiciones del videojuego y deporte electrónico Valorant así como la visualización de estadísticas de los propios jugadores.
