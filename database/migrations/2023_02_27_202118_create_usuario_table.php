@@ -26,7 +26,8 @@ return new class extends Migration
             $table->integer('rol')->comment('0 = nada, 1 = jugador, 2 =  coach, 3 = manager');
             $table->string('telefono', 20);
             $table->boolean('is_admin')->comment('1 = admin');
-            $table->string('equipo', 15)->nullable()->index('equipo');
+            //$table->string('equipo', 15)->nullable()->index('equipo');
+            $table->string('equipo',15);
         });
     }
 

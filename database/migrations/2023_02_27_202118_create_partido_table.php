@@ -20,8 +20,10 @@ return new class extends Migration
             $table->timestamp('hora');
             $table->integer('formato')->comment('1 = b01, 2 = b03, 3=b05');
             $table->integer('resultado')->comment('0 = proximamente, 1 = local, 2 = visitante, 3 = empate');
-            $table->string('equipo_local', 15)->index('equipo1');
-            $table->string('equipo_visitante', 15)->index('equipo2');
+            //$table->string('equipo_local', 15)->index('equipo1');
+            //$table->string('equipo_visitante', 15)->index('equipo2');
+            $table->string('equipo_local', 15);
+            $table->string('equipo_visitante', 15);
         });
     }
 
