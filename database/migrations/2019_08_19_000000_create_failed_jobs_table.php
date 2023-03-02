@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('usuario', function (Blueprint $table) {
-            $table->foreign(['equipo'], 'usuario_equipo_id_equipo_fk')->references(['id_equipo'])->on('equipo')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+        Schema::create('failed_jobs', function (Blueprint $table) {
+            $table->id();
+            $table->string('uuid')->unique();
+            $table->text('connection');
+            $table->text('queue');
+            $table->longText('payload');
+            $table->longText('exception');
+            $table->timestamp('failed_at')->useCurrent();
         });
     }
 
@@ -25,8 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('usuario', function (Blueprint $table) {
-            $table->dropForeign('usuario_equipo_id_equipo_fk');
-        });
+        Schema::dropIfExists('failed_jobs');
     }
 };

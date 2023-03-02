@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('equipo', function (Blueprint $table) {
-            $table->comment('');
-            $table->string('id_equipo', 15)->primary();
-            $table->string('nombre', 50);
-            $table->string('abreviatura', 32);
-            $table->string('descripcion')->nullable();
-            $table->string('foto')->nullable();
-            $table->string('pais', 50);
+        Schema::create('teams', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('short_name');
+            $table->string('description');
+            $table->string('picture');
+            $table->string('country');
             $table->integer('division');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipo');
+        Schema::dropIfExists('teams');
     }
 };

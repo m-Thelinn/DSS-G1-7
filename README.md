@@ -6,18 +6,17 @@
 > 4. Julio César Bastidas Sánchez
 
 ## INTRUCCIONES DE USO DE RAMAS
-1. Antes de empezar a trabajar, para bajar los cambios desde GitHub, realizamos en la rama LOCAL DEVEL :
+1. Antes de empezar a trabajar, para bajar los cambios desde GitHub a vuestra rama:
 ```
-git checkout devel
+git checkout TU RAMA
 git pull
 ```
-2. Para ver en que rama estamos hacemos `git branch`. Cambiamos a vuestra rama mediante `git checkout NOMBRE`.
-3. Traemos a la rama los cambios de devel mediante `git merge devel`.
-4. AHORA EMPEZAMOS A TRABAJAR EN LOCAL (INTENTAR TRABAJAR EN FICHEROS DINSTINTOS PARA NO TENER CONFLITOS)
-5. Una vez terminado el trabajo, hacemos `git status` para ver los cambios que han sucedido y estan pendientes de subir al github.
-6. Para subir TODOS los cambios, hacemos `git add .`
-7. Para realizar un commit hacemos `git commit -m "mensaje"`
-8. Para subir los cambios a vuestra rama en remoto hacemos `git push`
+2. Para ver en que rama estamos hacemos `git branch`.
+3. AHORA EMPEZAMOS A TRABAJAR EN LOCAL (INTENTAR TRABAJAR EN FICHEROS DINSTINTOS PARA NO TENER CONFLITOS)
+4. Una vez terminado el trabajo, hacemos `git status` para ver los cambios que han sucedido y estan pendientes de subir al github.
+5. Para subir TODOS los cambios, hacemos `git add .`
+6. Para realizar un commit hacemos `git commit -m "mensaje"`
+7. Para subir los cambios a vuestra rama en remoto hacemos `git push`
 
 ### AVISAR POR EL GRUPO DE QUE HABEIS SUBIDO CAMBIOS A VUESTRA RAMA
 
