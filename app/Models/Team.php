@@ -27,7 +27,7 @@ class Team extends Model
         return $this->hasMany(User::class);
     }
 
-    public function games() {
+    public function game() {
         return $this->hasOne(Game::class);
     }
 }

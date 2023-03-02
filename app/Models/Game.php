@@ -21,7 +21,11 @@ class Game extends Model
         'result',
     ];
 
-    public function teams() {
+    public function local() {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function visitante() {
         return $this->belongsTo(Team::class);
     }
 }

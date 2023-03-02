@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
         // Llamamos a otro fichero de semillas
         $this->call( Team ::class );
         // Mostramos información por consola
