@@ -7,20 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
-    protected $table = 'game';
-    protected $primaryKey = 'id';
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
-        'fecha', 'hora', 'formato', 'resultado', 'equipo_local', 'equipo_visitante',
+        'date',
+        'time',
+        'format',
+        'result',
     ];
 
-    public function Team() {
-        // Game tiene las claves ajenas equipo_local y equipo_visitante.
-        return $this->hasOne(Team::class);
+    public function teams() {
+        return $this->belongsTo(Team::class);
     }
 }
