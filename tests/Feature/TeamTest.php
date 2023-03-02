@@ -143,5 +143,4 @@ class TeamTest extends TestCase
         $equipo2->delete();
 
     }
-
 }
