@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('games', function (Blueprint $table){
-            $table->foreignId('team_id')->constrained();
+        Schema::table('games', function (Blueprint $table) {
+            $table->foreign(['visitante_id'], 'games_teams_id_fk')->references(['id'])->on('teams')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign(['local_id'], 'games_team_id_foreign')->references(['id'])->on('teams')->onUpdate('NO ACTION')->onDelete('NO ACTION');
         });
     }
 
@@ -25,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['team_id']);
+        Schema::table('games', function (Blueprint $table) {
+            $table->dropForeign('games_teams_id_fk');
+            $table->dropForeign('games_team_id_foreign');
+        });
     }
 };
