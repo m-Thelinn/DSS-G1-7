@@ -6,7 +6,7 @@
 > 4. Julio César Bastidas Sánchez
 
 ## INTRUCCIONES DE USO DE RAMAS
-1. Antes de empezar a trabajar, para bajar los cambios desde GitHub:
+1. Antes de empezar a trabajar, para bajar los cambios desde GitHub a vuestra rama:
 ```
 git checkout TU RAMA
 git pull
