@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-     * @return void
+     * @return vodni
      */
     public function run()
     {
@@ -19,150 +19,6 @@ class UsersTableSeeder extends Seeder
         DB::table('usuario')->delete();
         //Añadimos datos de prueba al usuario
         DB::table('usuario')->insert([
-            [
-            //ADMIN
-            'dni' => '01234567H', 
-            'nick' => 'TheLinn',
-            'nombre' => 'Miguel',
-            'apellidos' => 'Rodríguez',
-            'email' => 'mrs121@alu.ua.es',
-            'password' => '12345678',
-            'pais' => 'España',
-            'twitter' => 'thelinn',
-            'rol' => '0',
-            'telefono' => '654321987',
-            'is_admin' => '1'
-            ],
-            [
-            //NADA
-            'dni' => '01334567K', 
-            'nick' => 'Pacoflow',
-            'nombre' => 'Francisco',
-            'apellidos' => 'Fernandez',
-            'email' => 'pacoflow@gmail.com',
-            'password' => '12345678',
-            'pais' => 'España',
-            'twitter' => 'pacoflow',
-            'rol' => '0',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-            [
-            //JUGADOR
-            'dni' => '00009999D', 
-            'nick' => 'M1xwell',
-            'nombre' => 'Oscar',
-            'apellidos' => 'Cañellas',
-            'email' => 'm1xwell@gmail.com',
-            'password' => '12345678',
-            'pais' => 'España',
-            'twitter' => 'm1xwell',
-            'rol' => '1',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-
-            [
-            //JUGADOR
-            'dni' => '24681023Q', 
-            'nick' => 'Frenzaa',
-            'nombre' => 'David',
-            'apellidos' => 'Martinez',
-            'email' => 'papu@gmail.com',
-            'password' => '12345678',
-            'pais' => 'Argentina',
-            'twitter' => 'frenzaa',
-            'rol' => '1',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-            [
-            //JUGADOR
-            'dni' => '01234567M', 
-            'nick' => 'Frenzaa',
-            'nombre' => 'David',
-            'apellidos' => 'Martinez',
-            'email' => 'papu@gmail.com',
-            'password' => '12345678',
-            'pais' => 'Argentina',
-            'twitter' => 'frenzaa',
-            'rol' => '1',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-
-            [
-            //JUGADOR
-            'dni' => '01234567P', 
-            'nick' => 'Ximy',
-            'nombre' => 'Manuel',
-            'apellidos' => 'Sánchez',
-            'email' => 'ximy@gmail.com',
-            'password' => '12345678',
-            'pais' => 'Italia',
-            'twitter' => 'ximy',
-            'rol' => '1',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-
-            [
-            //JUGADOR
-            'dni' => '01234567X', 
-            'nick' => 'Chrol0',
-            'nombre' => 'Santiago',
-            'apellidos' => 'Perez',
-            'email' => 'chorlo@gmail.com',
-            'password' => '12345678',
-            'pais' => 'Grecia',
-            'twitter' => 'chorlo',
-            'rol' => '1',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-            [
-            //JUGADOR
-            'dni' => '01234567A', 
-            'nick' => 'SkyGi',
-            'nombre' => 'Joel',
-            'apellidos' => 'Gutierrez',
-            'email' => 'skygi@gmail.com',
-            'password' => '12345678',
-            'pais' => 'España',
-            'twitter' => 'skygi',
-            'rol' => '1',
-            'telefono' => '654321987',
-            'is_admin' => '0'
-            ],
-            //ENTRENADOR
-            [
-            'dni' => '9876543N',
-            'nick' => 'Neilzinho',
-            'nombre' => 'Neil',
-            'apellidos' => 'Finlay',
-            'email' => 'neilzinho@gmail.com',
-            'password' => '12345678',
-            'pais' => 'Inglaterra',
-            'twitter' => 'neilzinho',
-            'rol' => '2',
-            'telefono' => '733988234',
-            'is_admin' => '0'
-            ],
-
-            //MANAGER
-            [
-            'dni' => '1122334N',
-            'nick' => 'Ocelote',
-            'nombre' => 'Carlos',
-            'apellidos' => 'Rodriguez',
-            'email' => 'ocelote@gmail.com',
-            'password' => '12345678',
-            'pais' => 'España',
-            'twitter' => 'oceloteworld',
-            'rol' => '3',
-            'telefono' => '632654789',
-            'is_admin' => '0'
-            ],
             [
             //JUGADOR1
             'dni' => '45645325L',
@@ -175,7 +31,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@leojannnesson',
             'rol' => '1',
             'telefono' => '667876234',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
 
             [
@@ -190,7 +47,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@chronicleEZ',
             'rol' => '1',
             'telefono' => '678980990',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
 
             [
@@ -205,7 +63,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@Derke',
             'rol' => '1',
             'telefono' => '754345987',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
 
             [
@@ -216,11 +75,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Howlett',
             'email' => 'boaster@gmail.com',
             'password' => '0909',
-            'pais' => 'Reino Unido',
+            'pais' => 'Reino Undnio',
             'twitter' => '@officialboaster',
             'rol' => '1',
             'telefono' => '765222123',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
 
             [
@@ -235,7 +95,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@Alfajervl',
             'rol' => '1',
             'telefono' => '679098087',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
     
 
@@ -247,11 +108,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Harris',
             'email' => 'mini@gmail.com',
             'password' => '7743',
-            'pais' => 'Reino Unido',
+            'pais' => 'Reino Undnio',
             'twitter' => '@minijake_',
             'rol' => '2',
             'telefono' => '733988234',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
 
             //MANAGER1
@@ -262,11 +124,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Johnson',
             'email' => 'CoJo@gmail.com',
             'password' => '4471',
-            'pais' => 'Reino Unido',
+            'pais' => 'Reino Undnio',
             'twitter' => '@CoJoPM',
             'rol' => '3',
             'telefono' => '784321456',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 004
             ],
 
             [
@@ -277,11 +140,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'McGrath',
             'email' => 'stellar@gmail.com',
             'password' => 'password1',
-            'pais' => 'Estados unidos',
+            'pais' => 'Estados undnios',
             'twitter' => '@st9llar',
             'rol' => '1',
             'telefono' => '745652123',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
 
             [
@@ -292,11 +156,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Bezerra',
             'email' => 'bangzerra@gmail.com',
             'password' => 'password2',
-            'pais' => 'Estdos unidos',
+            'pais' => 'Estados undnios',
             'twitter' => '@bangzerra',
             'rol' => '1',
             'telefono' => '741569897',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
 
             [
@@ -307,11 +172,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Panganiban',
             'email' => 'cryocells@gmail.com',
             'password' => 'password3',
-            'pais' => 'Estados unidos',
+            'pais' => 'Estados undnios',
             'twitter' => '@Cryocells_',
             'rol' => '1',
             'telefono' => '648989731',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
 
             [
@@ -322,11 +188,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Ha',
             'email' => 'derrek@gmail.com',
             'password' => 'password4',
-            'pais' => 'Estados unidos',
+            'pais' => 'Estados undnios',
             'twitter' => '@DerrekOW',
             'rol' => '1',
             'telefono' => '699320012',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
 
             [
@@ -337,11 +204,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Mazuryk',
             'email' => 'asuna@gmail.com',
             'password' => 'password5',
-            'pais' => 'Estados Unidos',
+            'pais' => 'Estados Undnios',
             'twitter' => '@Asunaa',
             'rol' => '1',
             'telefono' => '745699800',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
 
             //ENTRENADOR2
@@ -352,11 +220,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Hockom',
             'email' => 'mikes@gmail.com',
             'password' => 'password6',
-            'pais' => 'Estados Unidos',
+            'pais' => 'Estados Undnios',
             'twitter' => '@MikesHD_',
             'rol' => '2',
             'telefono' => '600321123',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
 
             //MANAGER2
@@ -367,11 +236,12 @@ class UsersTableSeeder extends Seeder
             'apellidos' => 'Kapadia',
             'email' => 'ddkesports@gmail.com',
             'password' => 'password7',
-            'pais' => 'Estados Unidos',
+            'pais' => 'Estados Undnios',
             'twitter' => '@ddkesports',
             'rol' => '3',
             'telefono' => '696388945',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 005
             ],
             //JUGADOR1
             [
@@ -385,7 +255,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@koldamenta',
             'rol' => '1',
             'telefono' => '612457896',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
             ],
 
             [
@@ -400,7 +271,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@starxo5',
             'rol' => '1',
             'telefono' => '722365478',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
             ],
 
             [
@@ -415,7 +287,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@Sheydosk1ng',
             'rol' => '1',
             'telefono' => '741258963',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
             ],
 
             [
@@ -430,7 +303,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@trexxfps',
             'rol' => '1',
             'telefono' => '769321456',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
             ],
 
             [
@@ -445,7 +319,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@WolfenVAL',
             'rol' => '1',
             'telefono' => '632123897',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
             ],
             //ENTRENADOR3
             [
@@ -459,7 +334,8 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@gokedTV',
             'rol' => '2',
             'telefono' => '722412569',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
             ],
 
             //MANAGER3
@@ -474,10 +350,350 @@ class UsersTableSeeder extends Seeder
             'twitter' => '@BARBARRcs',
             'rol' => '3',
             'telefono' => '744896354',
-            'is_admin' => '0'
+            'is_admin' => '0',
+            'equipo' => 006
+            ],
+
+            [
+            //USUARIOS NAVI
+            //JUGADOR1
+            'dni' => '45645546Y',
+            'nick' => 'ANGE1',
+            'nombre' => 'Kyrylo',
+            'apellidos' => 'Karasov',
+            'email' => 'KyryloKarasov@gmail.com',
+            'password' => '5454',
+            'pais' => 'Ucrania',
+            'twitter' => '@officialange1',
+            'rol' => '1',
+            'telefono' => '640196681',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+
+            [
+            //JUGADOR2
+            'dni' => '78634566A',
+            'nick' => 'Shao',
+            'nombre' => 'Andrey',
+            'apellidos' => 'Kiprsky',
+            'email' => 'AndreyKirprsky@gmail.com',
+            'password' => '4433',
+            'pais' => 'Rusia',
+            'twitter' => '@Shaolele',
+            'rol' => '1',
+            'telefono' => '640196682',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+
+            [
+            //JUGADOR3
+            'dni' => '452136834A',
+            'nick' => 'Zyppan',
+            'nombre' => 'Pontus',
+            'apellidos' => 'Eek',
+            'email' => 'PontusEek@gmail.com',
+            'password' => '3521',
+            'pais' => 'Suecia',
+            'twitter' => '@zyppaan',
+            'rol' => '1',
+            'telefono' => '640196683',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+
+            [
+            //JUGADOR4
+            'dni' => '155963681A',
+            'nick' => 'SUYGETSU',
+            'nombre' => 'Dmitry',
+            'apellidos' => 'Llyushin',
+            'email' => 'DmitryLlyushin@gmail.com',
+            'password' => '0909',
+            'pais' => 'Rusia',
+            'twitter' => '@suygetsu_',
+            'rol' => '1',
+            'telefono' => '640196684',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+
+            [
+            //JUGADOR5 
+            'dni' => '52862448Y',
+            'nick' => 'cNed',
+            'nombre' => 'Mehmet',
+            'apellidos' => 'Yağiz İpek',
+            'email' => 'MehmetYağizİpek@gmail.com',
+            'password' => '8778',
+            'pais' => 'Turquia',
+            'twitter' => '@cNedf0r',
+            'rol' => '0',
+            'telefono' => '679098057',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+    
+
+            //ENTRENADOR1
+            [
+            'dni' => '974534358S',
+            'nick' => 'd00mbr0s',
+            'nombre' => 'Erik',
+            'apellidos' => 'Sandgren',
+            'email' => 'ErikSandgren@gmail.com',
+            'password' => '4435',
+            'pais' => 'Suecia',
+            'twitter' => '@d00mbr0s',
+            'rol' => '2',
+            'telefono' => '640196685',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+
+            //MANAGER1
+            [
+            'dni' => '41896223C',
+            'nick' => 'LATEKS',
+            'nombre' => 'Oliwer',
+            'apellidos' => 'Fahlander',
+            'email' => 'Oliwer@gmail.com',
+            'password' => '7234',
+            'pais' => 'Suecia',
+            'twitter' => '@LATEKSgg',
+            'rol' => '3',
+            'telefono' => '640196686',
+            'is_admin' => '0',
+            'equipo' => 001
+            ],
+
+            //USUARIOS TEAM HERETICS
+            //JUGADOR1
+            [
+            'dni' => '45862120Q',
+            'nick' => 'Mixwell',
+            'nombre' => 'Oscar',
+            'apellidos' => 'Cañellas',
+            'email' => 'mixwell@gmail.com',
+            'password' => '6789',
+            'pais' => 'España',
+            'twitter' => '@Mixwell',
+            'rol' => '1',
+            'telefono' => '640196687',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+
+            [
+            //JUGADOR2
+            'dni' => '78638970A',
+            'nick' => 'AvovA',
+            'nombre' => 'Auni',
+            'apellidos' => 'Chahade',
+            'email' => 'AvovA@gmail.com',
+            'password' => '2593',
+            'pais' => 'Dinamarca',
+            'twitter' => '@AvovaFPS',
+            'rol' => '1',
+            'telefono' => '640196688',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+
+            [
+            //JUGADOR3
+            'dni' => '45258254A',
+            'nick' => 'zeek',
+            'nombre' => 'Aleksander',
+            'apellidos' => 'Zygmunt',
+            'email' => 'zeek@gmail.com',
+            'password' => '7813',
+            'pais' => 'Polonia',
+            'twitter' => '@zeekrino',
+            'rol' => '1',
+            'telefono' => '640196689',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+
+            [
+            'dni' => '13466885A',
+            //JUGADOR4
+            'nick' => 'Boo',
+            'nombre' => 'Ričardas',
+            'apellidos' => 'Lukaševičius',
+            'email' => 'Boo@gmail.com',
+            'password' => '0959',
+            'pais' => 'Lituania',
+            'twitter' => '@BooVAL1',
+            'rol' => '1',
+            'telefono' => '640196690',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+
+            [
+            //JUGADOR5
+            'dni' => '12872449Y',
+            'nick' => 'keloqz',
+            'nombre' => 'Cista',
+            'apellidos' => 'Wassim',
+            'email' => 'keloqz@gmail.com',
+            'password' => '1123',
+            'pais' => 'Francia',
+            'twitter' => '@keloqz',
+            'rol' => '0',
+            'telefono' => '679098085',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+    
+
+            //ENTRENADOR1
+            [
+            'dni' => '9876543N',
+            'nick' => 'Neilzinho',
+            'nombre' => 'Neil',
+            'apellidos' => 'Finlay',
+            'email' => 'neilzinho@gmail.com',
+            'password' => '12345678',
+            'pais' => 'Inglaterra',
+            'twitter' => 'neilzinho',
+            'rol' => '2',
+            'telefono' => '733988234',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+
+            //MANAGER1
+            [
+            'dni' => '1122334N',
+            'nick' => 'Ocelote',
+            'nombre' => 'Carlos',
+            'apellidos' => 'Rodriguez',
+            'email' => 'ocelote@gmail.com',
+            'password' => '12345678',
+            'pais' => 'España',
+            'twitter' => 'oceloteworld',
+            'rol' => '3',
+            'telefono' => '632654789',
+            'is_admin' => '0',
+            'equipo' => 002
+            ],
+
+            //USUARIOS LEVIATAN
+            //JUGADOR1
+            [
+            'dni' => '45862389C',
+            'nick' => 'keznit',
+            'nombre' => 'Angelo',
+            'apellidos' => 'Mori',
+            'email' => 'keznit@gmail.com',
+            'password' => '8967',
+            'pais' => 'Chile',
+            'twitter' => '@keznitdeuS',
+            'rol' => '1',
+            'telefono' => '640196691',
+            'is_admin' => '0',
+            'equipo' => 003
+            ],
+
+            [
+            //JUGADOR2
+            'dni' => '54808970C',
+            'nick' => 'Tacolilla',
+            'nombre' => 'Vicente',
+            'apellidos' => 'Compagnon',
+            'email' => 'TacoTaco@gmail.com',
+            'password' => '2103',
+            'pais' => 'Chile',
+            'twitter' => '@tacolillalzh',
+            'rol' => '1',
+            'telefono' => '640196691',
+            'is_admin' => '0',
+            'equipo' => 003
+            ],
+
+            [
+            //JUGADOR3
+            'dni' => '45258235A',
+            'nick' => 'kiNgg',
+            'nombre' => 'Francisco',
+            'apellidos' => 'Aravena',
+            'email' => 'kiNgg@gmail.com',
+            'password' => '8927',
+            'pais' => 'Chile',
+            'twitter' => '@kiNggfps',
+            'rol' => '1',
+            'telefono' => '640196692',
+            'is_admin' => '0',
+            'equipo' => 003
+            ],
+
+            [
+            //JUGADOR4
+            'dni' => '13466557C',
+            'nick' => 'Mazino',
+            'nombre' => 'Roberto',
+            'apellidos' => 'Rivas',
+            'email' => 'MazinoFPS@gmail.com',
+            'password' => '1990',
+            'pais' => 'Chile',
+            'twitter' => '@Mazinofps',
+            'rol' => '1',
+            'telefono' => '640196693',
+            'is_admin' => '0',
+            'equipo' => 003
+            ],
+
+            [
+            //JUGADOR5 
+            'dni' => '12510979C',
+            'nick' => 'Shyy',
+            'nombre' => 'Fabian',
+            'apellidos' => 'Usnayo',
+            'email' => 'Shyy@gmail.com',
+            'password' => '1548',
+            'pais' => 'Chile',
+            'twitter' => '@ShyyFab',
+            'rol' => '0',
+            'telefono' => '679098098',
+            'is_admin' => '0',
+            'equipo' => 003
+            ],
+    
+            //ENTRENADOR1
+            [
+            'dni' => '78484301A',
+            'nick' => 'Onur',
+            'nombre' => 'Rodrigo',
+            'apellidos' => 'Dalmagro',
+            'email' => 'Onur@gmail.com',
+            'password' => '1233',
+            'pais' => 'Argentina',
+            'twitter' => 'onurthegreat',
+            'rol' => '2',
+            'telefono' => '733988234',
+            'is_admin' => '0',
+            'equipo' => 003
+            ],
+
+            //MANAGER1
+            [
+            'dni' => '1542334N',
+            'nick' => 'torito',
+            'nombre' => 'Cristobal',
+            'apellidos' => 'Quintana',
+            'email' => 'torito@gmail.com',
+            'password' => '5630',
+            'pais' => 'Tailandia',
+            'twitter' => 'toritoravalero',
+            'rol' => '3',
+            'telefono' => '634654782',
+            'is_admin' => '0',
+            'equipo' => 003
             ],
         ]);
       }
   }
-    
-
