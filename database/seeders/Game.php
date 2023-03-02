@@ -23,28 +23,28 @@ class Game extends Seeder
             //PARTidO1 NAVI vs LEV
             'date' => '2023-02-27 18:00:00', 
             'time' => '2023-02-27 18:00:00',
-            'format' => '2',
-            'result' => '3',
-            'local_id' => '001',
-            'visitor_id' => '003'
+            'format' => 2,
+            'result' => 3,
+            'local_id' => 1,
+            'visitante_id' => 3,
             ],
             [
             //PARTidO1 100T vs FNC
             'date' => '2023-02-27 20:30:00', 
             'time' => '2023-02-27 20:30:00',
-            'format' => '1',
-            'result' => '2',
-            'local_id' => '005',
-            'visitor_id' => '004'
+            'format' => 1,
+            'result' => 2,
+            'local_id' => 5,
+            'visitante_id' => 4,
             ],
             [
             //PARTidO1 KOI vs TH
             'date' => '2023-04-30 21:00:00', 
             'time' => '2023-04-30 21:00:00',
-            'format' => '3',
-            'result' => '0',
-            'local_id' => '006', 
-            'visitor_id' => '002' 
+            'format' => 3,
+            'result' => 0,
+            'local_id' => 6, 
+            'visitante_id' => 2 
             ],
         ]);
     }
