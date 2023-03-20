@@ -7,21 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    protected $table = 'team';
-    protected $primaryKey = 'id';
-    public $timestamps = false;
-
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
-        'nombre', 'abreviatura', 'descripcion', 'foto', 'pais', 'division',
+        'name',
+        'short_name',
+        'description',
+        'picture',
+        'country',
+        'division',
     ];
 
-    public function players() {
+    public function users() {
         return $this->hasMany(User::class);
+    }
+
+    public function game() {
+        return $this->hasOne(Game::class);
     }
 }
