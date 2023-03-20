@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
+use App\Models\Team;
 
 class User extends Seeder
 {
@@ -30,7 +31,7 @@ class User extends Seeder
             'rol' => 1,
             'phone' => '667876234',
             'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => 4,
             ],
 
             [
