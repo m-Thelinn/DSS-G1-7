@@ -26,7 +26,6 @@ class User extends Authenticatable
         'phone',
         'country',
         'rol',
-        'is_admin',
     ];
 
     /**
