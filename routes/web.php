@@ -17,6 +17,7 @@ use App\Http\Controllers\TeamsController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 */
 Route::get('/', function() {
     return view('homeBlade');
@@ -51,4 +52,3 @@ Route::get('teams/modifyteam/{id}' , [TeamsController::class, 'modifyTeam'])
 
 Route::patch('updateTeam/{team}', [TeamsController::class, 'updateTeam'])
     ->name('team.updateTeam');
-    
