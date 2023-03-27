@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
+use App\Models\Team;
 
 class User extends Seeder
 {
@@ -14,12 +15,15 @@ class User extends Seeder
      * @return void
      */
     public function run()
+
+
     {
         //Borramos los datos de la tabla
         DB::table('users')->delete();
         //Añadimos datos de prueba al usuario
         DB::table('users')->insert([
             [
+            //USUARIOS FNATIC
             //JUGADOR1            
             'nickname' => 'Leo',
             'name' => 'Leo',
@@ -29,8 +33,7 @@ class User extends Seeder
             'country' => 'Suecia',
             'rol' => 1,
             'phone' => '667876234',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id
             ],
 
             [
@@ -43,8 +46,7 @@ class User extends Seeder
             'country' => 'Rusia',
             'rol' => 1,
             'phone' => '678980990',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id 
             ],
 
             [
@@ -57,8 +59,7 @@ class User extends Seeder
             'country' => 'Finlandia',
             'rol' => 1,
             'phone' => '754345987',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id
             ],
 
             [
@@ -71,8 +72,7 @@ class User extends Seeder
             'country' => 'Reino Unido',
             'rol' => 1,
             'phone' => '765222123',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id
             ],
 
             [
@@ -85,8 +85,7 @@ class User extends Seeder
             'country' => 'Turquia',
             'rol' => 1,
             'phone' => '679098087',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id 
             ],
     
 
@@ -100,8 +99,7 @@ class User extends Seeder
             'country' => 'Reino Unido',
             'rol' => 2,
             'phone' => '733988234',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id
             ],
 
             //MANAGER1
@@ -114,10 +112,10 @@ class User extends Seeder
             'country' => 'Reino Unido',
             'rol' => 3,
             'phone' => '784321456',
-            'is_admin' => 0,
-            'team_id' => 4
+            'team_id' => DB::table('teams')->where('name','FNATIC')->first()->id
             ],
 
+            //USUARIOS 100T
             [
             //JUGADOR1            
             'nickname' => 'stellar',
@@ -128,8 +126,7 @@ class User extends Seeder
             'country' => 'Estados unidos',
             'rol' => 1,
             'phone' => '745652123',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id 
             ],
 
             [
@@ -142,8 +139,7 @@ class User extends Seeder
             'country' => 'Estados unidos',
             'rol' => 1,
             'phone' => '741569897',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id 
             ],
 
             [
@@ -156,8 +152,7 @@ class User extends Seeder
             'country' => 'Estados unidos',
             'rol' => 1,
             'phone' => '648989731',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id 
             ],
 
             [
@@ -170,8 +165,7 @@ class User extends Seeder
             'country' => 'Estados unidos',
             'rol' => 1,
             'phone' => '6993212',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id 
             ],
 
             [
@@ -184,8 +178,7 @@ class User extends Seeder
             'country' => 'Estados Unidos',
             'rol' => 1,
             'phone' => '745699800',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id 
             ],
 
             //ENTRENADOR2
@@ -198,8 +191,7 @@ class User extends Seeder
             'country' => 'Estados Unidos',
             'rol' => 2,
             'phone' => '6321123',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id 
             ],
 
             //MANAGER2
@@ -212,9 +204,10 @@ class User extends Seeder
             'country' => 'Estados Unidos',
             'rol' => 2,
             'phone' => '696388945',
-            'is_admin' => 0,
-            'team_id' => 5
+            'team_id' => DB::table('teams')->where('name','100 Thieves')->first()->id  
             ],
+
+            //USUARIOS KOI
             //JUGADOR1
             [            
             'nickname' => 'koldamenta',
@@ -225,8 +218,7 @@ class User extends Seeder
             'country' => 'España',
             'rol' => 1,
             'phone' => '612457896',
-            'is_admin' => 0,
-            'team_id' => 6
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
 
             [
@@ -238,9 +230,8 @@ class User extends Seeder
             'password' => 'PASSWORD2',
             'country' => 'Polonia',
             'rol' => 1,
-            'phone' => '722365478',
-            'is_admin' => 0,
-            'team_id' => 6
+            'phone' => '612457895',
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
 
             [
@@ -253,8 +244,7 @@ class User extends Seeder
             'country' => 'Rusia',
             'rol' => 1,
             'phone' => '741258963',
-            'is_admin' => 0,
-            'team_id' => 6
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
 
             [
@@ -267,8 +257,7 @@ class User extends Seeder
             'country' => 'Rusia',
             'rol' => 1,
             'phone' => '769321456',
-            'is_admin' => 0,
-            'team_id' => 6
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
 
             [
@@ -281,8 +270,7 @@ class User extends Seeder
             'country' => 'Bulgaria',
             'rol' => 1,
             'phone' => '632123897',
-            'is_admin' => 0,
-            'team_id' => 6
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
             //ENTRENADOR3
             [            
@@ -294,8 +282,7 @@ class User extends Seeder
             'country' => 'España',
             'rol' => 2,
             'phone' => '722412569',
-            'is_admin' => 0,
-            'team_id' => 6
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
 
             //MANAGER3
@@ -308,8 +295,7 @@ class User extends Seeder
             'country' => 'Suecia',
             'rol' => 3,
             'phone' => '744896354',
-            'is_admin' => 0,
-            'team_id' => 6
+            'team_id' => DB::table('teams')->where('name','KOI')->first()->id 
             ],
 
             [
@@ -323,8 +309,7 @@ class User extends Seeder
             'country' => 'Ucrania',
             'rol' => 1,
             'phone' => '640196681',
-            'is_admin' => 0,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
 
             [
@@ -337,8 +322,7 @@ class User extends Seeder
             'country' => 'Rusia',
             'rol' => 1,
             'phone' => '640196682',
-            'is_admin' => 0,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
 
             [
@@ -351,8 +335,7 @@ class User extends Seeder
             'country' => 'Suecia',
             'rol' => 1,
             'phone' => '640196683',
-            'is_admin' => 1,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
 
             [
@@ -365,8 +348,7 @@ class User extends Seeder
             'country' => 'Rusia',
             'rol' => 1,
             'phone' => '640196684',
-            'is_admin' => 0,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
 
             [
@@ -377,10 +359,9 @@ class User extends Seeder
             'email' => 'MehmetYağizİpek@gmail.com',
             'password' => '8778',
             'country' => 'Turquia',
-            'rol' => 0,
+            'rol' => 1,
             'phone' => '679098057',
-            'is_admin' => 1,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
     
 
@@ -394,8 +375,7 @@ class User extends Seeder
             'country' => 'Suecia',
             'rol' => 1,
             'phone' => '640196685',
-            'is_admin' => 0,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
 
             //MANAGER1
@@ -408,8 +388,7 @@ class User extends Seeder
             'country' => 'Suecia',
             'rol' => 3,
             'phone' => '640196686',
-            'is_admin' => 0,
-            'team_id' => 1
+            'team_id' => DB::table('teams')->where('name','Natus Vincere')->first()->id 
             ],
 
             //USUARIOS TEAM HERETICS
@@ -423,8 +402,7 @@ class User extends Seeder
             'country' => 'España',
             'rol' => 1,
             'phone' => '640196687',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
 
             [
@@ -437,8 +415,7 @@ class User extends Seeder
             'country' => 'Dinamarca',
             'rol' => 1,
             'phone' => '640196688',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
 
             [
@@ -451,8 +428,7 @@ class User extends Seeder
             'country' => 'Polonia',
             'rol' => 1,
             'phone' => '640196689',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
 
             [            
@@ -465,8 +441,7 @@ class User extends Seeder
             'country' => 'Lituania',
             'rol' => 1,
             'phone' => '640196690',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
 
             [
@@ -477,10 +452,9 @@ class User extends Seeder
             'email' => 'keloqz@gmail.com',
             'password' => '1123',
             'country' => 'Francia',
-            'rol' => 0,
+            'rol' => 1,
             'phone' => '679098085',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
     
 
@@ -492,10 +466,9 @@ class User extends Seeder
             'email' => 'neilzinho@gmail.com',
             'password' => '12345678',
             'country' => 'Inglaterra',
-            'rol' => 0,
+            'rol' => 1,
             'phone' => '733988234',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
 
             //MANAGER1
@@ -508,8 +481,7 @@ class User extends Seeder
             'country' => 'España',
             'rol' => 3,
             'phone' => '632654789',
-            'is_admin' => 0,
-            'team_id' => 2
+            'team_id' => DB::table('teams')->where('name','Team Heretics')->first()->id 
             ],
 
             //USUARIOS LEVIATAN
@@ -523,8 +495,7 @@ class User extends Seeder
             'country' => 'Chile',
             'rol' => 1,
             'phone' => '640196691',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id 
             ],
 
             [
@@ -537,8 +508,7 @@ class User extends Seeder
             'country' => 'Chile',
             'rol' => 1,
             'phone' => '640196691',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id
             ],
 
             [
@@ -551,8 +521,7 @@ class User extends Seeder
             'country' => 'Chile',
             'rol' => 1,
             'phone' => '640196692',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id  
             ],
 
             [
@@ -565,8 +534,7 @@ class User extends Seeder
             'country' => 'Chile',
             'rol' => 1,
             'phone' => '640196693',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id 
             ],
 
             [
@@ -577,10 +545,9 @@ class User extends Seeder
             'email' => 'Shyy@gmail.com',
             'password' => '1548',
             'country' => 'Chile',
-            'rol' => 0,
+            'rol' => 1,
             'phone' => '679098098',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id 
             ],
     
             //ENTRENADOR1
@@ -593,8 +560,7 @@ class User extends Seeder
             'country' => 'Argentina',
             'rol' => 2,
             'phone' => '733988234',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id 
             ],
 
             //MANAGER1
@@ -607,8 +573,7 @@ class User extends Seeder
             'country' => 'Tailandia',
             'rol' => 3,
             'phone' => '634654782',
-            'is_admin' => 0,
-            'team_id' => 3
+            'team_id' => DB::table('teams')->where('name','Leviatán')->first()->id 
             ],
         ]);
       }
