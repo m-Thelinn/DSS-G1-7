@@ -22,6 +22,7 @@ class Team extends Seeder
         //DB::table('games')->where('visitante_id', DB::raw('(SELECT id FROM teams LIMIT 1)'))->delete();    
         DB::table('users')->delete();
         DB::table('games')->delete();
+        DB::table('teamstats')->delete();
         DB::table('teams')->delete();
         //Añadimos datos de prueba al equipo
         DB::table('teams')->insert([            
