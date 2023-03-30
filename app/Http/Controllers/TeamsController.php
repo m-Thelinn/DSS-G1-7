@@ -18,7 +18,7 @@ class TeamsController extends Controller
     }
 
     public function addTeam(Request $req){
-        $name = $req->input('name');
+        /*$name = $req->input('name');
         $short_name = $req->input('short_name');
         $description = $req->input('description');
         $picture = $req->input('picture');
@@ -42,6 +42,16 @@ class TeamsController extends Controller
             'country' => $country ,
             'division' => $division
         ]);
+        */
+        $team = new Team();
+        $team->name = $req->input('name');
+        $team->short_name = $req->input('short_name');
+        $team->description = $req->input('description');
+        $team->picture = $req->input('picture');
+        $team->country = $req->input('country');
+        $team->division = $req->input('division');
+
+        $team->save();
         
         return redirect()->route('team.showAllTeams');
     }
@@ -61,7 +71,7 @@ class TeamsController extends Controller
     }
 
     public function updateTeam(Team $team){
-        
+        /*
         request()->validate([
             'name' => 'required|string|max:255',
             'short_name' => 'required|string|max:255',
@@ -81,7 +91,15 @@ class TeamsController extends Controller
 
 
         ]);
+        */
+        $team->name = request('name');
+        $team->short_name = request('short_name');
+        $team->description =request('description');
+        $team->picture = request('picture');
+        $team->country = request('country');
+        $team->division = request('division');        
 
+        $team->save();
         return redirect()->route('team.showAllTeams');
     
     }

@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call( User ::class );
         $this->call( Game ::class );
         $this->call( Teamstat ::class );
+        $this->call( Userstat ::class );
     }
 }

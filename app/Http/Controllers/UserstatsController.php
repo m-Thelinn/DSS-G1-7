@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-//usar la clase teamstats
 
-class TeamstatsController extends Controller
+class UserstatsController extends Controller
 {
     //
+    
     public function showAllteamstats() {
         //$teamstats = Teamstats::all();
         $teamstats = DB::table('teamstats')->get();
@@ -72,4 +71,5 @@ class TeamstatsController extends Controller
         return redirect()->route('teamstats.showAllTeamstats');
     
     }
+    
 }
