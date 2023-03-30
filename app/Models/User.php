@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function team() {
         return $this->belongsTo(Team::class);
     }
+
+    public function teamstat(){
+        return $this->hasOne(Userstat::class);
+    }
 }

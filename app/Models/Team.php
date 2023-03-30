@@ -30,4 +30,8 @@ class Team extends Model
     public function game() {
         return $this->hasOne(Game::class);
     }
+
+    public function teamstat(){
+        return $this->hasOne(Teamstat::class);
+    }
 }
