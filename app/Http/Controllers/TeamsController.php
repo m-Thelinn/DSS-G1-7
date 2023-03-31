@@ -7,25 +7,29 @@ use App\Models\Team;
 
 class TeamsController extends Controller
 {
-    //    
-    public function showAllTeams() {
-        $teams = Team::all();
-        return view('teams.teamsBlade', compact('teams'));
+    //      
+    public function showAllTeams(Request $request){        
+        $orderBy = $request->input('orderBy', 'id');//por defecto ordena por id si no se introce parametro
+        $teams = Team::orderBy($orderBy)->paginate(3);
+        return view('teams.teamsBlade', compact('teams', 'orderBy'));
     }
 
-    public function searchTeam($name) {
-        /*
-        $show = $request->input('search');
-        $teams = Team::where('name', 'LIKE', "%$show%")->get();
-        */
-        $team = Team::find($name);
-        /*
-        if(!$team){
-            return view('NotFound');
-        }
-        */
-        return view('teams.teamsBlade', compact('teams'));
+    public function searchTeamName(Request $request) {                 
+        $nombre = $request->input('nombre');        
+        
+        $teams = Team::where('name', $nombre)->get(); 
+        //dd($teams);  
+        return view('teams.teamsBrowser',compact('teams'));                            
     }
+
+    public function searchTeamid(Request $request) {                 
+        $id = $request->input('id');        
+        //dd($id);
+        $teams = Team::where('id', $id)->get(); 
+        //dd($teams);  
+        return view('teams.teamsBrowser',compact('teams'));                            
+    }
+    
 
     public function createTeam(){
         return view('teams.teamsCreateBlade');

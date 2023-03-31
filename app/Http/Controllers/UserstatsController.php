@@ -10,9 +10,10 @@ class UserstatsController extends Controller
 {
     //
     
-    public function showAlluserstats() {
-        $userstats = Userstat::all();
-        return view('userstats.userstatsBlade', compact('userstats'));
+    public function showAlluserstats(Request $request) {
+        $orderBy = $request->input('orderBy', 'id');//por defecto ordena por id si no se introce parametro
+        $userstats = Userstat::orderBy($orderBy)->paginate(6); 
+        return view('userstats.userstatsBlade', compact('userstats', 'orderBy'));
     }
 
     public function createUserstats(){
