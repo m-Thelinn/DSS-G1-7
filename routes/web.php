@@ -29,16 +29,20 @@ Route::get('users', [UserController::class, 'showAllUsers'])
 
 
 //------------------EQUIPOS------------------
-Route::get('teams', [TeamsController::class, 'showAllTeams'])
-    ->name('team.showAllTeams');
-
-Route::post('/teams/searchByName', [TeamsController::class, 'searchTeam'])
-    ->name('team.searchByName');
-
 Route::get('teams/createteam' , [TeamsController::class, 'createTeam'])
     ->name('team.createTeam'); 
 
-    Route::post('addTeam', [TeamsController::class, 'addTeam'])
+Route::get('teams/{orderBy?}', [TeamsController::class, 'showAllTeams'])
+    ->name('team.showAllTeams');
+
+//Route::get('teams/buscador', [TeamsController::class,'searchTeam'])->name('team.search');
+Route::post('/teams/searchByName', [TeamsController::class, 'searchTeamName'])
+    ->name('team.searchByName');
+
+Route::post('/teams/searchByid', [TeamsController::class, 'searchTeamid'])
+    ->name('team.searchByid');
+
+Route::post('addTeam', [TeamsController::class, 'addTeam'])
     ->name('team.addTeam');
        
 Route::delete('deleteTeam/{id}', [TeamsController::class, 'deleteTeam'])
@@ -53,7 +57,10 @@ Route::patch('updateTeam/{team}', [TeamsController::class, 'updateTeam'])
 
 
 //------------------GAMES------------------
-Route::get('games', [GamesController::class, 'showAllGames'])
+Route::get('games/creategame' , [GamesController::class, 'createGame'])
+    ->name('game.createGame');
+
+Route::get('games/{orderBy?}', [GamesController::class, 'showAllGames'])
     ->name('game.showAllGames');
 
 Route::get('games/creategame' , [GamesController::class, 'createGame'])
@@ -72,17 +79,11 @@ Route::patch('updateGame/{game}', [GamesController::class, 'updateGame'])
     ->name('game.updateGame');
 
 //------------------TEAMSTATS------------------
-
-/*posible para buscador
-Route::get('games/{game}', [GamesController::class,'showGame'])
-    ->name('game.showGame');
-*/
-
-Route::get('teamstats', [TeamstatsController::class, 'showAllteamstats'])
-    ->name('teamstats.showAllteamstats');
-
 Route::get('teamstats/createteamstats' , [TeamstatsController::class, 'createTeamstats'])
     ->name('teamstats.createTeamstats'); 
+
+Route::get('teamstats/{orderBy?}', [TeamstatsController::class, 'showAllteamstats'])
+    ->name('teamstats.showAllteamstats');
 
 Route::post('addTeamstats', [TeamstatsController::class, 'addTeamstats'])
     ->name('teamstats.addTeamstats');
@@ -97,12 +98,11 @@ Route::patch('updateTeamstats/{teamstats}', [TeamstatsController::class, 'update
     ->name('teamstats.updateTeamstats');
 
 //------------------USERSTATS------------------
-
-Route::get('userstats', [UserstatsController::class, 'showAlluserstats'])
-    ->name('userstats.showAlluserstats');
-
 Route::get('userstats/createuserstats' , [UserstatsController::class, 'createUserstats'])
     ->name('userstats.createUserstats'); 
+
+Route::get('userstats/{orderBy?}', [UserstatsController::class, 'showAlluserstats'])
+    ->name('userstats.showAlluserstats');
 
 Route::post('addUserstats', [UserstatsController::class, 'addUserstats'])
     ->name('userstats.addUserstats');

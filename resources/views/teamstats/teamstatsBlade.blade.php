@@ -1,24 +1,24 @@
 <!DOCTYPE html>
+@extends('layouts.app')
     <body>
 
     <h1>TeamStats</h1>                                
     <div style="display:flex;">
         <a href="/"><input type="button" value="Back"></a>
         <a href="{{ route('teamstats.createTeamstats') }}"><input type="button" value="Add Stats"></a>
-        <form class="form-inline">
-            <label for="ordenar">Ordenar por:</label>
-            <div class="form-group">
 
-                <select class="form-select" multiple aria-label="multiple select example"  id="ordenarUser" name="ordenarUser" [(ngModel)]="department">
-                    <option value="id">id</option>
-                    <option value="nombre">Nombre</option>
-                    <option value="apellidos">Apellidos</option>
-                    <option value="email">Email</option>
-                </select>
-            </div>
-            <button class="btn btn-dark mt-2" type="submit">Ordenar</button>
-        </form>
-
+        <form method="GET" action="{{ route('teamstats.showAllteamstats') }}">
+            <label for="orderBy">Ordenar por:</label>
+            <select name="orderBy" id="orderBy">                           
+                <option value="wins" {{ $orderBy == 'wins' ? 'selected' : '' }}>WINS</option>
+                <option value="losses" {{ $orderBy == 'losses' ? 'selected' : '' }}>LOSSES</option>
+                <option value="ranking_position" {{ $orderBy == 'ranking_position' ? 'selected' : '' }}>RANKING POSITION</option>
+                <option value="win_rate" {{ $orderBy == 'win_rate' ? 'selected' : '' }}>WIN RATE</option>
+                <option value="lose_rate" {{ $orderBy == 'lose_rate' ? 'selected' : '' }}>LOSE RATE</option>
+                <option value="team_id" {{ $orderBy == 'team_id' ? 'selected' : '' }}>TEAM ID</option>                
+            </select>                                     
+            <button type="submit">Ordenar</button>
+        </form>        
                    
     </div>
     <table class="table table-striped">
@@ -54,6 +54,6 @@
         </tr>        
         @endforeach     
     </table>
-    
+    {{ $teamstats->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
     </body>
 </html>

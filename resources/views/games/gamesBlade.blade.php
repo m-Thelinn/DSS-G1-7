@@ -1,22 +1,23 @@
 <!DOCTYPE html>
+@extends('layouts.app')
     <body>
 
     <h1>Games</h1>                                
     <div style="display:flex;">
         <a href="/"><input type="button" value="Back"></a>
         <a href="{{ route('game.createGame') }}"><input type="button" value="Add Game"></a>
-        <form class="form-inline">
-            <label for="ordenar">Ordenar por:</label>
-            <div class="form-group">
-            
-                <select class="form-select" multiple aria-label="multiple select example"  id="ordenarUser" name="ordenarUser" [(ngModel)]="department">
-                    <option value="id">id</option>
-                    <option value="nombre">Nombre</option>
-                    <option value="apellidos">Apellidos</option>
-                    <option value="email">Email</option>
-                </select>
-            </div>
-            <button class="btn btn-dark mt-2" type="submit">Ordenar</button>
+        
+        <form method="GET" action="{{ route('game.showAllGames') }}">
+            <label for="orderBy">Ordenar por:</label>
+            <select name="orderBy" id="orderBy">                           
+                <option value="date" {{ $orderBy == 'date' ? 'selected' : '' }}>FECHA</option>
+                <option value="time" {{ $orderBy == 'time' ? 'selected' : '' }}>HORA</option>
+                <option value="format" {{ $orderBy == 'format' ? 'selected' : '' }}>FORMATO</option>
+                <option value="result" {{ $orderBy == 'result' ? 'selected' : '' }}>RESULTADO</option>
+                <option value="local_id" {{ $orderBy == 'local_id' ? 'selected' : '' }}>EQUIPO LOCAL</option>
+                <option value="visitante_id" {{ $orderBy == 'visitante_id' ? 'selected' : '' }}>EQUIPO VISITANTE</option>                
+            </select>            
+            <button type="submit">Ordenar</button>
         </form>
 
                    
@@ -54,6 +55,6 @@
         </tr>        
         @endforeach     
     </table>
-    
+    {{ $games->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
     </body>
 </html>

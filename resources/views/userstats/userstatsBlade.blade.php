@@ -1,22 +1,23 @@
 <!DOCTYPE html>
+@extends('layouts.app')
     <body>
 
     <h1>UserStats</h1>                                
     <div style="display:flex;">
         <a href="/"><input type="button" value="Back"></a>
         <a href="{{ route('userstats.createUserstats') }}"><input type="button" value="Add Stats"></a>
-        <form class="form-inline">
-            <label for="ordenar">Ordenar por:</label>
-            <div class="form-group">
-
-                <select class="form-select" multiple aria-label="multiple select example"  id="ordenarUser" name="ordenarUser" [(ngModel)]="department">
-                    <option value="id">id</option>
-                    <option value="nombre">Nombre</option>
-                    <option value="apellidos">Apellidos</option>
-                    <option value="email">Email</option>
-                </select>
-            </div>
-            <button class="btn btn-dark mt-2" type="submit">Ordenar</button>
+        <form method="GET" action="{{ route('userstats.showAlluserstats') }}">
+            <label for="orderBy">Ordenar por:</label>
+            <select name="orderBy" id="orderBy">                           
+                <option value="kills" {{ $orderBy == 'kills' ? 'selected' : '' }}>KILLS</option>
+                <option value="assists" {{ $orderBy == 'assists' ? 'selected' : '' }}>ASSISTS</option>
+                <option value="deaths" {{ $orderBy == 'deaths' ? 'selected' : '' }}>DEATHS</option>
+                <option value="times_mvp" {{ $orderBy == 'times_mvp' ? 'selected' : '' }}>TIMES MVP</option>
+                <option value="win_rate" {{ $orderBy == 'win_rate' ? 'selected' : '' }}>WIN RATE</option>
+                <option value="adr" {{ $orderBy == 'adr' ? 'selected' : '' }}>ADR</option>                
+                <option value="user_id" {{ $orderBy == 'user_id' ? 'selected' : '' }}>USER ID</option>  
+            </select>                                                  
+            <button type="submit">Ordenar</button>             
         </form>
 
                    
@@ -56,6 +57,7 @@
         </tr>        
         @endforeach     
     </table>
-    
+    {{ $userstats->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
+
     </body>
 </html>
