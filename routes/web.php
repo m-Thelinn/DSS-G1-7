@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\GamesController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TeamstatsController;
 use App\Http\Controllers\UserstatsController;
 
@@ -24,8 +25,26 @@ Route::get('/', function() {
 });
 
 //------------------USUARIOS------------------
-Route::get('users', [UserController::class, 'showAllUsers'])
+Route::get('users', [UsersController::class, 'showAllUsers'])
     ->name('user.showAllUsers');
+
+Route::post('/users/searchByName', [UsersController::class, 'searchUser'])
+    ->name('user.searchByName');
+
+Route::get('users/createuser' , [UsersController::class, 'createUser'])
+    ->name('user.createUser');
+
+Route::post('addUser', [UsersController::class, 'addUser'])
+    ->name('user.addUser');
+
+Route::delete('deleteuser/{id}', [UsersController::class, 'deleteUser'])
+    ->name('user.deleteUser');
+
+Route::get('users/modifyuser/{id}' , [UsersController::class, 'modifyUser'])
+    ->name('user.modifyUser');   
+
+Route::patch('updateUser/{user}', [UsersController::class, 'updateUser'])
+    ->name('user.updateUser');
 
 
 //------------------EQUIPOS------------------
