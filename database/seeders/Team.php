@@ -16,10 +16,7 @@ class Team extends Seeder
     public function run()
     {
         //Borramos los datos de la tabla
-        //DB::table('games')->delete();
-        //DB::table('users')->where('team_id', DB::raw('(SELECT id FROM teams LIMIT 1)'))->delete();
-        //DB::table('games')->where('local_id', DB::raw('(SELECT id FROM teams LIMIT 1)'))->delete();
-        //DB::table('games')->where('visitante_id', DB::raw('(SELECT id FROM teams LIMIT 1)'))->delete(); 
+         
         DB::table('userstats')->delete();   
         DB::table('users')->delete();
         DB::table('games')->delete();
