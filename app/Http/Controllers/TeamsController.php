@@ -13,36 +13,25 @@ class TeamsController extends Controller
         return view('teams.teamsBlade', compact('teams'));
     }
 
+    public function searchTeam($name) {
+        /*
+        $show = $request->input('search');
+        $teams = Team::where('name', 'LIKE', "%$show%")->get();
+        */
+        $team = Team::find($name);
+        /*
+        if(!$team){
+            return view('NotFound');
+        }
+        */
+        return view('teams.teamsBlade', compact('teams'));
+    }
+
     public function createTeam(){
         return view('teams.teamsCreateBlade');
     }
 
-    public function addTeam(Request $req){
-        /*$name = $req->input('name');
-        $short_name = $req->input('short_name');
-        $description = $req->input('description');
-        $picture = $req->input('picture');
-        $country = $req->input('country');
-        $division = $req->input('division');         
-        
-        $req->validate([
-            'name' => 'required|string|max:255',
-            'short_name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'picture' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'division' => 'required|digits:1',
-        ]);
-
-        Team::create([
-            'name' => $name,
-            'short_name' => $short_name,
-            'description' => $description,
-            'picture' => $picture,
-            'country' => $country ,
-            'division' => $division
-        ]);
-        */
+    public function addTeam(Request $req){        
         $team = new Team();
         $team->name = $req->input('name');
         $team->short_name = $req->input('short_name');
@@ -70,28 +59,7 @@ class TeamsController extends Controller
         ]);
     }
 
-    public function updateTeam(Team $team){
-        /*
-        request()->validate([
-            'name' => 'required|string|max:255',
-            'short_name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'picture' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'division' => 'required|digits:1',
-        ]);
-
-        $team->update([
-            'name' => request('name'),
-            'short_name' => request('short_name'),
-            'description' => request('description'),
-            'picture'=> request('picture'),
-            'country' => request('country'),
-            'division' => intval(request('division')),
-
-
-        ]);
-        */
+    public function updateTeam(Team $team){        
         $team->name = request('name');
         $team->short_name = request('short_name');
         $team->description =request('description');

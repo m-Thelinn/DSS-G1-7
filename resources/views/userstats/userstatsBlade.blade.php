@@ -1,10 +1,10 @@
 <!DOCTYPE html>
     <body>
 
-    <h1>TeamStats</h1>                                
+    <h1>UserStats</h1>                                
     <div style="display:flex;">
         <a href="/"><input type="button" value="Back"></a>
-        <a href="{{ route('teamstats.createTeamstats') }}"><input type="button" value="Add Stats"></a>
+        <a href="{{ route('userstats.createUserstats') }}"><input type="button" value="Add Stats"></a>
         <form class="form-inline">
             <label for="ordenar">Ordenar por:</label>
             <div class="form-group">
@@ -24,28 +24,30 @@
     <table class="table table-striped">
         <thead>
         <tr>            
-            <th>WINS |</th>
-            <th>LOSSES |</th>
-            <th>RANKING POSITION |</th>
+            <th>KILLS |</th>
+            <th>ASSISTS |</th>
+            <th>DEATHS |</th>
+            <th>TIMES MVP |</th>
             <th>WIN RATE |</th>
-            <th>LOSE RATE |</th>
-            <th>TEAM ID |</th> 
+            <th>ADR |</th> 
+            <th>USER ID |</th> 
             <th>ACCIONES</th>                
         </tr>
         </thead>  
-        @foreach ($teamstats as $stat)          
+        @foreach ($userstats as $stat)          
         <tr>                
-            <td>{{ $stat->wins }}</td>
-            <td>{{ $stat->losses }}</td>   
-            <td>{{ $stat->ranking_position }}</td>                
-            <td>{{ $stat->win_rate }}</td> 
-            <td>{{ $stat->lose_rate }}</td>                
-            <td>{{ $stat->team_id }}</td>   
+            <td>{{ $stat->kills }}</td>
+            <td>{{ $stat->assists }}</td>   
+            <td>{{ $stat->deaths }}</td>                
+            <td>{{ $stat->times_mvp }}</td> 
+            <td>{{ $stat->win_rate }}</td>                
+            <td>{{ $stat->adr }}</td>   
+            <td>{{ $stat->user_id }}</td>            
                          
             <td>                                        
-                <a href="{{ route('teamstats.modifyTeamstats', $stat) }}"><input type="button" value="Update">
+                <a href="{{ route('userstats.modifyUserstats', $stat) }}"><input type="button" value="Update">
                 
-                <form action="{{ route('teamstats.deleteTeamstats',  ['id' => $stat->id]) }}" method="POST">
+                <form action="{{ route('userstats.deleteUserstats',  ['id' => $stat->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button type="submit">Delete</button>               

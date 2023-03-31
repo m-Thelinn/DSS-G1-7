@@ -1,74 +1,69 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Userstat;
 use Illuminate\Http\Request;
+
+use App\Models\User;
 
 class UserstatsController extends Controller
 {
     //
     
-    public function showAllteamstats() {
-        //$teamstats = Teamstats::all();
-        $teamstats = DB::table('teamstats')->get();
-        //dd($teamstats);
-        //dd(compact('teamstats'));
-        return view('teamstats.teamstatsBlade', compact('teamstats'));
+    public function showAlluserstats() {
+        $userstats = Userstat::all();
+        return view('userstats.userstatsBlade', compact('userstats'));
     }
 
-    public function createTeamstats(){
-        return view('teamstats.teamstatsCreateBlade');
+    public function createUserstats(){
+        return view('userstats.userstatsCreateBlade');
     }
 
-    public function addTeamstats(Request $req){                 
-        //falta completar
+    public function addUserstats(Request $req){                         
+        $user1 = User::select()->where('nickname', $req->input('user_nick'))->first();
+
+        $userstat = new Userstat();
+        $userstat->kills = $req->input('kills');
+        $userstat->assists = $req->input('assists');
+        $userstat->deaths = $req->input('deaths');
+        $userstat->times_mvp = $req->input('times_mvp');
+        $userstat->win_rate = $req->input('win_rate');
+        $userstat->adr = $req->input('adr');
+        $userstat->user_id = $user1->id;
+        $userstat->save();
         
-        return redirect()->route('teamstats.showAllteamstats');
+        return redirect()->route('userstats.showAlluserstats');
     }
 
-    public function deleteTeamstats($id){
-        /*
-        $teamstats = Teamstats::findOrfail($id);
-        $teamstats->delete($id);
-        */
-        return redirect()->route('teamstats.showAllTeamstats');
+    public function deleteUserstats($id){
+        $userstats = Userstat::findOrfail($id);
+        $userstats->delete($id);
+        return redirect()->route('userstats.showAlluserstats');
     }
 
 
-    public function modifyTeamstats($id){
-        /*
-        $teamstats = Teamstats::findOrfail($id);
-        
-        return view('teamstats.teamstatsModifyBlade', [
-            'teamstats' => $teamstats
-        ]);
-        */
-        return redirect()->route('teamstats.showAllTeamstats');
+    public function modifyUserstats($id){
+        $userstats = Userstat::findOrfail($id);
+        return view('userstats.userstatsModifyBlade', [
+            'userstats' => $userstats
+        ]);        
     }
 
-    public function updateTeamstats(Teamstats $teamstat){
-        /*
-        request()->validate([
-            'name' => 'required|string|max:255',
-            'short_name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'picture' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'division' => 'required|digits:1',
-        ]);
-
-        $team->update([
-            'name' => request('name'),
-            'short_name' => request('short_name'),
-            'description' => request('description'),
-            'picture'=> request('picture'),
-            'country' => request('country'),
-            'division' => intval(request('division')),
-
-
-        ]);
-        */
-        return redirect()->route('teamstats.showAllTeamstats');
+    public function updateUserstats($id){
+        $userstat = Userstat::find($id);        
+        $user1 = User::select()->where('nickname', request('user_nick'))->first();   
+            
+        $userstat->kills = request('kills');
+        $userstat->assists = request('assists');
+        $userstat->deaths = request('deaths');
+        $userstat->times_mvp = request('times_mvp');
+        $userstat->win_rate = request('win_rate');
+        $userstat->adr = request('adr');
+    
+        $userstat->user_id = $user1->id; 
+            
+        $userstat->save();
+        return redirect()->route('userstats.showAlluserstats');        
     
     }
     

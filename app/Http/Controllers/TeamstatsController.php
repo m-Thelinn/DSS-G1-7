@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Teamstat;
+use App\Models\Team;
 //usar la clase teamstats
 
 class TeamstatsController extends Controller
 {
     //
     public function showAllteamstats() {
-        //$teamstats = Teamstats::all();
-        $teamstats = DB::table('teamstats')->get();
+        $teamstats = Teamstat::all();
+        //$teamstats = DB::table('teamstats')->get();
         //dd($teamstats);
         //dd(compact('teamstats'));
         return view('teamstats.teamstatsBlade', compact('teamstats'));
@@ -21,55 +23,51 @@ class TeamstatsController extends Controller
         return view('teamstats.teamstatsCreateBlade');
     }
 
-    public function addTeamstats(Request $req){                 
-        //falta completar
+    public function addTeamstats(Request $req){         
+               
+        $team1 = Team::select()->where('short_name', $req->input('team_shortName'))->first();
+
+        $teamstat = new Teamstat();
+        $teamstat->wins = $req->input('wins');
+        $teamstat->losses = $req->input('losses');
+        $teamstat->ranking_position = $req->input('ranking_position');
+        $teamstat->win_rate = $req->input('win_rate');
+        $teamstat->lose_rate = $req->input('lose_rate');
+        $teamstat->team_id = $team1->id;
+        $teamstat->save();
         
         return redirect()->route('teamstats.showAllteamstats');
     }
 
-    public function deleteTeamstats($id){
-        /*
-        $teamstats = Teamstats::findOrfail($id);
+    public function deleteTeamstats($id){        
+        $teamstats = Teamstat::findOrfail($id);
         $teamstats->delete($id);
-        */
-        return redirect()->route('teamstats.showAllTeamstats');
+        
+        return redirect()->route('teamstats.showAllteamstats');
     }
 
 
     public function modifyTeamstats($id){
-        /*
-        $teamstats = Teamstats::findOrfail($id);
-        
+        $teamstats = Teamstat::findOrfail($id);
         return view('teamstats.teamstatsModifyBlade', [
             'teamstats' => $teamstats
         ]);
-        */
-        return redirect()->route('teamstats.showAllTeamstats');
     }
 
-    public function updateTeamstats(Teamstats $teamstat){
-        /*
-        request()->validate([
-            'name' => 'required|string|max:255',
-            'short_name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'picture' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
-            'division' => 'required|digits:1',
-        ]);
-
-        $team->update([
-            'name' => request('name'),
-            'short_name' => request('short_name'),
-            'description' => request('description'),
-            'picture'=> request('picture'),
-            'country' => request('country'),
-            'division' => intval(request('division')),
-
-
-        ]);
-        */
-        return redirect()->route('teamstats.showAllTeamstats');
+    public function updateTeamstats($id){   
+        $teamstat = Teamstat::find($id);
+        $team1 = Team::select()->where('short_name', request('shortName'))->first();     
+            
+        $teamstat->wins = request('wins');
+        $teamstat->losses = request('losses');
+        $teamstat->ranking_position = request('ranking_position');
+        $teamstat->win_rate = request('win_rate');
+        $teamstat->lose_rate = request('lose_rate');
     
+        $teamstat->team_id = $team1->id; 
+            
+        $teamstat->save();
+    
+        return redirect()->route('teamstats.showAllteamstats');  
     }
 }

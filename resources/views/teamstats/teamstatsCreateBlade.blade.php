@@ -36,9 +36,9 @@
                 </label>
                 <p></p> 
                 <label>
-                    Equipo:<br>
-                    <input value="{{ old('team_id') }}" type="text" name="team_id">
-                    {!! $errors->first('team_id', '<br><small class="text-danger">:message</small><br>') !!}
+                    Equipo (short name):<br>
+                    <input value="{{ old('team_shortName') }}" type="text" name="team_shortName">
+                    {!! $errors->first('team_shortName', '<br><small class="text-danger">:message</small><br>') !!}
                 </label>
                 <p></p> 
                 

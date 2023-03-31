@@ -2,8 +2,8 @@
     <body>
         
 
-        <h1> Modificar Estadistica</h1>
-        <form method="POST" action="{{ route('teamstats.updateTeamstats', $teamstats) }}">
+        <h1> Modificar Estadistica de equipo</h1>
+        <form method="POST" action="{{ route('teamstats.updateTeamstats', $teamstats->id) }}">
             @csrf
             @method('PATCH')
             <label>
@@ -38,8 +38,8 @@
             <p></p> 
             <label>
                 Equipo:<br>
-                <input value="{{ old('team_id') }}" type="text" name="team_id">
-                {!! $errors->first('team_id', '<br><small class="text-danger">:message</small><br>') !!}
+                <input value="{{ old('shortName') }}" type="text" name="shortName">
+                {!! $errors->first('shortName', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             

@@ -17,6 +17,11 @@
                 </select>
             </div>
             <button class="btn btn-dark mt-2" type="submit">Ordenar</button>
+            <form method="POST" action="{{ route('team.searchByName') }}">
+               @csrf
+                  <input placeholder="Nombre del Equipo" type="text" name="nombre">
+               <button class="btn-dark">Buscar</button>
+            </form>
         </form>
 
                    

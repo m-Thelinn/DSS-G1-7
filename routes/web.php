@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\GamesController;
 use App\Http\Controllers\TeamstatsController;
+use App\Http\Controllers\UserstatsController;
 
 
 /*
@@ -30,6 +31,9 @@ Route::get('users', [UserController::class, 'showAllUsers'])
 //------------------EQUIPOS------------------
 Route::get('teams', [TeamsController::class, 'showAllTeams'])
     ->name('team.showAllTeams');
+
+Route::post('/teams/searchByName', [TeamsController::class, 'searchTeam'])
+    ->name('team.searchByName');
 
 Route::get('teams/createteam' , [TeamsController::class, 'createTeam'])
     ->name('team.createTeam'); 
@@ -83,32 +87,31 @@ Route::get('teamstats/createteamstats' , [TeamstatsController::class, 'createTea
 Route::post('addTeamstats', [TeamstatsController::class, 'addTeamstats'])
     ->name('teamstats.addTeamstats');
     
-Route::delete('deleteteamstats/{id}', [GamesController::class, 'deleteTeamstats'])
+Route::delete('deleteteamstats/{id}', [TeamstatsController::class, 'deleteTeamstats'])
     ->name('teamstats.deleteTeamstats');
 
-Route::get('teamstats/modifyteamstats/{id}' , [GamesController::class, 'modifyTeamstats'])
+Route::get('teamstats/modifyteamstats/{id}' , [TeamstatsController::class, 'modifyTeamstats'])
     ->name('teamstats.modifyTeamstats');   
 
-Route::patch('updateTeamstats/{teamstats}', [GamesController::class, 'updateTeamstats'])
+Route::patch('updateTeamstats/{teamstats}', [TeamstatsController::class, 'updateTeamstats'])
     ->name('teamstats.updateTeamstats');
 
-//------------------TEAMSTATS------------------
-/*
-Route::get('teamstats', [TeamstatsController::class, 'showAllteamstats'])
-    ->name('teamstats.showAllteamstats');
+//------------------USERSTATS------------------
 
-Route::get('teamstats/createteamstats' , [TeamstatsController::class, 'createTeamstats'])
-    ->name('teamstats.createTeamstats'); 
+Route::get('userstats', [UserstatsController::class, 'showAlluserstats'])
+    ->name('userstats.showAlluserstats');
 
-Route::post('addTeamstats', [TeamstatsController::class, 'addTeamstats'])
-    ->name('teamstats.addTeamstats');
+Route::get('userstats/createuserstats' , [UserstatsController::class, 'createUserstats'])
+    ->name('userstats.createUserstats'); 
+
+Route::post('addUserstats', [UserstatsController::class, 'addUserstats'])
+    ->name('userstats.addUserstats');
     
-Route::delete('deleteteamstats/{id}', [GamesController::class, 'deleteTeamstats'])
-    ->name('teamstats.deleteTeamstats');
+Route::delete('deleteuserstats/{id}', [UserstatsController::class, 'deleteUserstats'])
+    ->name('userstats.deleteUserstats');
 
-Route::get('teamstats/modifyteamstats/{id}' , [GamesController::class, 'modifyTeamstats'])
-    ->name('teamstats.modifyTeamstats');   
+Route::get('userstats/modifyuserstats/{id}' , [UserstatsController::class, 'modifyUserstats'])
+    ->name('userstats.modifyUserstats');   
 
-Route::patch('updateTeamstats/{teamstats}', [GamesController::class, 'updateTeamstats'])
-    ->name('teamstats.updateTeamstats');
-*/
+Route::patch('updateUserstats/{userstats}', [UserstatsController::class, 'updateUserstats'])
+    ->name('userstats.updateUserstats');
