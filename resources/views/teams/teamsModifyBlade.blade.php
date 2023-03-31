@@ -2,7 +2,7 @@
     <body>
         
 
-        <h1> Crear nuevo equipo</h1>
+        <h1> Modificar equipo</h1>
         <form method="POST" action="{{ route('team.updateTeam', $team) }}">
             @csrf
             @method('PATCH')

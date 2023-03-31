@@ -1,10 +1,10 @@
 <!DOCTYPE html>
     <body>
 
-    <h1>Teams</h1>                                
+    <h1>Games</h1>                                
     <div style="display:flex;">
         <a href="/"><input type="button" value="Back"></a>
-        <a href="{{ route('team.createTeam') }}"><input type="button" value="Add Team"></a>
+        <a href="{{ route('game.createGame') }}"><input type="button" value="Add Game"></a>
         <form class="form-inline">
             <label for="ordenar">Ordenar por:</label>
             <div class="form-group">
@@ -17,11 +17,6 @@
                 </select>
             </div>
             <button class="btn btn-dark mt-2" type="submit">Ordenar</button>
-            <form method="POST" action="{{ route('team.searchByName') }}">
-               @csrf
-                  <input placeholder="Nombre del Equipo" type="text" name="nombre">
-               <button class="btn-dark">Buscar</button>
-            </form>
         </form>
 
                    
@@ -29,27 +24,28 @@
     <table class="table table-striped">
         <thead>
         <tr>            
-            <th>NAME</th>
-            <th>SHORT NAME</th>
-            <th>DESCRIPTION</th>
-            <th>PICTURE</th>
-            <th>COUNTRY</th>
-            <th>DIVISION</th> 
+            <th>FECHA |</th>
+            <th>HORA |</th>
+            <th>FORMATO |</th>
+            <th>RESULTADO |</th>
+            <th>EQUIPO LOCAL |</th>
+            <th>EQUIPO VISITANTE |</th> 
             <th>ACCIONES</th>                
         </tr>
         </thead>  
-        @foreach ($teams as $team)          
-        <tr>        
-            <td>{{ $team->name }}</td>
-            <td>{{ $team->short_name }}</td>   
-            <td>{{ $team->description }}</td>                
-            <td><img src = "{{ $team->picture }}" width="40" height="40" alt="img"></td>                
-            <td>{{ $team->country }}</td>                
-            <td>{{ $team->division }}</td>                
+        @foreach ($games as $game)          
+        <tr>                
+            <td>{{ $game->date }}</td>
+            <td>{{ $game->time }}</td>   
+            <td>{{ $game->format }}</td>                
+            <td>{{ $game->result }}</td> 
+            <td>{{ $game->local_id }}</td>                
+            <td>{{ $game->visitante_id }}</td>   
+                         
             <td>                                        
-                <a href="{{ route('team.modifyTeam', $team) }}"><input type="button" value="Update">
+                <a href="{{ route('game.modifyGame', $game) }}"><input type="button" value="Update">
                 
-                <form action="{{ route('team.deleteTeam',  ['id' => $team->id]) }}" method="POST">
+                <form action="{{ route('game.deleteGame',  ['id' => $game->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button type="submit">Delete</button>               
