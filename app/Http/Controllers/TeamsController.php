@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Team;
+use App\Models\User;
+use App\Models\Game;
+use App\Models\Teamstat;
+use App\Models\Userstat;
 
 class TeamsController extends Controller
 {
@@ -50,8 +54,38 @@ class TeamsController extends Controller
     }
 
     public function deleteTeam($id){
+        /*
+        $user = User::select()->where('team_id', $id);
+        $userstat = Userstat::select()->where('user_id', $user->id);
+        $userstat->delete();
+        $user = User::select()->where('team_id', $id);
+        $user->delete($id);
+        $game = Game::select()->where('local_id', $id)->orWhere('visitor_id', $id);
+        $game->delete($id);
+        $teamstat = Teamstat::select()->where('team_id', $id);
+        $teamstat->delete();
         $team = Team::findOrfail($id);
         $team->delete($id);
+        return redirect()->route('team.showAllTeams');
+        */
+        $users = User::where('team_id', $id)->get();
+        foreach ($users as $user) {
+            $userstat = Userstat::where('user_id', $user->id);
+            $userstat->delete();
+            $user->delete();
+        }
+        
+        $games = Game::where('local_id', $id)->orWhere('visitante_id', $id)->get();
+        foreach ($games as $game) {
+            $game->delete();
+        }
+
+        $teamstat = Teamstat::where('team_id', $id);
+        $teamstat->delete();
+        
+        $team = Team::findOrFail($id);
+        $team->delete();
+        
         return redirect()->route('team.showAllTeams');
     }
 

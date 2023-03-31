@@ -28,9 +28,6 @@ Route::get('/', function() {
 Route::get('users', [UsersController::class, 'showAllUsers'])
     ->name('user.showAllUsers');
 
-Route::post('/users/searchByName', [UsersController::class, 'searchUser'])
-    ->name('user.searchByName');
-
 Route::get('users/createuser' , [UsersController::class, 'createUser'])
     ->name('user.createUser');
 

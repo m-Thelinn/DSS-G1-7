@@ -5,21 +5,20 @@
     <div style="display:flex; margin-bottom: 30px;">
         <a href="/"><input type="button" value="Back"></a>
         <a href="{{ route('user.createUser') }}"><input type="button" value="Add User"></a>
-        <form class="form-inline">
-            <div class="form-group" style="margin-left: 10px;"> Ordenar por:
-                <select id="ordenarUser" name="ordenarUser" [(ngModel)]="department">
-                    <option value="nombre">Nombre</option>
-                    <option value="apellidos">Apellidos</option>
-                    <option value="nickname">Nickname</option>
-                </select>
-                <button type="submit">Ordenar</button>         
-            </div>
-        </form>
-        <form method="POST" action="{{ route('team.searchByName') }}" style="margin-left: 10px;">
-            @csrf
-                <input placeholder="Nickname" type="text" name="nickname">
-            <button class="btn-dark">Buscar</button>
-        </form>
+        <form method="GET" action="{{ route('user.showAllUsers') }}">
+            <label for="orderBy">Ordenar por:</label>
+            <select name="orderBy" id="orderBy">                           
+                <option value="name" {{ $orderBy == 'name' ? 'selected' : '' }}>NOMBRE</option>
+                <option value="lastname" {{ $orderBy == 'lastname' ? 'selected' : '' }}>APELLIDO</option>
+                <option value="nickname" {{ $orderBy == 'nickname' ? 'selected' : '' }}>NICKNAME</option>
+                <option value="email" {{ $orderBy == 'email' ? 'selected' : '' }}>EMAIL</option>
+                <option value="phone" {{ $orderBy == 'phone' ? 'selected' : '' }}>TELEFONO</option>
+                <option value="country" {{ $orderBy == 'country' ? 'selected' : '' }}>PAIS</option>
+                <option value="team_id" {{ $orderBy == 'team_id' ? 'selected' : '' }}>EQUIPO</option>
+                <option value="rol" {{ $orderBy == 'rol' ? 'selected' : '' }}>ROL</option>                
+            </select>                       
+            <button type="submit">Ordenar</button>
+        </form>        
     </div>
     <table class="table table-striped">
         <thead>
@@ -34,7 +33,7 @@
             <th>ROL</th>                
         </tr>
         </thead>  
-        @foreach ($users->sortBy('name') as $user)          
+        @foreach ($users as $user)          
         <tr>        
             <td>{{ $user->name }}</td>
             <td>"{{ $user->nickname }}"</td>                
@@ -59,11 +58,13 @@
                     @method('DELETE')
                     @csrf
                     <button type="submit">Delete</button>               
-                </form>                                        
+                </form> 
+                                                       
             </td>                                                                        
         </tr>        
         @endforeach     
     </table>
-    
+    {{ $users->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
+
     </body>
 </html>
