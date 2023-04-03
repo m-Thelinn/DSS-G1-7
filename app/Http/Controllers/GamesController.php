@@ -9,17 +9,11 @@ use App\Models\Team;
 class GamesController extends Controller
 {
     //
-    public function showAllGames() {
-        $games = Game::all();
-        return view('games.gamesBlade', compact('games'));
-    }
-
-    /*posibilidad de buscador, busca por id
-    public function showGame(Request $request) {
-        $game = Game::find($request->id);
-        return view('games.game', compact('game'));
-    }
-    */
+    public function showAllGames(Request $request) {
+        $orderBy = $request->input('orderBy', 'id');//por defecto ordena por id si no se introce parametro
+        $games = Game::orderBy($orderBy)->paginate(3);        
+        return view('games.gamesBlade', compact('games', 'orderBy'));
+    }    
 
     public function createGame(){
         return view('games.gamesCreateBlade');

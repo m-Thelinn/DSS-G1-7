@@ -11,12 +11,10 @@ use App\Models\Team;
 class TeamstatsController extends Controller
 {
     //
-    public function showAllteamstats() {
-        $teamstats = Teamstat::all();
-        //$teamstats = DB::table('teamstats')->get();
-        //dd($teamstats);
-        //dd(compact('teamstats'));
-        return view('teamstats.teamstatsBlade', compact('teamstats'));
+    public function showAllteamstats(Request $request) {
+        $orderBy = $request->input('orderBy', 'id');//por defecto ordena por id si no se introce parametro
+        $teamstats = Teamstat::orderBy($orderBy)->paginate(3); 
+        return view('teamstats.teamstatsBlade', compact('teamstats', 'orderBy'));
     }
 
     public function createTeamstats(){
