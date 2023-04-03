@@ -48,6 +48,15 @@ class TeamsController extends Controller
         $team->country = $req->input('country');
         $team->division = $req->input('division');
 
+        $req->validate([
+            'name' => 'required|string|max:255',
+            'short_name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'picture' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'division' => 'required|digits:1',
+        ]);
+
         $team->save();
         
         return redirect()->route('team.showAllTeams');
@@ -104,6 +113,15 @@ class TeamsController extends Controller
         $team->picture = request('picture');
         $team->country = request('country');
         $team->division = request('division');        
+
+        request()->validate([
+            'name' => 'required|string|max:255',
+            'short_name' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'picture' => 'required|string|max:255',
+            'country' => 'required|string|max:255',
+            'division' => 'required|digits:1',
+        ]);
 
         $team->save();
         return redirect()->route('team.showAllTeams');
