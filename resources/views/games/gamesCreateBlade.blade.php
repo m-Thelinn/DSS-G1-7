@@ -45,6 +45,7 @@
                 
                 <p></p> 
                 <button class="btn btn-primary">Crear Partido</button>
-            </form>            
+            </form>        
+            <a href="{{ route('game.showAllGames') }}"><input type="button" value="Back"></a>    
     </body>
 </html>
