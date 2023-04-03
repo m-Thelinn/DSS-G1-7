@@ -20,7 +20,17 @@ class UserstatsController extends Controller
         return view('userstats.userstatsCreateBlade');
     }
 
-    public function addUserstats(Request $req){                         
+    public function addUserstats(Request $req){       
+        $req->validate([
+            'kills' => 'required|integer',
+            'assists' => 'required|integer',
+            'deaths' => 'required|integer',
+            'times_mvp' => 'required|integer',
+            'win_rate' => 'required|integer',
+            'adr' => 'required|integer',
+            'user_nick' => 'required|string|max:255',
+        ]);
+
         $user1 = User::select()->where('nickname', $req->input('user_nick'))->first();
 
         $userstat = new Userstat();
@@ -51,6 +61,15 @@ class UserstatsController extends Controller
     }
 
     public function updateUserstats($id){
+        request()->validate([
+            'kills' => 'required|integer',
+            'assists' => 'required|integer',
+            'deaths' => 'required|integer',
+            'times_mvp' => 'required|integer',
+            'win_rate' => 'required|integer',
+            'adr' => 'required|integer',
+            'user_nick' => 'required|string|max:255',
+        ]);
         $userstat = Userstat::find($id);        
         $user1 = User::select()->where('nickname', request('user_nick'))->first();   
             
