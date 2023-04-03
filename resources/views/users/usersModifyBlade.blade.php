@@ -63,7 +63,8 @@
             
             <p></p> 
             <button class="btn btn-primary">Modificar Partido</button>
-        </form>                    
+        </form>
+        <a href="{{ route('user.showAllUsers') }}"><input type="button" value="Back"></a>             
         <br>
                  
     </body>

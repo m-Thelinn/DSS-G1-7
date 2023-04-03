@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <body>
             <h1> Crear nuevo usuario</h1>
+            
             <form method="POST" action="{{ route('user.addUser') }}">            
                 @csrf
                 <label>
@@ -44,13 +45,17 @@
                     <input value="{{ old('country') }}" type="text" name="country">
                     {!! $errors->first('country', '<br><small class="text-danger">:message</small><br>') !!}
                 </label>
+                
                 <p></p>
-                <label>
-                    Rol (0 a 3): <br>
-                    <input value="{{ old('rol') }}" type="text" name="rol">
-                    {!! $errors->first('rol', '<br><small class="text-danger">:message</small><br>') !!}
-                </label>
+                    <label for="rol">Rol:</label> <br>
+                    <select name="rol" id="rol">                           
+                        <option value="0">Admin</option>
+                        <option value="1">Jugador</option>
+                        <option value="2">Coach</option>
+                        <option value="3">Manager</option>          
+                    </select>       
                 <p></p> 
+
                 <label>
                     Equipo (Nombre):<br>
                     <input value="{{ old('team_id') }}" type="text" name="team_id">
@@ -60,6 +65,9 @@
                 
                 <p></p> 
                 <button class="btn btn-primary">Crear usuario</button>
-            </form>            
+                
+            </form>
+            <a href="{{ route('user.showAllUsers') }}"><input type="button" value="Back"></a>
+
     </body>
 </html>
