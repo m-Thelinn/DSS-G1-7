@@ -46,5 +46,6 @@
                 <p></p> 
                 <button class="btn btn-primary">Crear Equipo</button>
             </form>            
+            <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Back"></a>
     </body>
 </html>

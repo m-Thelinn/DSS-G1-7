@@ -48,6 +48,6 @@
             <button class="btn btn-primary">Modificar Partido</button>
         </form>                    
         <br>
-                 
+        <a href="{{ route('game.showAllGames') }}"><input type="button" value="Back"></a>          
     </body>
 </html>

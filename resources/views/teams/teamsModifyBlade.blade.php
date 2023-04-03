@@ -48,6 +48,6 @@
             <button class="btn btn-primary">Modificar Equipo</button>
         </form>                    
         <br>
-                 
+        <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Back"></a>
     </body>
 </html>

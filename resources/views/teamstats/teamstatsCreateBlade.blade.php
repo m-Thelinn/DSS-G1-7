@@ -45,6 +45,7 @@
                 
                 <p></p> 
                 <button class="btn btn-primary">Crear Estadística</button>
-            </form>            
+            </form>     
+            <a href="{{ route('teamstats.showAllteamstats') }}"><input type="button" value="Back"></a>           
     </body>
 </html>
