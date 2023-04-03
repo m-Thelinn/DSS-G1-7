@@ -60,7 +60,16 @@ class GamesController extends Controller
         ]);
     }
 
-    public function updateGame(Game $game){        
+    public function updateGame(Game $game){
+        request()->validate([
+            'date' => 'required|date',
+            'time' => 'date_format:H:i',
+            'format' => 'required|integer|between:0,2',
+            'result' => 'required|integer|between:0,3',
+            'local_id' => 'required|string|max:255|different:visitante_id',
+            'visitante_id' => 'required|string|max:255|different:local_id',
+        ]);
+
         $game->date = request('date');
         $game->time = request('time');
         $game->format = request('format');
