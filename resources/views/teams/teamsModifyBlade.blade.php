@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 @extends('layouts.app')
     <body>
-        
-
         <h1> Modificar equipo</h1>
         <form method="POST" action="{{ route('team.updateTeam', $team) }}">
             @csrf
@@ -48,6 +46,6 @@
             <button class="btn btn-primary">Modificar Equipo</button>
         </form>                    
         <br>
-        <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Back"></a>
+        <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Atrás"></a>
     </body>
 </html>

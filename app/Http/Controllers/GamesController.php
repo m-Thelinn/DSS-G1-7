@@ -19,7 +19,17 @@ class GamesController extends Controller
         return view('games.gamesCreateBlade');
     }
 
-    public function addGame(Request $req){                 
+    public function addGame(Request $req){
+        
+        $req->validate([
+            'date' => 'required|date',
+            'time' => 'date_format:H:i',
+            'format' => 'required|integer|between:0,2',
+            'result' => 'required|integer|between:0,3',
+            'local_id' => 'required|string|max:255|different:visitante_id',
+            'visitante_id' => 'required|string|max:255|different:local_id',
+        ]);
+
         $team1 = Team::select()->where('short_name', $req->input('local_id'))->first();
         $team2 = Team::select()->where('short_name', $req->input('visitante_id'))->first();
 
@@ -28,6 +38,7 @@ class GamesController extends Controller
         $game->time = $req->input('time');
         $game->format = $req->input('format');
         $game->result = $req->input('result');
+
         $game->local_id = $team1->id;
         $game->visitante_id = $team2->id;        
 

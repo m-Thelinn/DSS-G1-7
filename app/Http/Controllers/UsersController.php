@@ -21,7 +21,23 @@ class UsersController extends Controller
         return view('users.usersCreateBlade');
     }
 
-    public function addUser(Request $req){                 
+    public function addUser(Request $req){
+
+        $req->validate([
+            'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'nickname' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => [
+                'required',
+                'min:8',
+            ],
+            'country' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'rol' => 'required|integer|between:0,3',
+            'team_id' => 'required|string|max:255',
+        ]);
+
         $team = Team::select()->where('name', $req->input('team_id'))->first();
 
         $user = new User();
@@ -33,7 +49,8 @@ class UsersController extends Controller
         $user->country = $req->input('country');
         $user->phone = $req->input('phone');
         $user->rol = $req->input('rol');
-        $user->team_id = $team->id;       
+
+        $user->team_id = $team->id;
 
         $user->save();
         
@@ -56,6 +73,21 @@ class UsersController extends Controller
     }
 
     public function updateUser($id){
+        request()->validate([
+            'name' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'nickname' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => [
+                'required',
+                'min:8',
+            ],
+            'country' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'rol' => 'required|integer|between:0,3',
+            'team_id' => 'required|string|max:255',
+        ]);
+        
         $user = User::find($id);
         $team = Team::select()->where('name', request('team_id'))->first();
 
@@ -68,6 +100,7 @@ class UsersController extends Controller
         $user->rol = request('rol');
         $user->country = request('country');
         $team = Team::select()->where('name', request('team_id'))->first();
+
         $user->team_id = $team->id;
 
         $user->save();

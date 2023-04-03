@@ -3,42 +3,42 @@
     <body>
         
 
-        <h1> Modificar Estadistica de usuario</h1>
+        <h1> Modificar estadistica de usuario</h1>
         <form method="POST" action="{{ route('userstats.updateUserstats', $userstats->id) }}">
             @csrf
             @method('PATCH')
             <label>
-                Kills: <br>   
+                Asesinatos: <br>   
                 <input value="{{ old('kills') }}" type="text" name="kills">
                 {!! $errors->first('kills', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
-                Assists: <br>
+                Asistencias: <br>
                 <input value="{{ old('assists') }}" type="text" name="assists">
                 {!! $errors->first('assists', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
-                Deaths: <br>
+                Muertes: <br>
                 <input value="{{ old('deaths') }}" type="text" name="deaths">
                 {!! $errors->first('deaths', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
-                Times mvp: <br>
+                Veces MVP: <br>
                 <input value="{{ old('times_mvp') }}" type="text" name="times_mvp">
                 {!! $errors->first('times_mvp', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
-                Win rate: <br>
+                Win-rate: <br>
                 <input value="{{ old('win_rate') }}" type="text" name="win_rate">
                 {!! $errors->first('win_rate', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
-                Adr:<br>
+                ADR:<br>
                 <input value="{{ old('adr') }}" type="text" name="adr">
                 {!! $errors->first('adr', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
@@ -51,9 +51,9 @@
             <p></p> 
             
             <p></p> 
-            <button class="btn btn-primary">Modificar Estadística</button>
+            <button class="btn btn-primary">Modificar estadística</button>
         </form>
-        <a href="{{ route('userstats.showAlluserstats') }}"><input type="button" value="Back"></a>               
+        <a href="{{ route('userstats.showAlluserstats') }}"><input type="button" value="Atrás"></a>               
         <br>
                  
     </body>

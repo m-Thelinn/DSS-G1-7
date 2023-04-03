@@ -48,11 +48,13 @@
                 {!! $errors->first('country', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p>
-            <label>
-                Rol (0 a 3): <br>
-                <input value="{{ old('rol') }}" type="text" name="rol">
-                {!! $errors->first('rol', '<br><small class="text-danger">:message</small><br>') !!}
-            </label>
+            <label for="rol">Rol:</label> <br>
+                <select name="rol" id="rol">                           
+                    <option value="0">Admin</option>
+                    <option value="1">Jugador</option>
+                    <option value="2">Coach</option>
+                    <option value="3">Manager</option>          
+                </select> 
             <p></p> 
             <label>
                 Equipo (Nombre):<br>
@@ -62,7 +64,7 @@
             <p></p>
             
             <p></p> 
-            <button class="btn btn-primary">Modificar Partido</button>
+            <button class="btn btn-primary">Modificar usuario</button>
         </form>
         <a href="{{ route('user.showAllUsers') }}"><input type="button" value="Back"></a>             
         <br>
