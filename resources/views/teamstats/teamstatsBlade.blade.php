@@ -23,25 +23,23 @@
     </div>
     <table class="table table-striped">
         <thead>
-        <tr>            
+        <tr>
+            <th>EQUIPO |</th>             
             <th>WINS |</th>
             <th>LOSSES |</th>
-            <th>RANKING POSITION |</th>
+            <th>POSICION EN RANKING |</th>
             <th>WIN RATE |</th>
             <th>LOSE RATE |</th>
-            <th>TEAM ID |</th> 
-            <th>ACCIONES</th>                
         </tr>
         </thead>  
         @foreach ($teamstats as $stat)          
-        <tr>                
+        <tr>
+            <td>{{ $stat->team->name }}</td>                   
             <td>{{ $stat->wins }}</td>
             <td>{{ $stat->losses }}</td>   
             <td>{{ $stat->ranking_position }}</td>                
             <td>{{ $stat->win_rate }}</td> 
             <td>{{ $stat->lose_rate }}</td>                
-            <td>{{ $stat->team_id }}</td>   
-                         
             <td>                                        
                 <a href="{{ route('teamstats.modifyTeamstats', $stat) }}"><input type="button" value="Update">
                 

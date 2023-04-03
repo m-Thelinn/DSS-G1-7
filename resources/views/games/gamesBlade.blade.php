@@ -37,11 +37,26 @@
         @foreach ($games as $game)          
         <tr>                
             <td>{{ $game->date }}</td>
-            <td>{{ $game->time }}</td>   
-            <td>{{ $game->format }}</td>                
-            <td>{{ $game->result }}</td> 
-            <td>{{ $game->local_id }}</td>                
-            <td>{{ $game->visitante_id }}</td>   
+            <td>{{ $game->time }}</td>
+            @if( $game->format === 0)
+                <td>BO1</td>
+            @elseif( $game->format === 1)
+                <td>BO3</td>
+            @else
+                <td>BO5</td>
+            @endif
+
+            @if( $game->result === 0)
+                <td>Proximamente</td>
+            @elseif( $game->result === 1)
+                <td>En juego</td>
+            @elseif( $game->result === 2)
+                <td>Gana equipo local</td>
+            @else
+                <td>Gana equipo visitante</td>
+            @endif  
+            <td>{{ $game->local->name }}</td>                
+            <td>{{ $game->visitante->name}}</td>   
                          
             <td>                                        
                 <a href="{{ route('game.modifyGame', $game) }}"><input type="button" value="Update">

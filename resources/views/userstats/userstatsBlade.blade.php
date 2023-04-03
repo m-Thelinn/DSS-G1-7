@@ -24,26 +24,25 @@
     </div>
     <table class="table table-striped">
         <thead>
-        <tr>            
+        <tr>
+            <th>USUARIO |</th>             
             <th>KILLS |</th>
             <th>ASSISTS |</th>
             <th>DEATHS |</th>
-            <th>TIMES MVP |</th>
+            <th>VECES MVP |</th>
             <th>WIN RATE |</th>
             <th>ADR |</th> 
-            <th>USER ID |</th> 
-            <th>ACCIONES</th>                
         </tr>
         </thead>  
         @foreach ($userstats as $stat)          
-        <tr>                
+        <tr>
+            <td>{{ $stat->user->name }}</td>                     
             <td>{{ $stat->kills }}</td>
             <td>{{ $stat->assists }}</td>   
             <td>{{ $stat->deaths }}</td>                
             <td>{{ $stat->times_mvp }}</td> 
             <td>{{ $stat->win_rate }}</td>                
             <td>{{ $stat->adr }}</td>   
-            <td>{{ $stat->user_id }}</td>            
                          
             <td>                                        
                 <a href="{{ route('userstats.modifyUserstats', $stat) }}"><input type="button" value="Update">
