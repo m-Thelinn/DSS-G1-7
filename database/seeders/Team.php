@@ -16,11 +16,16 @@ class Team extends Seeder
     public function run()
     {
         //Borramos los datos de la tabla
+         
+        DB::table('userstats')->delete();   
+        DB::table('users')->delete();
+        DB::table('games')->delete();
+        DB::table('teamstats')->delete();
         DB::table('teams')->delete();
         //Añadimos datos de prueba al equipo
         DB::table('teams')->insert([            
             [
-            //EQUIPO1
+            //Equipo1
             'name' => 'Natus Vincere',
             'short_name' => 'NAVI',
             'description' => 'Navi es un equipo de esports de Valorant reconocido y exitoso.',
@@ -29,7 +34,7 @@ class Team extends Seeder
             'division' => 1,
             ],
             [
-            //EQUIPO2
+            //Equipo2
             'name' => 'Team Heretics',
             'short_name' => 'TH',
             'description' => 'Team Heretics es un equipo español de esports de Valorant con jugadores de gran habilidad como "Mixwell" y "AvovA"',
