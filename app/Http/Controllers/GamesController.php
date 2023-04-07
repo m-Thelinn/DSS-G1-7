@@ -82,6 +82,6 @@ class GamesController extends Controller
         $game->save();
 
         return redirect()->route('game.showAllGames');
-    
+        
     }
 }
