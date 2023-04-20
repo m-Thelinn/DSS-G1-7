@@ -1,7 +1,7 @@
 # **VALCheck - Visualización y gestión de eSports**
 
 > 1. Miguel Rodríguez Sánchez
-> 2. Francisco Fernández Ruiz 
+> 2. Francisco Fernández Ruiz
 > 3. Demian Calvo Rodríguez
 > 4. Julio César Bastidas Sánchez
 
