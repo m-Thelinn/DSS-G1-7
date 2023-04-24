@@ -67,7 +67,7 @@
                 <button class="btn btn-primary">Crear usuario</button>
                 
             </form>
-            <a href="{{ route('user.showAllUsers') }}"><input type="button" value="Back"></a>
+            <a href="{{ route('user.showAllUsers') }}"><input type="button" value="Atrás"></a>
 
     </body>
 </html>

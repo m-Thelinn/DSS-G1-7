@@ -3,8 +3,8 @@
 
     <h1>Usuarios</h1>                                
     <div style="display:flex; margin-bottom: 30px;">
-        <a href="/"><input type="button" value="Back"></a>
-        <a href="{{ route('user.createUser') }}"><input type="button" value="Add User"></a>
+        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('user.createUser') }}"><input type="button" value="Añadir usuario"></a>
         <form method="GET" action="{{ route('user.showAllUsers') }}">
             <label for="orderBy">Ordenar por:</label>
             <select name="orderBy" id="orderBy">                           
@@ -52,12 +52,12 @@
                 <td>Admin</td>
             @endif
             <td>                                        
-                <a href="{{ route('user.modifyUser', $user) }}"><input type="button" value="Update">
+                <a href="{{ route('user.modifyUser', $user) }}"><input type="button" value="Actualizar">
                 
                 <form action="{{ route('user.deleteUser',  ['id' => $user->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
-                    <button type="submit">Delete</button>               
+                    <button type="submit">Eliminar</button>               
                 </form> 
                                                        
             </td>                                                                        

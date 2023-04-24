@@ -28,7 +28,7 @@ return [
     'between' => [
         'array' => 'The :attribute must have between :min and :max items.',
         'file' => 'The :attribute must be between :min and :max kilobytes.',
-        'numeric' => 'The :attribute must be between :min and :max.',
+        'numeric' => 'El campo :attribute debe estar entre :min y :max.',
         'string' => 'The :attribute must be between :min and :max characters.',
     ],
     'boolean' => 'The :attribute field must be true or false.',
@@ -124,7 +124,7 @@ return [
     'prohibited_if' => 'The :attribute field is prohibited when :other is :value.',
     'prohibited_unless' => 'The :attribute field is prohibited unless :other is in :values.',
     'prohibits' => 'The :attribute field prohibits :other from being present.',
-    'regex' => 'The :attribute format is invalid.',
+    'regex' => 'La :attribute debe tener 8 dígitos.',
     'required' => 'The :attribute field is required.',
     'required_array_keys' => 'The :attribute field must contain entries for: :values.',
     'required_if' => 'The :attribute field is required when :other is :value.',

@@ -34,13 +34,13 @@
                 </label>
                 <p></p> 
                 <label>
-                    Equipoo local (short name): <br>
+                    Equipo local (tag): <br>
                     <input value="{{ old('local_id') }}" type="text" name="local_id">
                     {!! $errors->first('local_id', '<br><small class="text-danger">:message</small><br>') !!}
                 </label>
                 <p></p> 
                 <label>
-                    Equipo visitante (short name):<br>
+                    Equipo visitante (tag):<br>
                     <input value="{{ old('visitante_id') }}" type="text" name="visitante_id">
                     {!! $errors->first('visitante_id', '<br><small class="text-danger">:message</small><br>') !!}
                 </label>
@@ -49,6 +49,6 @@
                 <p></p> 
                 <button class="btn btn-primary">Crear Partido</button>
             </form>        
-            <a href="{{ route('game.showAllGames') }}"><input type="button" value="Back"></a>    
+            <a href="{{ route('game.showAllGames') }}"><input type="button" value="Atrás"></a>    
     </body>
 </html>
