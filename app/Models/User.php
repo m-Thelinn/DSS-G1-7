@@ -26,6 +26,7 @@ class User extends Authenticatable
         'phone',
         'country',
         'rol',
+        'team_id',
     ];
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\GamesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TeamstatsController;
 use App\Http\Controllers\UserstatsController;
+use App\Http\Controllers\AutenticationController;
 
 
 /*
@@ -22,7 +23,9 @@ use App\Http\Controllers\UserstatsController;
 
 Route::get('/', function() {
     return view('homeBlade');
-});
+})->name('home');
+
+Route::post('auth/login', 'Auth\LoginController@login')->name('login');
 
 //------------------USUARIOS------------------
 Route::get('users', [UsersController::class, 'showAllUsers'])
@@ -131,3 +134,7 @@ Route::get('userstats/modifyuserstats/{id}' , [UserstatsController::class, 'modi
 
 Route::patch('updateUserstats/{userstats}', [UserstatsController::class, 'updateUserstats'])
     ->name('userstats.updateUserstats');
+
+Auth::routes();
+
+Route::get('/iniciado', [App\Http\Controllers\HomeController::class, 'index'])->name('iniciado');
