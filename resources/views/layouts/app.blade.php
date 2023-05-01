@@ -18,15 +18,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/img/logo.png" alt="logo-valcheck">
+                    <img class="navbar-logo" src="/img/logo.png" alt="logo-valcheck">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">Inicio</a>
-                        </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">Información</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">Contacto</span></a>
                         </li>
                     </ul>
@@ -58,22 +55,22 @@
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registro') }}</a>
+                                    <a class="nav-button nav-link" href="{{ route('register') }}">{{ __('Crear cuenta') }}</a>
                                 </li>
                             @endif
 
                         @else
-                            @if (Auth::user()->rol == 0)
-                                <div>
-                                    <a href="{{ route('homeAdmin') }}"><input type="button" value="PANEL DE ADMIN"></a>
-                                </div>
-                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
-                                </a>                                    
+                                </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                    @if (Auth::user()->rol == 0)
+                                        <a class="dropdown-item" href="{{ route('homeAdmin') }}">Panel de control</a>
+                                    @endif
+
                                     <a class="dropdown-item" href="{{ route('profile.showProfile') }}">Perfil</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

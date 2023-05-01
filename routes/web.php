@@ -145,14 +145,13 @@ Auth::routes();
 
 Route::get('/iniciado', [App\Http\Controllers\HomeController::class, 'index'])->name('iniciado');
 
-
 //PERFIL
 Route::get('profile' , [ProfileController::class, 'showProfile'])
     ->name('profile.showProfile');   
 
 //VISTA ADMIN
-Route::get('/admin', function() {
-    return view('homeAdmin');
-})->name('homeAdmin');
-
-
+Route::group(['middleware' => ['isAdmin']], function() {
+    Route::get('/admin', function() {
+        return view('homeAdmin');
+    })->name('homeAdmin');
+});
