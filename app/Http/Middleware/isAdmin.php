@@ -18,7 +18,7 @@ class isAdmin
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
-        if($user && $user->esAdmin == true) {
+        if($user && $user->rol == 0) {
             return $next($request);
         } else {
             abort(403, 'No eres admin');//ver si hay que cambiar mejor por next(request)
