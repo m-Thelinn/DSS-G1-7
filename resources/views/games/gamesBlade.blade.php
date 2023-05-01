@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
-
+@section('content')
     <h1>Partidos</h1>                                
     <div style="display:flex;">
         <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
@@ -70,5 +68,4 @@
         @endforeach     
     </table>
     {{ $games->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-    </body>
-</html>
+@endsection
