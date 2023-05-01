@@ -82,7 +82,6 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'rol' => $data['rol'],
             'team_id' => $data['team_id'],
-            
         ]);
     }
 }

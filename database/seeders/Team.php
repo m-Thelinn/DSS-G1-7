@@ -34,6 +34,15 @@ class Team extends Seeder
             'division' => 1,
             ],
             [
+            //SIN EQUIPO
+            'name' => 'Sin equipo',
+            'short_name' => 'NULL',
+            'description' => '',
+            'picture' => '',
+            'country' => 'La Tierra',
+            'division' => -1,
+            ],
+            [
             //Equipo2
             'name' => 'Team Heretics',
             'short_name' => 'TH',
