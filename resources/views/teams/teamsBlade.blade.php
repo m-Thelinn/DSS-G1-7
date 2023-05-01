@@ -4,7 +4,7 @@
 
     <h1>Equipos</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('team.createTeam') }}"><input type="button" value="Añadir equipo"></a>        
         <div>
             <form method="POST" action="{{ route('team.searchByName') }}">

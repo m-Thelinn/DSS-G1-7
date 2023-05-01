@@ -20,12 +20,12 @@
 
             <!--VERIFICAR QUE ES USUARIO NORMAL-->
             <div>
-                <a href="#"><input type="button" value="VER PERFIL USUARIO"></a>
+                <a href="{{ route('profile.showProfile') }}"><input type="button" value="VER PERFIL USUARIO"></a>
             </div>
 
             <!--VERIFICAR QUE ES ADMIN-->
             <div>
-                <a href="#"><input type="button" value="VER GESTION ADMINISTRADOR"></a>
+                <a href="{{ route('homeAdmin') }}"><input type="button" value="VER GESTION ADMINISTRADOR"></a>
             </div>
         </div>
     </div>

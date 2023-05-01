@@ -3,7 +3,7 @@
 
     <h1>Usuarios</h1>                                
     <div style="display:flex; margin-bottom: 30px;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('user.createUser') }}"><input type="button" value="Añadir usuario"></a>
         <form method="GET" action="{{ route('user.showAllUsers') }}">
             <label for="orderBy">Ordenar por:</label>
