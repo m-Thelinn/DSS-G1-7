@@ -7,6 +7,8 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TeamstatsController;
 use App\Http\Controllers\UserstatsController;
 use App\Http\Controllers\AutenticationController;
+use App\Http\Controllers\ProfileController;
+
 
 
 /*
@@ -20,10 +22,19 @@ use App\Http\Controllers\AutenticationController;
 |
 */
 
-
+//VISTAS USUARIO SIN REGISTRAR NI INICIADO
 Route::get('/', function() {
     return view('homeBlade');
 })->name('home');
+
+Route::get('/contact', function() {
+    return view('contact');
+})->name('contact');
+
+Route::get('/about', function() {
+    return view('about');
+})->name('about');
+
 
 Route::post('auth/login', 'Auth\LoginController@login')->name('login');
 
@@ -138,3 +149,15 @@ Route::patch('updateUserstats/{userstats}', [UserstatsController::class, 'update
 Auth::routes();
 
 Route::get('/iniciado', [App\Http\Controllers\HomeController::class, 'index'])->name('iniciado');
+
+
+//PERFIL
+Route::get('profile' , [ProfileController::class, 'showProfile'])
+    ->name('profile.showProfile');   
+
+//VISTA ADMIN
+Route::get('/admin', function() {
+    return view('homeAdmin');
+})->name('homeAdmin');
+
+

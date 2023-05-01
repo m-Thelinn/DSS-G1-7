@@ -4,7 +4,7 @@
 
     <h1>Partidos</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('game.createGame') }}"><input type="button" value="Añadir partido"></a>
         
         <form method="GET" action="{{ route('game.showAllGames') }}">
