@@ -4,7 +4,7 @@
 
     <h1>Estadísticas de equipo</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('teamstats.createTeamstats') }}"><input type="button" value="Añadir estadisticas"></a>
 
         <form method="GET" action="{{ route('teamstats.showAllteamstats') }}">

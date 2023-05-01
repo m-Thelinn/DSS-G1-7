@@ -4,7 +4,7 @@
 
     <h1>Estadisticas de usuario</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('userstats.createUserstats') }}"><input type="button" value="Añadir estadísticas"></a>
         <form method="GET" action="{{ route('userstats.showAlluserstats') }}">
             <label for="orderBy">Ordenar por:</label>
