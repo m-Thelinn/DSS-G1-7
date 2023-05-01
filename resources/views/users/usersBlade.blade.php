@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-    <body>
+@extends('layouts.app')
 
+@section('content')
     <h1>Usuarios</h1>                                
     <div style="display:flex; margin-bottom: 30px;">
         <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
@@ -65,6 +65,4 @@
         @endforeach     
     </table>
     {{ $users->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-
-    </body>
-</html>
+@endsection
