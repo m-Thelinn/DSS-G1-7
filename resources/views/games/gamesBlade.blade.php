@@ -20,7 +20,7 @@
 
                    
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>            
             <th>FECHA  </th>
