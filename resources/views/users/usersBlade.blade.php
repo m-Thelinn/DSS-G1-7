@@ -20,7 +20,7 @@
             <button type="submit">Ordenar</button>
         </form>        
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>            
             <th>NOMBRE</th>
@@ -48,6 +48,8 @@
                 <td>Coach</td>
             @elseif( $user->rol === 3)
                 <td>Manager</td>
+            @elseif( $user->rol === 4)
+                <td>Fan</td>
             @else
                 <td>Admin</td>
             @endif

@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
 
+@section('content')
     <h1>Estadísticas de equipo</h1>                                
     <div style="display:flex;">
         <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
@@ -20,7 +19,7 @@
         </form>        
                    
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>
             <th>EQUIPO  </th>             
@@ -52,5 +51,4 @@
         @endforeach     
     </table>
     {{ $teamstats->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-    </body>
-</html>
+@endsection

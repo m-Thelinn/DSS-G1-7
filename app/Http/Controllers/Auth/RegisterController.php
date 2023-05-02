@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Team;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+
 class RegisterController extends Controller
 {
+    
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -70,7 +73,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //$team = Team::select()->where('name', $req->input('team_id'))->first();
+        $team = Team::select()->where('name', 'LIKE', '%Sin equipo%')->first();
 
         return User::create([
             'name' => $data['name'],
@@ -81,7 +84,7 @@ class RegisterController extends Controller
             'country' => $data['country'],
             'phone' => $data['phone'],
             'rol' => $data['rol'],
-            'team_id' => $data['team_id'],
+            'team_id' => $team->id,
         ]);
     }
 }

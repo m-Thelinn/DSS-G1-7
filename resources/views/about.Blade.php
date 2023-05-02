@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 text">
             <h1>INFORMACION DEL PROYECTO</h1>
             <br>
             <p>Nos enfocamos en cubrir noticias, estadísticas y eventos del juego llamado Valorant.</p>
