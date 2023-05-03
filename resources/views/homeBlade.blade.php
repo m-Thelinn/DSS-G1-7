@@ -14,7 +14,7 @@
                     <p class="home-p">¿A qué estas esperando?</p>
                 </div>
                 <div>
-                    <a class="home-button" href="{{ route('register') }}">{{ __('Unirse a la comunidad') }}</a>
+                    <a class="default-button" href="{{ route('register') }}">{{ __('Unirse a la comunidad') }}</a>
                 </div>
             </div>         
         </section>
