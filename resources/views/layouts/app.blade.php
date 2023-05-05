@@ -93,6 +93,7 @@
 
         <main>
             @yield('content')
+            @include('layouts.footer')
         </main>
     </div>
 </body>
