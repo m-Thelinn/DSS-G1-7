@@ -1,0 +1,24 @@
+.pagination {
+font-size: 16px;
+}
+
+.pagination li {
+display: inline-block;
+margin: 0 5px;
+}
+
+.pagination li a {
+padding: 5px 10px;
+border: 1px solid #ddd;
+color: #555;
+}
+
+.pagination li a:hover {
+background-color: #ddd;
+}
+
+.pagination .active a {
+background-color: #007bff;
+border-color: #007bff;
+color: #fff;
+}

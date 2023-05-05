@@ -26,7 +26,7 @@ class User extends Authenticatable
         'phone',
         'country',
         'rol',
-        'is_admin',
+        'team_id',
     ];
 
     /**
@@ -50,5 +50,9 @@ class User extends Authenticatable
 
     public function team() {
         return $this->belongsTo(Team::class);
+    }
+
+    public function userstat(){
+        return $this->hasOne(Userstat::class);
     }
 }

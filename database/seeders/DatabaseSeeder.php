@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
         // ]);
         // Llamamos a otro fichero de semillas
         $this->call( Team ::class );
-        // Mostramos información por consola
-        //$this->command->info('User table seeded!' );
         $this->call( User ::class );
-        //$this->call( Game ::class );
+        $this->call( Game ::class );
+        $this->call( Teamstat ::class );
+        $this->call( Userstat ::class );
     }
 }

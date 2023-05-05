@@ -21,8 +21,7 @@ return new class extends Migration
             $table->string('nickname');
             $table->string('phone');
             $table->string('country');
-            $table->integer('rol');
-            $table->boolean('is_admin');
+            $table->integer('rol');            
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

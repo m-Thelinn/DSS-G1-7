@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('short_name');
-            $table->string('description');
-            $table->string('picture');
+            $table->string('description')->nullable();
+            $table->string('picture')->nullable();
             $table->string('country');
             $table->integer('division');
             $table->timestamps();
