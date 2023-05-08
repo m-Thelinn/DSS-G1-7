@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'ValCheck') }}</title>
+    <title>Valcheck: Analiza, crea, compite</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -93,8 +93,8 @@
 
         <main>
             @yield('content')
-            @include('layouts.footer')
         </main>
+        @include('layouts.footer')
     </div>
 </body>
 </html>

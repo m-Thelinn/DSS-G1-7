@@ -37,11 +37,11 @@
                                 @enderror
                             </div>
                         </div>
-<!--
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
+
+                        <div class="row mb-3 mt-3">
+                            <div class="col-sm-3 offset-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="form-check-input login-remember" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Recordar cuenta') }}
@@ -49,10 +49,10 @@
                                 </div>
                             </div>
                         </div>
--->
+
                         <div class="row mb-2">
                             <div>
-                                <button type="submit" class="default-button mt-5">
+                                <button type="submit" class="btn-default mt-5">
                                     {{ __('Iniciar sesión') }}
                                 </button>
                             </div>
