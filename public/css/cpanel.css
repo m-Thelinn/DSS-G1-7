@@ -1,0 +1,114 @@
+@import "styles.css";
+
+.admin-title {
+    color: var(--main-color);
+    font-size: 60px;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    text-align: center;
+    cursor: default;
+}
+
+.admin-back{
+    color: var(--second-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.admin-back:hover{
+    color: var(--main-color);
+}
+
+.btn-admin{
+    width: 135px;
+    padding: 5px 5px;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+
+.btn-admin:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.btn-delete{
+    width: 110px;
+    padding: 5px 3px;
+    background-color: red;
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 6px;
+}
+
+.btn-delete:hover{
+    color: red;
+    background-color: var(--second-color);
+}
+
+.btn-update{
+    width: 100px;
+    padding: 5px 5px;
+    background-color: cornflowerblue;
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-update:hover{
+    color: cornflowerblue;
+    background-color: var(--second-color);
+}
+
+.form-admin{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    padding: 5px 5px;
+}
+
+.btn-previous{
+    width: 110px;
+    padding: 5px 3px;
+    background-color: gray;
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+
+.btn-previous:disabled{
+    background-color: darkgrey;
+    color: var(--second-color);
+}
+
+.btn-previous:hover{
+    background-color: var(--second-color);
+    color: gray;
+}
