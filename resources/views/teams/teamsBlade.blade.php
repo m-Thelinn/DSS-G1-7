@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
 
+@section('content')
     <h1>Equipos</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('team.createTeam') }}"><input type="button" value="Añadir equipo"></a>        
         <div>
             <form method="POST" action="{{ route('team.searchByName') }}">
@@ -33,7 +32,7 @@
 
                    
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>            
             <th>NOMBRE</th>
@@ -66,5 +65,4 @@
         
     </table>
     {{ $teams->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-    </body>
-</html>
+@endsection

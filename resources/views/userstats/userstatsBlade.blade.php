@@ -1,10 +1,8 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
-
+@section('content')
     <h1>Estadisticas de usuario</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('userstats.createUserstats') }}"><input type="button" value="Añadir estadísticas"></a>
         <form method="GET" action="{{ route('userstats.showAlluserstats') }}">
             <label for="orderBy">Ordenar por:</label>
@@ -22,7 +20,7 @@
 
                    
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>
             <th>USUARIO  </th>             
@@ -57,6 +55,4 @@
         @endforeach     
     </table>
     {{ $userstats->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-
-    </body>
-</html>
+@endsection

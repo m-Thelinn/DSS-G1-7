@@ -1,10 +1,8 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
-
+@section('content')
     <h1>Partidos</h1>                                
     <div style="display:flex;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('game.createGame') }}"><input type="button" value="Añadir partido"></a>
         
         <form method="GET" action="{{ route('game.showAllGames') }}">
@@ -22,7 +20,7 @@
 
                    
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>            
             <th>FECHA  </th>
@@ -70,5 +68,4 @@
         @endforeach     
     </table>
     {{ $games->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-    </body>
-</html>
+@endsection

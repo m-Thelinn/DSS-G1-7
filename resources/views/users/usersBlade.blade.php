@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-    <body>
+@extends('layouts.app')
 
+@section('content')
     <h1>Usuarios</h1>                                
     <div style="display:flex; margin-bottom: 30px;">
-        <a href="/"><input type="button" value="Atrás"></a>
+        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
         <a href="{{ route('user.createUser') }}"><input type="button" value="Añadir usuario"></a>
         <form method="GET" action="{{ route('user.showAllUsers') }}">
             <label for="orderBy">Ordenar por:</label>
@@ -20,7 +20,7 @@
             <button type="submit">Ordenar</button>
         </form>        
     </div>
-    <table class="table table-striped">
+    <table class="table text">
         <thead>
         <tr>            
             <th>NOMBRE</th>
@@ -48,6 +48,8 @@
                 <td>Coach</td>
             @elseif( $user->rol === 3)
                 <td>Manager</td>
+            @elseif( $user->rol === 4)
+                <td>Fan</td>
             @else
                 <td>Admin</td>
             @endif
@@ -65,6 +67,4 @@
         @endforeach     
     </table>
     {{ $users->appends(['orderBy' => $orderBy])->links('custom-pagination', ['previous_label' => 'Anterior', 'next_label' => 'Siguiente']) }}
-
-    </body>
-</html>
+@endsection
