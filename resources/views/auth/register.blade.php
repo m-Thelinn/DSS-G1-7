@@ -136,20 +136,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="team_id" class="col-md-4 col-form-label text-md-end">{{ __('Equipo') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="team_id" type="text" class="form-control @error('team_id') is-invalid @enderror" name="team_id" value="{{ old('team_id') }}" required autocomplete="team_id" autofocus>
-                                
-                                @error('team_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                         
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

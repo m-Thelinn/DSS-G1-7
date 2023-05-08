@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-    <body>
+@extends('layouts.app')
 
+@section('content')
+<div class="container text ">
     <h1>PERFIL DE USUARIO</h1>
-    <a href="/iniciado"><input type="button" value="Atrás"></a>                                
-    
+    <div>
+        <a href="/"><input type="button"  class="btn-admin" value="Atrás"></a>
+        <a href="{{ route('profile.modifyProfile') }}" class="btn-update">Actualizar datos</a>
+    </div>
     <div>   
         <h4>EMAIL</h4> 
         <p>{{ $user->email }}</p>
@@ -22,5 +25,5 @@
         <h4>TEAM</h4> 
         <p>{{ $user->team->name }}</p>
     </div>
-    </body>
-</html>
+</div>
+@endsection

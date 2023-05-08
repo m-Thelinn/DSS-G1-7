@@ -149,6 +149,12 @@ Route::get('/iniciado', [App\Http\Controllers\HomeController::class, 'index'])->
 Route::get('profile' , [ProfileController::class, 'showProfile'])
     ->name('profile.showProfile');   
 
+Route::get('profile/modifyprofile' , [ProfileController::class, 'modifyProfile'])
+    ->name('profile.modifyProfile');   
+
+Route::patch('updateProfile', [ProfileController::class, 'updateProfile'])
+    ->name('profile.updateProfile');
+
 //VISTA ADMIN
 Route::group(['middleware' => ['isAdmin']], function() {
     Route::get('/admin', function() {
