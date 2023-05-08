@@ -58,6 +58,4 @@
         </div>
     </section>
 @endsection
-@section('layouts.footer')
-@endsection
 
