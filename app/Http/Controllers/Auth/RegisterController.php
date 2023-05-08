@@ -61,7 +61,6 @@ class RegisterController extends Controller
             'country' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
             'rol' => 'required|integer|between:0,3',
-            'team_id' => 'required|integer',
         ]);
     }
 
