@@ -89,7 +89,7 @@ body{
     font-size: 18px;
 }
 
-.default-button{
+.btn-default{
     display: block;
     margin: 0 auto;
     width: 300px;
@@ -105,7 +105,7 @@ body{
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
-.default-button:hover{
+.btn-default:hover{
     background-color: var(--second-color);
     color: var(--main-color);
     text-decoration: none;
@@ -214,6 +214,10 @@ body{
     border: none;
 }
 
+*:focus{
+    outline: none;
+}
+
 .login-register-form:focus{
     background-color: var(--bg-color-2);
     color: var(--second-color);
@@ -227,6 +231,20 @@ body{
     color: var(--second-color);
 }
 
+.login-remember{
+    cursor: pointer;
+    background-color: var(--bg-color-2);
+    width: 15px;
+    width: 15px;
+    appearance: none;
+}
+
+.login-remember:checked{
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+}
+
 ::-webkit-scrollbar{
     width: 7px;
     background-color: var(--bg-color-2);
@@ -238,32 +256,30 @@ body{
 }
 
 footer{
-    width: 100%;
-    padding: 25px 25px;
-    background-image: url(../img/background-footer.jpg);
-    background-size: cover;
+    background-color: var(--main-color);
 }
 
-.container__footer{
+.footer-flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: auto;
     margin-top: 100px;
 }
 
-.box__footer{
+.footer-box{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    align-items: center;
 }
 
-.box__footer .logo img{
+.footer-box .footer-logo img{
     width: 100px;
+    margin-bottom: -20px;
 }
 
-.box__footer .terms{
+.footer-box .footer-terms{
     max-width: 350px;
     margin-top: 20px;
     font-weight: 500;
@@ -271,40 +287,48 @@ footer{
     font-size: 15px;
 }
 
-.box__footer h2{
+.footer-box h2{
     margin-bottom: 30px;
-    color: var(--main-color);
+    color: var(--second-color);
     font-weight: 700;
 }
 
-.box__footer a{
+.footer-box a{
     margin-top: 10px;
     color: var(--second-color);
     font-weight: 600;
+    text-decoration: none;
 }
 
-.box__footer a:hover{
+.footer-box a:hover{
     opacity: 0.8;
 }
 
-.box__footer a .fab{
+.footer-box a .fab{
     font-size: 20px;
 }
 
-.box__copyright{
+.footer-copyright{
     max-width: 1200px;
     margin: auto;
     text-align: center;
     padding: 0px 40px;
 }
 
-.box__copyright p{
+.footer-copyright p{
     margin-top: 20px;
     color: var(--second-color);
 }
 
-.box__copyright hr{
+.footer-copyright hr{
     border: none;
     height: 1px;
     background-color: var(--second-color);
+}
+
+@media (min-width: 768px){
+    .col-md-2 {
+        flex: 0 0 auto;
+        width: 30%;
+    }    
 }
