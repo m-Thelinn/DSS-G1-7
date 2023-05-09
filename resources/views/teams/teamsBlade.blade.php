@@ -4,7 +4,9 @@
     <h1>Equipos</h1>                                
     <div class="mb-4 d-flex container align-items-center">
         <a class="btn-admin" href="{{ route('homeAdmin') }}">Atrás</a>
-        <a class="btn-admin" href="{{ route('team.createTeam') }}">Añadir equipo</a> 
+        @if (optional(auth()->user())->rol === 0)
+        <a class="btn-admin" href="{{ route('team.createTeam') }}">Añadir equipo</a>
+        @endif  
 
         <form method="POST" action="{{ route('team.searchByName') }}">
             @csrf               
@@ -19,6 +21,7 @@
         </form>
     </div>
     <div class="mb-2 d-flex container">
+
         <form method="GET" action="{{ route('team.showAllTeams') }}">
             <select class="form-admin" name="orderBy" id="orderBy">            
                 <option value="name" {{ $orderBy == 'name' ? 'selected' : '' }}>Nombre</option>
@@ -49,7 +52,8 @@
             <td>{{ $team->description }}</td>                
             <td><img src = "{{ $team->picture }}" width="40" height="40" alt="img"></td>                
             <td>{{ $team->country }}</td>                
-            <td>{{ $team->division }}</td>                
+            <td>{{ $team->division }}</td>   
+            @if (optional(auth()->user())->rol === 0)             
             <td>                                        
                 <a class="btn-update" href="{{ route('team.modifyTeam', $team) }}">Actualizar</a>
                 
@@ -58,7 +62,8 @@
                     @csrf
                     <button class="btn-delete" type="submit">Eliminar</button>               
                 </form>                                        
-            </td>                                                                        
+            </td>  
+            @endif                                                                      
         </tr>        
         @endforeach  
         

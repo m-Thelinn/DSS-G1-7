@@ -4,7 +4,9 @@
     <h1>Usuarios</h1>                                
     <div class="mb-5 d-flex container align-items-center">
         <a class="btn-admin" href="{{ route('homeAdmin') }}"> Atrás</a>
+        @if (optional(auth()->user())->rol === 0)
         <a class="btn-admin" href="{{ route('user.createUser') }}"> Nuevo usuario</a>
+        @endif
 
         <form method="GET" action="{{ route('user.showAllUsers') }}">
             <label style="user-select:none;" for="orderBy">Ordenar por:</label>
@@ -56,6 +58,7 @@
             @else
                 <td>Admin</td>
             @endif
+            @if (optional(auth()->user())->rol === 0)
             <td>                                        
                 <a href="{{ route('user.modifyUser', $user) }}" class="btn-update">Actualizar</a>
                 
@@ -65,7 +68,8 @@
                     <button class="btn-delete" type="submit">Eliminar</button>               
                 </form> 
                                                        
-            </td>                                                                        
+            </td>  
+            @endif                                                                      
         </tr>        
         @endforeach     
     </table>
