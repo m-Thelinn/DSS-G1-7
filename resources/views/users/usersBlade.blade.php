@@ -9,16 +9,16 @@
         @endif
 
         <form method="GET" action="{{ route('user.showAllUsers') }}">
-            <label for="orderBy">Ordenar por:</label>
+            <label style="user-select:none;" for="orderBy">Ordenar por:</label>
             <select class="form-admin" name="orderBy" id="orderBy">                           
-                <option value="name" {{ $orderBy == 'name' ? 'selected' : '' }}>NOMBRE</option>
-                <option value="lastname" {{ $orderBy == 'lastname' ? 'selected' : '' }}>APELLIDO</option>
-                <option value="nickname" {{ $orderBy == 'nickname' ? 'selected' : '' }}>NICKNAME</option>
-                <option value="email" {{ $orderBy == 'email' ? 'selected' : '' }}>EMAIL</option>
-                <option value="phone" {{ $orderBy == 'phone' ? 'selected' : '' }}>TELEFONO</option>
-                <option value="country" {{ $orderBy == 'country' ? 'selected' : '' }}>PAIS</option>
-                <option value="team_id" {{ $orderBy == 'team_id' ? 'selected' : '' }}>EQUIPO</option>
-                <option value="rol" {{ $orderBy == 'rol' ? 'selected' : '' }}>ROL</option>                
+                <option value="name" {{ $orderBy == 'name' ? 'selected' : '' }}>Nombre</option>
+                <option value="lastname" {{ $orderBy == 'lastname' ? 'selected' : '' }}>Apellidos</option>
+                <option value="nickname" {{ $orderBy == 'nickname' ? 'selected' : '' }}>Nickname</option>
+                <option value="email" {{ $orderBy == 'email' ? 'selected' : '' }}>Email</option>
+                <option value="phone" {{ $orderBy == 'phone' ? 'selected' : '' }}>Teléfono</option>
+                <option value="country" {{ $orderBy == 'country' ? 'selected' : '' }}>País</option>
+                <option value="team_id" {{ $orderBy == 'team_id' ? 'selected' : '' }}>Equipo</option>
+                <option value="rol" {{ $orderBy == 'rol' ? 'selected' : '' }}>Rol</option>                
             </select>                       
             <button class="btn-admin" type="submit">Ordenar</button>
         </form>        
@@ -34,7 +34,8 @@
             <th>EQUIPO</th>
             <th>EMAIL</th>
             <th>TELEFONO</th> 
-            <th>ROL</th>                
+            <th>ROL</th>
+            <th>ACCIONES</th>                 
         </tr>
         </thead>  
         @foreach ($users as $user)          

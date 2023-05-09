@@ -13,7 +13,11 @@
                 <p class="home-p">¿A qué estas esperando?</p>
             </div>
             <div>
-                <a class="btn-default" href="{{ route('register') }}">{{ __('Unirse a la comunidad') }}</a>
+                @guest
+                    <a class="btn-default" href="{{ route('register') }}">Unirse a la comunidad</a>
+                @else
+                    <a class="btn-default" href="#options">Empezar a explorar</a>
+                @endguest
             </div>
         </div>         
     </section>
