@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container text">
-
-        <h1> MODIFICAR PERFIL DE USUARIO</h1>
-        <div>
+    <h1 class="section-title">MODIFICAR PERFIL</h1>
+    <div>
         <form method="POST" action="{{ route('profile.updateProfile', $user) }}">
             @csrf
             @method('PATCH')
@@ -66,12 +65,11 @@
             <p></p>
             
             <p></p> 
-            <button class="btn btn-primary">Modificar perfil</button>
+            <button class="btn btn-admin">Modificar perfil</button>
         </form>
         
         <a href="{{ route('profile.showProfile') }}"><input type="button" value="Back"></a>             
         <br>
-        </div>        
-
+    </div>        
 </div>
 @endsection

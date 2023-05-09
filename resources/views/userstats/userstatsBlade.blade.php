@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
     <h1>Estadisticas de usuario</h1>                                
-    <div style="display:flex;">
-        <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
-        <a href="{{ route('userstats.createUserstats') }}"><input type="button" value="Añadir estadísticas"></a>
+    <div class="mb-5 d-flex container align-items-center">
+        <a class="btn-admin" href="{{ route('homeAdmin') }}"> Atrás</a>
+        <a class="btn-admin" href="{{ route('userstats.createUserstats') }}"> Añadir estadisticas</a>
+
         <form method="GET" action="{{ route('userstats.showAlluserstats') }}">
-            <label for="orderBy">Ordenar por:</label>
-            <select name="orderBy" id="orderBy">                           
+            <label style="user-select:none;" for="orderBy">Ordenar por:</label>
+            <select class="form-admin" name="orderBy" id="orderBy">                           
                 <option value="kills" {{ $orderBy == 'kills' ? 'selected' : '' }}>Asesinatos</option>
                 <option value="assists" {{ $orderBy == 'assists' ? 'selected' : '' }}>Asistencias</option>
                 <option value="deaths" {{ $orderBy == 'deaths' ? 'selected' : '' }}>Muertes</option>
@@ -15,12 +16,11 @@
                 <option value="adr" {{ $orderBy == 'adr' ? 'selected' : '' }}>ADR</option>                
                 <option value="user_id" {{ $orderBy == 'user_id' ? 'selected' : '' }}>ID</option>  
             </select>                                                  
-            <button type="submit">Ordenar</button>             
+            <button class="btn-admin" type="submit">Ordenar</button>             
         </form>
-
-                   
     </div>
-    <table class="table text">
+
+    <table class="table text container">
         <thead>
         <tr>
             <th>USUARIO  </th>             
@@ -29,7 +29,8 @@
             <th>MUERTES  </th>
             <th>VECES MVP  </th>
             <th>WIN-RATE  </th>
-            <th>ADR |</th> 
+            <th>ADR </th> 
+            <th>ACCIONES </th> 
         </tr>
         </thead>  
         @foreach ($userstats as $stat)          
@@ -43,12 +44,12 @@
             <td>{{ $stat->adr }}</td>   
                          
             <td>                                        
-                <a href="{{ route('userstats.modifyUserstats', $stat) }}"><input type="button" value="Actualizar">
+                <a href="{{ route('userstats.modifyUserstats', $stat) }}" class="btn-update">Actualizar</a>
                 
                 <form action="{{ route('userstats.deleteUserstats',  ['id' => $stat->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
-                    <button type="submit">Eliminar</button>               
+                    <button class="btn-delete" type="submit">Eliminar</button>               
                 </form>                                        
             </td>                                                                        
         </tr>        

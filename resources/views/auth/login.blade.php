@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8 text">
             <div>
-                <div class="card-header row justify-content-center mb-4 login-register-title">{{ __('Bienvenido a VALCHECK') }}</div>
+                <div class="card-header row justify-content-center mb-4 section-title">{{ __('Bienvenido a VALCHECK') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
