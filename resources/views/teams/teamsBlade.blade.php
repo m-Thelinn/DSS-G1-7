@@ -4,7 +4,9 @@
     <h1>Equipos</h1>                                
     <div style="display:flex;">
         <a href="{{ route('homeAdmin') }}"><input type="button" value="Atrás"></a>
-        <a href="{{ route('team.createTeam') }}"><input type="button" value="Añadir equipo"></a>        
+        @if (optional(auth()->user())->rol === 0)
+        <a href="{{ route('team.createTeam') }}"><input type="button" value="Añadir equipo"></a>      
+        @endif  
         <div>
             <form method="POST" action="{{ route('team.searchByName') }}">
                 @csrf               
@@ -50,7 +52,8 @@
             <td>{{ $team->description }}</td>                
             <td><img src = "{{ $team->picture }}" width="40" height="40" alt="img"></td>                
             <td>{{ $team->country }}</td>                
-            <td>{{ $team->division }}</td>                
+            <td>{{ $team->division }}</td>   
+            @if (optional(auth()->user())->rol === 0)             
             <td>                                        
                 <a href="{{ route('team.modifyTeam', $team) }}"><input type="button" value="Actualizar">
                 
@@ -59,7 +62,8 @@
                     @csrf
                     <button type="submit">Eliminar</button>               
                 </form>                                        
-            </td>                                                                        
+            </td>  
+            @endif                                                                      
         </tr>        
         @endforeach  
         

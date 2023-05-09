@@ -23,21 +23,21 @@
             <h2 class="options-title mb-2">Descubre VALCHECK</h2>
             <p class="options-subtitle mb-5">Jugadores. Equipos. Partidas</p>
             <div class="row mb-5">
-                <a class="col-md-4 col-sm-6 options-area" href="{{ route('home') }}">
+                <a class="col-md-4 col-sm-6 options-area" href="{{ route('user.showAllUsers') }}">
                     <img class="options-img" src="/img/player-card.jpg" alt="">
                     <div class="options-img-text">
                         <p>JUGADORES</p>
                     </div>
                 </a>
 
-                <a class="col-md-4 col-sm-6 options-area" href="{{ route('home') }}">
+                <a class="col-md-4 col-sm-6 options-area" href="{{ route('team.showAllTeams') }}">
                     <img class="options-img" src="/img/team-card.jpg" alt="">
                     <div class="options-img-text">
                         <p>EQUIPOS</p>
                     </div>
                 </a>
 
-                <a class="col-md-4 col-sm-6 options-area" href="{{ route('home') }}">
+                <a class="col-md-4 col-sm-6 options-area" href="{{ route('game.showAllGames') }}">
                     <img class="options-img" src="/img/game-card.jpg" alt="">
                     <div class="options-img-text">
                         <p>PARTIDOS</p>
