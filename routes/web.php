@@ -143,7 +143,7 @@ Route::patch('updateUserstats/{userstats}', [UserstatsController::class, 'update
 
 Auth::routes();
 
-Route::get('/iniciado', [App\Http\Controllers\HomeController::class, 'index'])->name('iniciado');
+//Route::get('/iniciado', [App\Http\Controllers\HomeController::class, 'index'])->name('iniciado');
 
 //PERFIL
 Route::get('profile' , [ProfileController::class, 'showProfile'])
