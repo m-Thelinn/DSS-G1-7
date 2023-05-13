@@ -5,7 +5,7 @@
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 text">
-        <h1 class="home-title mb-2">EQUIPO</h1>
+        <h1 class="home-title mb-2">CONTACTO</h1>
         <p class="contact-subtitle mb-5">Sobre nosotros</p>
             <p>Somos un equipo de cobertura de Esports de Valorant apasionado por proporcionar información precisa 
                 y actualizada sobre calendarios, resultados de partidos, clasificaciones de equipos y estadísticas detalladas. 
@@ -14,11 +14,7 @@
 
             <div>
                 <br>
-                @guest
-                    <a class="btn-default" href="{{ route('register') }}">Unirse a nosotros</a>
-                @else
-                    <a class="btn-default" href="#options">Empezar a explorar</a>
-                @endguest
+                <a class="btn-default" href="#contact">Pedir ayuda</a>
             </div>
 </section>
 
