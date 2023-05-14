@@ -57,6 +57,95 @@ body{
     margin-bottom: 150px;
 }
 
+.about-bg{
+    background-image: url(/img/background-about.jpg);
+    height: 400px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.left {
+    text-align: left;
+    margin-left: 45px;
+}
+
+.center{
+    text-align: center;
+    margin-left: 420px;
+    margin-top: -47px;
+}
+
+.right{
+    text-align: right;
+    margin-left: 1010px;
+    margin-top: -47px;
+}
+
+.about-title{
+    color: white;
+    font-size: 82px;
+    font-family: var(--title-font);
+    cursor: default;
+}
+
+.imagen-equipos{
+    width: 250;
+    height: 250;
+    overflow: hidden;
+    float: left;
+    margin-left: 2px;
+}
+
+.imagen-jugadores{
+    width: 250;
+    height: 250;
+    overflow: hidden;
+    float: left;
+    margin-left: 230px;
+}
+
+.imagen-partidos{
+    width: 250;
+    height: 250;
+    overflow: hidden;
+    float: left;
+    margin-left: 950px;
+    margin-top: -250px;
+}
+
+.parrafo-izquierda{
+    text-align: center;
+    padding: 30px;
+    color: var(--second-color);
+    font-family: var(--text-font);
+    cursor: default;
+    margin-top: -75px;
+    margin-right: 550px;
+}
+
+.parrafo-medio{
+    text-align: center;
+    padding: 30px;
+    color: var(--second-color);
+    font-family: var(--text-font);
+    cursor: default;
+    margin-top: -242px;
+    margin-right: 220px;
+}
+
+.parrafo-derecha{
+    text-align: center;
+    padding: 30px;
+    color: var(--second-color);
+    font-family: var(--text-font);
+    cursor: default;
+    margin-top: -242px;
+    margin-left: 475px;
+}
+
 .home-bg{
     background-image: url(/img/background.jpg);
     height: 620px;
