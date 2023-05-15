@@ -1,20 +1,61 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 text">
-            <h1>INFORMACION DEL PROYECTO</h1>
-            <br>
-            <p>Nos enfocamos en cubrir noticias, estadísticas y eventos del juego llamado Valorant.</p>
-            <br>
-            <p>Ofrecemos información detallada sobre equipos y jugadores profesionales y torneos importantes de todo el mundo.</p>
-            <br>
-            <p>Proporcionamos datos de las partidas, clasificaciones del juego y una seccion de análisis y estadísticas.</p>
-            <br>
-            <p>Valcheck es una herramienta esencial para aquellos que desean mantenerse al día con el mundo competitivo de Valorant.</p>
-            <br>
+<section class="about-bg mb-50" id="home">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text">
+            <h1 class="about-title mb-2">THE MOST ENTERTAINING ESPORTS COVERAGE IN THE WORLD</h1>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="d-flex justify-content-around text">
+            
+                <div class = "w-auto d-flex flex-column justify-content-center " >
+                    <h2 > EQUIPOS</h2>
+                    <div >
+                        <img src="img/equipos.jpg" width="285" height = "285">
+                    </div>
+
+                    <p class = "text-about ">En nuestra pagina web tendremos la opcion
+                         de poder bservar todos los equipos, asi como las estadisticas
+                         de los mismos.
+                        </p>
+                </div>
+                
+
+                <div class= "w-auto d-flex flex-column justify-content-center " >
+                    <h2 > JUGADORES</h2>
+                    <div >
+                        <img src= "img/jugador2.jpeg" width="285" height = "285">
+                    </div>
+                    <p class = "text-about "> Por último tenemos la posibilidad de 
+                         ver los resultados de los partidos que se
+                         han disputado.
+                        </p>
+                </div>
+
+
+                <div class= "w-auto d-flex flex-column justify-content-center ">
+                    <h2 > PARTIDOS</h2>
+                    <div >
+                        <img src= "img/partidos.jpg" width="285" height = "285">
+                    </div>
+                    <p class = "text-about "> Por último tenemos la posibilidad de 
+                         ver los resultados de los partidos que se
+                         han disputado.
+                        </p>
+                </div>
+
+            </div>
+        
+    </div>
+</section>
+
+
+
 @endsection
