@@ -66,24 +66,6 @@ body{
     background-size: cover;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
-
-.left {
-    text-align: left;
-    margin-left: 45px;
-}
-
-.center{
-    text-align: center;
-    margin-left: 420px;
-    margin-top: -47px;
-}
-
-.right{
-    text-align: right;
-    margin-left: 1010px;
-    margin-top: -47px;
-}
-
 .about-title{
     color: white;
     font-size: 82px;
@@ -115,37 +97,6 @@ body{
     margin-left: 950px;
     margin-top: -250px;
 }
-
-.parrafo-izquierda{
-    text-align: center;
-    padding: 30px;
-    color: var(--second-color);
-    font-family: var(--text-font);
-    cursor: default;
-    margin-top: -75px;
-    margin-right: 550px;
-}
-
-.parrafo-medio{
-    text-align: center;
-    padding: 30px;
-    color: var(--second-color);
-    font-family: var(--text-font);
-    cursor: default;
-    margin-top: -242px;
-    margin-right: 220px;
-}
-
-.parrafo-derecha{
-    text-align: center;
-    padding: 30px;
-    color: var(--second-color);
-    font-family: var(--text-font);
-    cursor: default;
-    margin-top: -242px;
-    margin-left: 475px;
-}
-
 .home-bg{
     background-image: url(/img/background.jpg);
     height: 620px;
@@ -166,16 +117,22 @@ body{
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
 }
 .contact-img{
-    height: 400px;
-    width: 350px;
+    display: flex;
+    height: 200px;
+    width: 200px;
     border-radius: 20px;
     border-style: groove;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
     border: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 .contact-img-rrss{
+    display: flex;
     height: 50px;
     width: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .home-title{
     color: var(--main-color);
@@ -183,7 +140,6 @@ body{
     font-family: var(--title-font);
     cursor: default;
 }
-
 .home-subtitle{
     color: var(--third-color);
     font-size: 30px;
@@ -199,11 +155,21 @@ body{
     cursor: default;
 }
 .contact-email-text a{
+    text-align: center;
+    display: flex;
     color: var(--main-color);
     font-size: 15px;
     font-style: italic;
     font-family: var(--text-font);
-    cursor: default;
+    margin-top: -30px;
+    margin-left: 80px;
+}
+.section-title-contact{
+    color: var(--main-color);
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--title-font);
 }
 .text{
     text-align: center;
