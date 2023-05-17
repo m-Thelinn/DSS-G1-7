@@ -19,8 +19,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/cpanel.css">
+    <link rel="stylesheet" href="{{url('css/styles.css')}}">
+    <link rel="stylesheet" href="{{url('css/cpanel.css')}}">
 </head>
 
 <body>

@@ -287,6 +287,26 @@ body{
     outline: none;
 }
 
+.form-profile{
+    background-color: var(--bg-color-2);
+    width: 250px;
+    color: var(--second-color);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+.text-back{
+    color: var(--second-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.text-back:hover{
+    color: var(--main-color);
+}
+
 footer{
     background-color: var(--main-color);
 }
@@ -374,6 +394,10 @@ footer{
     font-size: 15px;
     font-family: var(--text-font);
     cursor: default;
+}
+
+.btn-profile{
+    
 }
 
 ::-webkit-scrollbar{
