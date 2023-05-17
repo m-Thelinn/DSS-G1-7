@@ -161,3 +161,6 @@ Route::group(['middleware' => ['isAdmin']], function() {
         return view('homeAdmin');
     })->name('homeAdmin');
 });
+
+//VER EQUIPO
+Route::get('teamData/{id}',[TeamsController::class, 'showTeamData'])->name('team.teamData');
