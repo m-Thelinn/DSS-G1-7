@@ -2,7 +2,7 @@
     <div class="footer-flex">
         <div class="footer-box mt-3">
             <div class="footer-logo">
-                <img src="img/logo-b.png" alt="logo valcheck">
+                <img src="{{ url('img/logo-b.png') }}" alt="logo valcheck">
             </div>
             <div class="footer-terms">
                 <p class="text">Cobertura de Esports de Valorant: calendario, resultados de partidos, clasificaciones de equipos y estadísticas.</p>
