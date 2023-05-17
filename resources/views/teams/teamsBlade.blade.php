@@ -53,17 +53,20 @@
             <td><img src = "{{ $team->picture }}" width="40" height="40" alt="img"></td>                
             <td>{{ $team->country }}</td>                
             <td>{{ $team->division }}</td>   
-            @if (optional(auth()->user())->rol === 0)             
-            <td>                                        
+                        
+            <td>     
+                <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-admin">Ver equipo</a>
+                @if (optional(auth()->user())->rol === 0) 
                 <a class="btn-update" href="{{ route('team.modifyTeam', $team) }}">Actualizar</a>
                 
                 <form action="{{ route('team.deleteTeam',  ['id' => $team->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button class="btn-delete" type="submit">Eliminar</button>               
-                </form>                                        
+                </form>
+                @endif                                        
             </td>  
-            @endif                                                                      
+                                                                                  
         </tr>        
         @endforeach  
         

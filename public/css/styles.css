@@ -16,6 +16,10 @@ body{
     background-color: var(--bg-color);
 }
 
+h1{
+    color:white;
+}
+
 .navbar-logo{
     width: 50px;
 }

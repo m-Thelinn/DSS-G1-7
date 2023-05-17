@@ -85,6 +85,15 @@ class TeamsController extends Controller
         return redirect()->route('team.showAllTeams');
     }
 
+    public function showTeamData($id){
+        $team = Team::findOrFail($id);
+        $teamstat = Teamstat::where('team_id', $id)->first();
+        return view('teams.teamsProfileBlade', [
+            'team' => $team,
+            'teamstat' => $teamstat
+        ]);
+    }
+
 
     public function modifyTeam($id){
         $team = Team::findOrfail($id);
