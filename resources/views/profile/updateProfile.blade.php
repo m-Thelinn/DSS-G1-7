@@ -51,7 +51,7 @@
             <p></p>
             <label>
                 Equipo <i>(Nombre)</i>: <br>
-                <input class="form-profile" value="{{ old('team_id', $user->team_id) }}" type="text" name="team_id">
+                <input class="form-profile" value="{{ old('team_id', $user->team->name) }}" type="text" name="team_id">
                 {!! $errors->first('team_id', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 

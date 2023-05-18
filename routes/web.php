@@ -162,5 +162,6 @@ Route::group(['middleware' => ['isAdmin']], function() {
     })->name('homeAdmin');
 });
 
-//VER EQUIPO
+//VER PERFILES
 Route::get('teamData/{id}',[TeamsController::class, 'showTeamData'])->name('team.teamData');
+Route::get('userData/{id}',[UsersController::class, 'showUserData'])->name('user.userData');

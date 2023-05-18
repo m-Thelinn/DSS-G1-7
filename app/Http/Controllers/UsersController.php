@@ -107,4 +107,13 @@ class UsersController extends Controller
 
         return redirect()->route('user.showAllUsers');
     }
+
+    public function showUserData($id){
+        $user = User::findOrFail($id);
+        $userstat = Userstat::where('user_id', $id)->first();
+        return view('users.usersProfileBlade', [
+            'user' => $user,
+            'userstat' => $userstat
+        ]);
+    }
 }

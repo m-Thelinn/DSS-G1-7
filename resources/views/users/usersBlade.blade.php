@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Usuarios</h1>                                
+    <h1 class="container mt-5 mb-5 page-title">Usuarios</h1>                                
     <div class="mb-5 d-flex container align-items-center">
         @if (optional(auth()->user())->rol === 0)
         <a class="btn-admin" href="{{ route('homeAdmin') }}"> Atrás</a>
@@ -68,7 +68,7 @@
             @endif
             
             <td>
-                <a href="{{ route('user.modifyUser', $user) }}" class="btn-admin">Ver perfil</a>
+                <a href="{{ route('user.userData',  ['id' => $user->id]) }}" class="btn-admin">Ver perfil</a>
 
                 @if (optional(auth()->user())->rol === 0)
                 <a href="{{ route('user.modifyUser', $user) }}" class="btn-update">Actualizar</a>
@@ -79,7 +79,6 @@
                     <button class="btn-delete" type="submit">Eliminar</button>               
                 </form>
                 @endif
-
 
             </td>                                                                     
         </tr>        
