@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Equipos</h1>                                
+    <h1 class="container mt-5 mb-5 page-title">Equipos</h1>                                
     <div class="mb-4 d-flex container align-items-center">
-        <a class="btn-admin" href="{{ route('homeAdmin') }}">Atrás</a>
+        <a class="btn-admin" href="/">Atrás</a>
         @if (optional(auth()->user())->rol === 0)
         <a class="btn-admin" href="{{ route('team.createTeam') }}">Añadir equipo</a>
         @endif  
@@ -55,7 +55,8 @@
             <td>{{ $team->division }}</td>   
                         
             <td>     
-                <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-admin">Ver equipo</a>
+                <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-admin">Ver</a>
+                
                 @if (optional(auth()->user())->rol === 0) 
                 <a class="btn-update" href="{{ route('team.modifyTeam', $team) }}">Actualizar</a>
                 
