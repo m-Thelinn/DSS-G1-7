@@ -38,8 +38,8 @@
             </label>
             <p></p>
             <label>
-                Contraseña: <br>
-                <input class="form-profile" value="{{ old('password') }}" type="password" name="password">
+                Nueva contraseña: <br>
+                <input class="form-profile" value="{{ old('password', $user->password) }}" type="password" name="password">
                 {!! $errors->first('password', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p>

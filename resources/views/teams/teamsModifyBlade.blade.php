@@ -2,52 +2,52 @@
 
 @section ('content')
 <div class="container text">
-    <h1 class="admin-title"> Modificar equipo</h1>
+    <h1 class="mt-5 admin-subtitle"> Modificar equipo</h1>
         <form method="POST" action="{{ route('team.updateTeam', $team) }}">
             @csrf
             @method('PATCH')
             <label>
                 Nombre: <br>   
-                <input value="{{ old('name') }}" type="text" name="name">
+                <input class="form-admin-black" value="{{ old('name', $team->name) }}" type="text" name="name">
                 {!! $errors->first('name', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
                 Abreviatura: <br>
-                <input value="{{ old('short_name') }}" type="text" name="short_name">
+                <input class="form-admin-black" value="{{ old('short_name', $team->short_name) }}" type="text" name="short_name">
                 {!! $errors->first('short_name', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
                 Descripcion: <br>
-                <input value="{{ old('description') }}" type="text" name="description">
+                <input class="form-admin-black" value="{{ old('description', $team->description) }}" type="text" name="description">
                 {!! $errors->first('description', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
                 Enlace Foto: <br>
-                <input value="{{ old('picture') }}" type="text" name="picture">
+                <input class="form-admin-black" value="{{ old('picture', $team->picture) }}" type="text" name="picture">
                 {!! $errors->first('picture', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
                 Pais: <br>
-                <input value="{{ old('country') }}" type="text" name="country">
+                <input class="form-admin-black" value="{{ old('country', $team->country) }}" type="text" name="country">
                 {!! $errors->first('country', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             <label>
                 Division:<br>
-                <input value="{{ old('division') }}" type="text" name="division">
+                <input class="form-admin-black" value="{{ old('division', $team->division) }}" type="text" name="division">
                 {!! $errors->first('division', '<br><small class="text-danger">:message</small><br>') !!}
             </label>
             <p></p> 
             
             <p></p> 
-            <button class="btn btn-primary">Modificar Equipo</button>
+            <button class="mt-5 mb-3 btn-admin">Modificar Equipo</button>
         </form>                    
     <br>
-    <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Atrás"></a>
+    <a class="admin-back" href="{{ route('team.showAllTeams') }}">Atrás</a>
 </div>
         
 @endsection

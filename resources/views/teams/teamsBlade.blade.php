@@ -40,13 +40,13 @@
             <th>TAG</th>
             <th>DESCRIPCION</th>
             <th>ESCUDO</th>
-            <th>PAIS</th>
+            <th>REGIÓN</th>
             <th>DIVISION</th>
             <th>ACCIONES</th> 
         </tr>
         </thead>  
-        @foreach ($teams as $team)          
-        <tr>        
+        @foreach ($teams as $team)            
+        <tr>       
             <td>{{ $team->name }}</td>
             <td>{{ $team->short_name }}</td>   
             <td>{{ $team->description }}</td>                
@@ -58,16 +58,16 @@
                 <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-admin">Ver</a>
                 
                 @if (optional(auth()->user())->rol === 0) 
-                <a class="btn-update" href="{{ route('team.modifyTeam', $team) }}">Actualizar</a>
+                <a href="{{ route('team.modifyTeam', $team) }}" class="btn-update">Actualizar</a>
                 
                 <form action="{{ route('team.deleteTeam',  ['id' => $team->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button class="btn-delete" type="submit">Eliminar</button>               
                 </form>
-                @endif                                        
-            </td>  
-                                                                                  
+                @endif
+
+            </td>                                                                      
         </tr>        
         @endforeach  
         

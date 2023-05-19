@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
-        
+
+@section('content')
 
         <h1> Modificar estadistica de usuario</h1>
         <form method="POST" action="{{ route('userstats.updateUserstats', $userstats->id) }}">
@@ -56,5 +55,4 @@
         <a href="{{ route('userstats.showAlluserstats') }}"><input type="button" value="Atrás"></a>               
         <br>
                  
-    </body>
-</html>
+@endsection
