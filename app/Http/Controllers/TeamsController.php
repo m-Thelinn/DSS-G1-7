@@ -10,11 +10,10 @@ use App\Models\Teamstat;
 use App\Models\Userstat;
 
 class TeamsController extends Controller
-{
-    //      
+{      
     public function showAllTeams(Request $request){        
-        $orderBy = $request->input('orderBy', 'id');//por defecto ordena por id si no se introce parametro
-        $teams = Team::orderBy($orderBy)->paginate(3);
+        $orderBy = $request->input('orderBy', 'id'); // por defecto ordena por id si no se introduce un parámetro
+        $teams = Team::where('id', '!=', 2)->orderBy($orderBy)->paginate(3);
         return view('teams.teamsBlade', compact('teams', 'orderBy'));
     }
 

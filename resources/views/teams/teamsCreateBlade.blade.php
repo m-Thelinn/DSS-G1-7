@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
+
+@section('content')
             <h1> Crear nuevo equipo</h1>
             <form method="POST" action="{{ route('team.addTeam') }}">
                 @csrf
@@ -45,5 +45,4 @@
                 <button class="btn btn-primary">Crear equipo</button>
             </form>            
             <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Atrás"></a>
-    </body>
-</html>
+@endsection

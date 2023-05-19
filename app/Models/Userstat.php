@@ -19,7 +19,7 @@ class Userstat extends Model
         'assists',
         'deaths',
         'times_mvp',
-        'winrate',
+        'win_rate',
         'adr',
     ];
 

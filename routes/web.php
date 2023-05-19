@@ -104,7 +104,7 @@ Route::patch('updateGame/{game}', [GamesController::class, 'updateGame'])->middl
     ->name('game.updateGame');
 
 //------------------TEAMSTATS------------------
-Route::get('teamstats/{orderBy?}', [TeamstatsController::class, 'showAllteamstats'])
+Route::get('teamstats/{orderBy?}', [TeamstatsController::class, 'showAllteamstats'])->middleware('isAdmin')
     ->name('teamstats.showAllteamstats');
 
 Route::get('teamstats/createteamstats' , [TeamstatsController::class, 'createTeamstats'])->middleware('isAdmin')
@@ -123,7 +123,7 @@ Route::patch('updateTeamstats/{teamstats}', [TeamstatsController::class, 'update
     ->name('teamstats.updateTeamstats');
 
 //------------------USERSTATS------------------
-Route::get('userstats/{orderBy?}', [UserstatsController::class, 'showAlluserstats'])
+Route::get('userstats/{orderBy?}', [UserstatsController::class, 'showAlluserstats'])->middleware('isAdmin')
     ->name('userstats.showAlluserstats');
 
 Route::get('userstats/createuserstats' , [UserstatsController::class, 'createUserstats'])->middleware('isAdmin')
