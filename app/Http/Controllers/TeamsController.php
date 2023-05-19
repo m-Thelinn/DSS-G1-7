@@ -59,6 +59,17 @@ class TeamsController extends Controller
 
         $team->save();
         
+        $teamstat = Teamstat::create([
+            'wins' => 0,
+            'losses' => 0,
+            'ranking_position' => 0,
+            'win_rate' => 0,
+            'lose_rate' => 0,
+            'team_id' => $team->id,
+        ]);
+
+        $teamstat->save();
+        
         return redirect()->route('team.showAllTeams');
     }
 

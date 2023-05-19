@@ -21,6 +21,7 @@ class Userstat extends Model
         'times_mvp',
         'win_rate',
         'adr',
+        'user_id',
     ];
 
     public function user() {
