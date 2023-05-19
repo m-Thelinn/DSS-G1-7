@@ -88,7 +88,7 @@ class RegisterController extends Controller
 
         $user->save();
 
-        Userstat::create([
+        $userstat = Userstat::create([
             'kills' => 0,
             'assists' => 0,
             'deaths' => 0,
@@ -97,7 +97,9 @@ class RegisterController extends Controller
             'adr' => 0,
             'user_id' => $user->id,
         ]);
-        
+
+        $userstat->save();
+
         return $user;
     }
 }

@@ -35,6 +35,10 @@ Route::get('/about', function() {
     return view('about');
 })->name('about');
 
+Route::get('/faq', function() {
+    return view('faq');
+})->name('faq');
+
 
 Route::post('auth/login', 'Auth\LoginController@login')->name('login');
 
