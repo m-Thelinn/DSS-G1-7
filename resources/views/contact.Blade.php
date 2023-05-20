@@ -7,18 +7,18 @@
             <div class="col-md-8 text">
             <h1 class="home-title mb-2">CONTACTO</h1>
             <p class="contact-subtitle mb-5">Sobre nosotros</p>
-                <p>
+                <p class="home-p">
                     Somos un equipo de cobertura de Esports de Valorant apasionado por proporcionar información precisa 
                     y actualizada sobre calendarios, resultados de partidos, clasificaciones de equipos y estadísticas detalladas. 
                     Nos enorgullece ser el mejor recurso para la comunidad de Valorant y mantener a los fanáticos actualizados sobre 
                     los últimos acontecimientos en el mundo de los Esports de Valorant.
                 </p>
-
-                <p>
+                <br><br>
+                <p class="home-p">
                     ¿Necesitas ayuda?
                 </p>
                 <div>
-                <p>¡¡No dudes en clicar ese botón y contactarnos!!</p>
+                <p class="home-p">¡¡No dudes en clicar ese botón y contactarnos!!</p>
                     <a class="btn-default" href="#contact">Pedir ayuda</a>
                 </div>
             </div>
