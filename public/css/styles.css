@@ -109,7 +109,7 @@ body{
 
 .contact-bg{
     background-image: url(/img/background_contact.jpg);
-    height: 620px;
+    height: 520px;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
@@ -354,6 +354,17 @@ body{
     border: none;
 }
 
+.textarea-form{
+    background-color: var(--bg-color-2);
+    color: var(--second-color);
+    border: none;
+    resize: none;
+    height: 150px;
+}
+.textarea-form:focus{
+    background-color: var(--bg-color-2);
+    color: var(--second-color);
+}
 *:focus{
     outline: none;
 }
