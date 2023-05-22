@@ -17,3 +17,12 @@ function getMensaje(){
     Frases[14]="Nuestra página 404 fue capturada por Viper y ahora está atrapada en una nube venenosa. ¡Esperamos que tengas una máscara de gas a mano!";
     return(Frases[Math.floor(Math.random()*Frases.length)]);
 }
+
+function toggleAnswer(index) {
+    const answer = document.getElementById(`answer${index}`);
+    const icon = document.getElementById(`icon${index}`);
+    const isOpened = answer.style.display === "none";
+
+    answer.style.display = isOpened ? "block" : "none";
+    icon.classList.toggle("opened", isOpened);
+}

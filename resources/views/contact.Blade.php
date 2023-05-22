@@ -31,7 +31,7 @@
         <div class="d-flex">
             <div>
                 <img class="contact-img" src="/img/miguel.png" alt="">
-                <br><p class="section-title-contact">PRESIDENTE</p>
+                <br><p class="section-title-contact">JEFE DE PROYECTO</p>
                 <p class= "text">MIGUEL RODRÍGUEZ SÁNCHEZ</p>
                 <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">mrs121@gcloud.ua.es</a></p>
                 <p>
@@ -45,7 +45,7 @@
             </div>
             <div>
                 <img class="contact-img" src="/img/paco.JPG" alt="">
-                <br><p class="section-title-contact">VICEPRESIDENTE</p>
+                <br><p class="section-title-contact">DESARROLLADOR BACKEND</p>
                 <p class= "text">FRANCISCO FERNÁNDEZ RUIZ</p>
                 <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">ffr9@gcloud.ua.es</a></p>
                 <p>
@@ -59,7 +59,7 @@
             </div>
             <div>
                 <img class="contact-img" src="/img/demian.png" alt="">
-                <br><p class="section-title-contact">ANALISTA DE DATOS</p>
+                <br><p class="section-title-contact">MARKETING</p>
                 <p class= "text">DEMIAN CALVO RODRÍGUEZ</p>
                 <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">dcr28@gcloud.ua.es</a></p>
                 <p>
@@ -73,7 +73,7 @@
             </div>
             <div>
                 <img class="contact-img" src="/img/julio.jpeg" alt="">
-                <br><p class="section-title-contact">GERENTE DE MARKETING</p>
+                <br><p class="section-title-contact">DESARROLLADOR FRONTEND</p>
                 <p class= "text">JULIO CÉSAR BASTIDAS SÁNCHEZ</p>
                 <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">jcbs6@gcloud.ua.es</a></p>
                 <p>

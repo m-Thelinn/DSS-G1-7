@@ -94,20 +94,7 @@
                     y estamos trabajando constantemente en mejorar nuestra página web. Tomamos en cuenta vuestros intereses en noticias y novedades, y consideraremos implementar 
                     una sección dedicada en futuras versiones de nuestro sitio. 
             </div>
-
         </div>
     </div>
-
-    <!-- Por no añadir un fichero faq.js -->
-    <script>
-        function toggleAnswer(index) {
-            const answer = document.getElementById(`answer${index}`);
-            const icon = document.getElementById(`icon${index}`);
-            const isOpened = answer.style.display === "none";
-
-            answer.style.display = isOpened ? "block" : "none";
-            icon.classList.toggle("opened", isOpened);
-        }
-    </script>
 </section>
 @endsection
