@@ -38,12 +38,6 @@
             </label>
             <p></p>
             <label>
-                Nueva contraseña: <br>
-                <input class="form-profile" value="{{ old('password', $user->password) }}" type="password" name="password">
-                {!! $errors->first('password', '<br><small class="text-danger">:message</small><br>') !!}
-            </label>
-            <p></p>
-            <label>
                 Pais: <br>
                 <input class="form-profile" value="{{ old('country', $user->country) }}" type="text" name="country">
                 {!! $errors->first('country', '<br><small class="text-danger">:message</small><br>') !!}
@@ -65,6 +59,9 @@
                 </select> 
             
             <p></p> 
+
+            <a href="{{ url('/password/reset') }}" class="btn-update">Cambiar contraseña</a>
+
             <button class="btn btn-admin mt-3">Modificar perfil</button>
         </form>
     </div>

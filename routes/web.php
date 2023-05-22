@@ -39,8 +39,12 @@ Route::get('/faq', function() {
     return view('faq');
 })->name('faq');
 
+/*Route::get('/password/reset', function() {
+    return view('auth/passwords/reset.blade.php');
+})->name('changePassword');
 
-Route::post('auth/login', 'Auth\LoginController@login')->name('login');
+
+Route::post('auth/login', 'Auth\LoginController@login')->name('login');*/
 
 //------------------USUARIOS------------------
 Route::get('users', [UsersController::class, 'showAllUsers'])
