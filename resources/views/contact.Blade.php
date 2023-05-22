@@ -25,7 +25,7 @@
                 <img class="contact-img" src="/img/miguel.png" alt="">
                 <br><p class="section-title-contact">JEFE DE PROYECTO</p>
                 <p class= "text">MIGUEL RODRÍGUEZ SÁNCHEZ</p>
-                <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">mrs121@gcloud.ua.es</a></p>
+                <p class="contact-email-text"><a href="mailto:mrs121@gcloud.ua.es">mrs121@gcloud.ua.es</a></p>
                 <p>
                     <a href="https://www.instagram.com/miguelrs_02/">
                         <img class="contact-img-rrss" img src="/img/instagram.png" alt="Instagram">
@@ -39,7 +39,7 @@
                 <img class="contact-img" src="/img/paco.JPG" alt="">
                 <br><p class="section-title-contact">DESARROLLADOR BACKEND</p>
                 <p class= "text">FRANCISCO FERNÁNDEZ RUIZ</p>
-                <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">ffr9@gcloud.ua.es</a></p>
+                <p class="contact-email-text"><a href="mailto:ffr9@gcloud.ua.es">ffr9@gcloud.ua.es</a></p>
                 <p>
                     <a href="https://www.instagram.com//">
                         <img class="contact-img-rrss" img src="/img/instagram.png" alt="Instagram">
@@ -53,7 +53,7 @@
                 <img class="contact-img" src="/img/demian.png" alt="">
                 <br><p class="section-title-contact">MARKETING</p>
                 <p class= "text">DEMIAN CALVO RODRÍGUEZ</p>
-                <p class="contact-email-text"><a href="mailto:jcbs6@gcloud.ua.es">dcr28@gcloud.ua.es</a></p>
+                <p class="contact-email-text"><a href="mailto:dcr28@gcloud.ua.es<">dcr28@gcloud.ua.es</a></p>
                 <p>
                     <a href="https://www.instagram.com/demiancr12/">
                         <img class="contact-img-rrss" img src="/img/instagram.png" alt="Instagram">

@@ -64,20 +64,20 @@
             </div>
 
             <div class="faq-item">
-                <h2 class="faq-title-questions" onclick="toggleAnswer(4)">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(5)">
                 ¿Cuál es la fuente de los datos en ValCheck?
                 </h2><br>
-                <p class="text" id="answer4" style="display: none;">
+                <p class="text" id="answer5" style="display: none;">
                     Recopilamos nuestros datos de fuentes confiables y oficiales, como plataformas de juego y organizadores de torneos. 
                     Nos esforzamos por proporcionar información precisa y actualizada para brindar una experiencia confiable a nuestros usuarios.
                 </p><br>
             </div>
 
             <div class="faq-item">
-                <h2 class="faq-title-questions" onclick="toggleAnswer(5)">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(6)">
                     ¿Puedo participar en competiciones a través de ValCheck?
                 </h2><br>
-                <p class="text" id="answer5" style="display: none;">
+                <p class="text" id="answer6" style="display: none;">
                     ValCheck, es una plataforma de información y análisis, pero no organizamos competiciones directamente. 
                     Sin embargo, puedes utilizar nuestra plataforma para descubrir competiciones en curso y encontrar equipos para unirte a ellos
                 </p><br>
@@ -85,20 +85,20 @@
             
             <!-- Agrega más preguntas y respuestas aquí siguiendo el formato :) -->
             <div class="faq-item">
-                <h2 class="faq-title-questions" onclick="toggleAnswer(6)">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(7)">
                     ¿Es segura la aplicación y la privacidad de mis datos?
                 </h2><br>
-                <p class="text" id="answer6" style="display: none;">
+                <p class="text" id="answer7" style="display: none;">
                     Nos tomamos muy en serio la seguridad y privacidad de tus datos. Utilizamos medidas de seguridad avanzadas para proteger 
                     tu información personal y nos adherimos a las mejores prácticas en cuanto a privacidad. Puedes estar tranquilo sabiendo que tus datos están en buenas manos
                 </p><br>
             </div>
 
             <div class="faq-item">
-                <h2 class="faq-title-questions" onclick="toggleAnswer(7)">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(8)">
                     ¿Hay alguna sección dedicada a las noticias y novedades de Valorant?
                 </h2><br>
-                <p class="text" id="answer7" style="display: none;">
+                <p class="text" id="answer8" style="display: none;">
                     Actualmente, no contamos con una sección dedicada a las noticias y novedades de Valorant. Sin embargo, valoramos todos los comentarios y sugerencias, 
                     y estamos trabajando constantemente en mejorar nuestra página web. Tomamos en cuenta vuestros intereses en noticias y novedades, y consideraremos implementar 
                     una sección dedicada en futuras versiones de nuestro sitio. 
