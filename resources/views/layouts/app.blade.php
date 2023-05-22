@@ -43,7 +43,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">Contacto</span></a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('faq') }}">FAQ</span></a>
                         </li>
