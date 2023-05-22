@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text">
-            <h1 class="about-title mb-2">THE MOST ENTERTAINING ESPORTS COVERAGE IN THE WORLD</h1>
+            <h1 class="about-title mb-2">LA COBERTURA DE ESPORTS MÁS ENTRETENIDA DEL MUNDO</h1>
             </div>
         </div>
     </div>
@@ -21,9 +21,8 @@
                         <img src="img/equipos.jpg" width="285" height = "285">
                     </div>
 
-                    <p class = "text-about ">En nuestra pagina web tendremos la opcion
-                         de poder bservar todos los equipos, asi como las estadisticas
-                         de los mismos.
+                    <p class = "text-about ">En nuestra pagina web podemos
+                        observar todos los equipos, asi como sus estadisticas.
                         </p>
                 </div>
                 
@@ -33,9 +32,9 @@
                     <div >
                         <img src= "img/jugador2.jpeg" width="285" height = "285">
                     </div>
-                    <p class = "text-about "> Por último tenemos la posibilidad de 
-                         ver los resultados de los partidos que se
-                         han disputado.
+                    <p class = "text-about "> Además de los equipos, podremos ver
+                        los jugadores que componen cada equipo
+                        y sus estadisticas.
                         </p>
                 </div>
 
@@ -73,8 +72,16 @@
                 <p class="home-p">
                 No importa si estás buscando información competitiva, consejos estratégicos o simplemente quieres mantenerte informado sobre las últimas novedades de Valorant, nuestra página web es tu recurso definitivo.
                 </p>
+                <br><br>
                 <p class="home-subtitle mb-5"> ¡Únete a nosotros y sumérgete en el fascinante mundo de Valorant ahora mismo!</p>
             </div>
+        </div>
+        <div>
+                @guest
+                    <a class="btn-default" href="{{ route('register') }}">Unirse a la comunidad</a>
+                @else
+                    <a class="btn-default" href="#options">Empezar a explorar</a>
+                @endguest
         </div>
 </section>
 @endsection
