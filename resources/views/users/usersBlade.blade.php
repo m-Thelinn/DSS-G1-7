@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Usuarios</h1>                                
+    <h1 class="container mt-5 mb-5 page-title">Usuarios</h1>                                
     <div class="mb-5 d-flex container align-items-center">
-        <a class="btn-admin" href="{{ route('homeAdmin') }}"> Atrás</a>
         @if (optional(auth()->user())->rol === 0)
+        <a class="btn-admin" href="{{ route('homeAdmin') }}"> Atrás</a>
         <a class="btn-admin" href="{{ route('user.createUser') }}"> Nuevo usuario</a>
+        @else
+        <a class="btn-admin" href="/"> Atrás</a>
         @endif
 
         <form method="GET" action="{{ route('user.showAllUsers') }}">
@@ -14,8 +16,10 @@
                 <option value="name" {{ $orderBy == 'name' ? 'selected' : '' }}>Nombre</option>
                 <option value="lastname" {{ $orderBy == 'lastname' ? 'selected' : '' }}>Apellidos</option>
                 <option value="nickname" {{ $orderBy == 'nickname' ? 'selected' : '' }}>Nickname</option>
+                @if (optional(auth()->user())->rol === 0)
                 <option value="email" {{ $orderBy == 'email' ? 'selected' : '' }}>Email</option>
                 <option value="phone" {{ $orderBy == 'phone' ? 'selected' : '' }}>Teléfono</option>
+                @endif
                 <option value="country" {{ $orderBy == 'country' ? 'selected' : '' }}>País</option>
                 <option value="team_id" {{ $orderBy == 'team_id' ? 'selected' : '' }}>Equipo</option>
                 <option value="rol" {{ $orderBy == 'rol' ? 'selected' : '' }}>Rol</option>                
@@ -30,10 +34,12 @@
             <th>NOMBRE</th>
             <th>NICKNAME</th>
             <th>APELLIDOS</th>
-            <th>PAIS</th>
             <th>EQUIPO</th>
+            <th>PAIS</th>
+            @if (optional(auth()->user())->rol === 0)
             <th>EMAIL</th>
-            <th>TELEFONO</th> 
+            <th>TELEFONO</th>
+            @endif
             <th>ROL</th>
             <th>ACCIONES</th>                 
         </tr>
@@ -42,11 +48,13 @@
         <tr>        
             <td>{{ $user->name }}</td>
             <td>"{{ $user->nickname }}"</td>                
-            <td>{{ $user->lastname }}</td>   
+            <td>{{ $user->lastname }}</td>
+            <td>{{ $user->team->name }}</td>   
             <td>{{ $user->country }}</td>                
-            <td>{{ $user->team->name }}</td>
+            @if (optional(auth()->user())->rol === 0)
             <td>{{ $user->email }}</td>                
             <td>{{ $user->phone }}</td>
+            @endif
             @if( $user->rol === 1)
                 <td>Jugador</td>
             @elseif( $user->rol === 2)
@@ -58,18 +66,21 @@
             @else
                 <td>Admin</td>
             @endif
-            @if (optional(auth()->user())->rol === 0)
-            <td>                                        
+            
+            <td>
+                <a href="{{ route('user.userData',  ['id' => $user->id]) }}" class="btn-admin">Ver perfil</a>
+
+                @if (optional(auth()->user())->rol === 0)
                 <a href="{{ route('user.modifyUser', $user) }}" class="btn-update">Actualizar</a>
                 
                 <form action="{{ route('user.deleteUser',  ['id' => $user->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button class="btn-delete" type="submit">Eliminar</button>               
-                </form> 
-                                                       
-            </td>  
-            @endif                                                                      
+                </form>
+                @endif
+
+            </td>                                                                     
         </tr>        
         @endforeach     
     </table>

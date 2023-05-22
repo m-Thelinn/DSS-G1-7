@@ -2,7 +2,7 @@
 @section('content')
     <h1>Partidos</h1>                                
     <div class="mb-5 d-flex container align-items-center">
-        <a class="btn-admin" href="{{ route('homeAdmin') }}">Atrás</a>
+        <a class="btn-admin" href="/">Atrás</a>
         @if (optional(auth()->user())->rol === 0)
         <a class="btn-admin" href="{{ route('game.createGame') }}">Añadir partido</a>
         @endif
@@ -13,7 +13,7 @@
                 <option value="date" {{ $orderBy == 'date' ? 'selected' : '' }}>Fecha</option>
                 <option value="time" {{ $orderBy == 'time' ? 'selected' : '' }}>Hora</option>
                 <option value="format" {{ $orderBy == 'format' ? 'selected' : '' }}>Formato</option>
-                <option value="result" {{ $orderBy == 'result' ? 'selected' : '' }}>Resultado</option>
+                <option value="result" {{ $orderBy == 'result' ? 'selected' : '' }}>Estado</option>
                 <option value="local_id" {{ $orderBy == 'local_id' ? 'selected' : '' }}>Local</option>
                 <option value="visitante_id" {{ $orderBy == 'visitante_id' ? 'selected' : '' }}>Visitante</option>                
             </select>            
@@ -28,7 +28,7 @@
             <th>FECHA  </th>
             <th>HORA  </th>
             <th>FORMATO  </th>
-            <th>RESULTADO  </th>
+            <th>ESTADO  </th>
             <th>EQUIPO LOCAL  </th>
             <th>EQUIPO VISITANTE  </th>
             <th>ACCIONES  </th> 
@@ -58,17 +58,20 @@
             @endif  
             <td>{{ $game->local->name }}</td>                
             <td>{{ $game->visitante->name}}</td>   
-            @if (optional(auth()->user())->rol === 0)             
-            <td>                                        
-                <a href="{{ route('game.modifyGame', $game) }}" class="btn-update">Actualizar</a>
+            <td>
                 
-                <form action="{{ route('game.deleteGame',  ['id' => $game->id]) }}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <button class="btn-delete" type="submit">Eliminar</button>               
-                </form>                                        
+                <a href="https://www.twitch.tv/" target="_blank" class="btn-admin">Ver partido</a>
+                @if (optional(auth()->user())->rol === 0)                                   
+                    <a href="{{ route('game.modifyGame', $game) }}" class="btn-update">Actualizar</a>
+                    
+                    <form action="{{ route('game.deleteGame',  ['id' => $game->id]) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn-delete" type="submit">Eliminar</button>               
+                    </form>
+                @endif                                         
             </td> 
-            @endif                                                                       
+                                                                            
         </tr>        
         @endforeach     
     </table>

@@ -19,8 +19,9 @@ class Userstat extends Model
         'assists',
         'deaths',
         'times_mvp',
-        'winrate',
+        'win_rate',
         'adr',
+        'user_id',
     ];
 
     public function user() {

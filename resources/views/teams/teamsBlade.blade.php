@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Equipos</h1>                                
+    <h1 class="container mt-5 mb-5 page-title">Equipos</h1>                                
     <div class="mb-4 d-flex container align-items-center">
-        <a class="btn-admin" href="{{ route('homeAdmin') }}">Atrás</a>
+        <a class="btn-admin" href="/">Atrás</a>
         @if (optional(auth()->user())->rol === 0)
         <a class="btn-admin" href="{{ route('team.createTeam') }}">Añadir equipo</a>
         @endif  
@@ -40,30 +40,34 @@
             <th>TAG</th>
             <th>DESCRIPCION</th>
             <th>ESCUDO</th>
-            <th>PAIS</th>
+            <th>REGIÓN</th>
             <th>DIVISION</th>
             <th>ACCIONES</th> 
         </tr>
         </thead>  
-        @foreach ($teams as $team)          
-        <tr>        
+        @foreach ($teams as $team)            
+        <tr>       
             <td>{{ $team->name }}</td>
             <td>{{ $team->short_name }}</td>   
             <td>{{ $team->description }}</td>                
             <td><img src = "{{ $team->picture }}" width="40" height="40" alt="img"></td>                
             <td>{{ $team->country }}</td>                
             <td>{{ $team->division }}</td>   
-            @if (optional(auth()->user())->rol === 0)             
-            <td>                                        
-                <a class="btn-update" href="{{ route('team.modifyTeam', $team) }}">Actualizar</a>
+                        
+            <td>     
+                <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-admin">Ver</a>
+                
+                @if (optional(auth()->user())->rol === 0) 
+                <a href="{{ route('team.modifyTeam', $team) }}" class="btn-update">Actualizar</a>
                 
                 <form action="{{ route('team.deleteTeam',  ['id' => $team->id]) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button class="btn-delete" type="submit">Eliminar</button>               
-                </form>                                        
-            </td>  
-            @endif                                                                      
+                </form>
+                @endif
+
+            </td>                                                                      
         </tr>        
         @endforeach  
         

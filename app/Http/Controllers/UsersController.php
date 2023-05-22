@@ -54,6 +54,18 @@ class UsersController extends Controller
 
         $user->save();
         
+        $userstat = Userstat::create([
+            'kills' => 0,
+            'assists' => 0,
+            'deaths' => 0,
+            'times_mvp' => 0,
+            'win_rate' => 0,
+            'adr' => 0,
+            'user_id' => $user->id,
+        ]);
+
+        $userstat->save();
+        
         return redirect()->route('user.showAllUsers');
     }
 
@@ -106,5 +118,14 @@ class UsersController extends Controller
         $user->save();
 
         return redirect()->route('user.showAllUsers');
+    }
+
+    public function showUserData($id){
+        $user = User::findOrFail($id);
+        $userstat = Userstat::where('user_id', $id)->first();
+        return view('users.usersProfileBlade', [
+            'user' => $user,
+            'userstat' => $userstat
+        ]);
     }
 }
