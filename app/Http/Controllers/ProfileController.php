@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Userstat;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Team;
 
@@ -13,7 +13,11 @@ class ProfileController extends Controller
     //
     public function showProfile(Request $request){   
         $user = Auth::user();
-        return view('profile.profile',compact('user'));
+        $userstat = Userstat::where('user_id', $user->id)->first();
+        return view('profile.profile', [
+            'user' => $user,
+            'userstat' => $userstat
+        ], compact('user'));
     }
 
     public function modifyProfile(){   

@@ -35,7 +35,7 @@
         </thead>  
         @foreach ($userstats as $stat)          
         <tr>
-            <td>{{ $stat->user->name }}</td>                     
+            <td>{{ $stat->user->nickname }}</td>                     
             <td>{{ $stat->kills }}</td>
             <td>{{ $stat->assists }}</td>   
             <td>{{ $stat->deaths }}</td>                

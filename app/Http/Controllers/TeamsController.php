@@ -98,9 +98,11 @@ class TeamsController extends Controller
     public function showTeamData($id){
         $team = Team::findOrFail($id);
         $teamstat = Teamstat::where('team_id', $id)->first();
+        $users = User::where('team_id', $id)->get();
         return view('teams.teamsProfileBlade', [
             'team' => $team,
-            'teamstat' => $teamstat
+            'teamstat' => $teamstat,
+            'users' => $users
         ]);
     }
 

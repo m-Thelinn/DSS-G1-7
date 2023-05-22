@@ -96,7 +96,7 @@ class UsersController extends Controller
             ],
             'country' => 'required|string|max:255',
             'phone' => 'required|string|max:255',
-            'rol' => 'required|integer|between:0,3',
+            'rol' => 'required|integer|between:0,4',
             'team_id' => 'required|string|max:255',
         ]);
         

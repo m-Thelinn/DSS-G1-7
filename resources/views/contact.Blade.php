@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="contact-bg mb-50" id="home">
+<section class="contact-bg mb-50">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text">

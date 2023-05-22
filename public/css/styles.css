@@ -159,6 +159,14 @@ body{
     text-transform: uppercase;
     text-align: center;
     font-family: var(--title-font);
+    cursor: pointer;
+    transition: 0.5;
+    user-select: none;
+}
+
+.faq-title-questions:hover{
+    color: var(--second-color);
+    transform: scale(110%);
 }
 
 .home-title{
@@ -210,7 +218,6 @@ body{
 .text-about{
     text-align: center;
     width: 285px;
-    
     margin-left: 2px;
     margin-right: 2px;
     color: var(--second-color);
@@ -219,6 +226,18 @@ body{
 
 .home-p{
     font-size: 18px;
+}
+
+.form-control{
+    background-color: var(--bg-color-2);
+    color: var(--second-color);
+    border-radius: 10px;
+    border: none;
+}
+
+.form-control:focus{
+    background-color: var(--bg-color-2);
+    color: var(--second-color);
 }
 
 .btn-default{
@@ -521,9 +540,24 @@ footer{
 
 .profile-text{
     color: var(--main-color);
-    font-size: 15px;
+    font-size: 17px;
     font-family: var(--text-font);
     cursor: default;
+}
+
+.profile-player{
+    color: var(--second-color);
+    font-size: 17px;
+    font-family: var(--text-font);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5;
+}
+
+.profile-player:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--main-color);
 }
 
 .profile-name{
@@ -547,6 +581,7 @@ footer{
     font-size: 25px;
     font-family: var(--title-font);
     cursor: default;
+    text-align: center;
 }
 
 ::-webkit-scrollbar{
