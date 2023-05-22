@@ -16,7 +16,11 @@
         <p class="profile-text">Admin</p>
     @endif
 
+    @if( $user->team->picture == null)
+    <img class="mb-5" src = "{{ url('img/none.png') }}" width="100" height="100" alt="img">
+    @else
     <img class="mb-5" src = "{{ $user->team->picture }}" width="100" height="100" alt="img">
+    @endif
 
     <h3 class="profile-stats-title mt-5 mb-5">Estadísticas</h3>
     <div class="d-flex justify-content-evenly mb-5">

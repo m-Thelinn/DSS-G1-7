@@ -91,10 +91,10 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="d-flex flex-column align-items-center mb-3">
-                                <label for="name" class="col-md-4 col-form-label">{{ __('Nombre') }}</label>
+                                <label for="name" class="col-md-4 col-form-label">Nombre</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="login-register-form form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                    <input name="nombre" id="name" type="text" class="login-register-form form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -104,10 +104,10 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column align-items-center mb-3">
-                                <label for="email" class="col-md-4 col-form-label">{{ __('Correo electrónico') }}</label>
+                                <label for="email" class="col-md-4 col-form-label">Correo electrónico</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="login-register-form form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                    <input name="email" id="email" type="email" class="login-register-form form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column align-items-center mb-3">
-                                <label for="asunto" class="col-md-4 col-form-label">{{ __('Asunto') }}</label>
+                                <label for="asunto" class="col-md-4 col-form-label">Asunto</label>
 
                                 <div class="col-md-6">
                                     <input id="asunto" type="asunto" class="login-register-form form-control @error('asunto') is-invalid @enderror" name="asunto" value="{{ old('asunto') }}" required autocomplete="asunto">
@@ -130,7 +130,7 @@
                                 </div>
                             </div>
                             <div class="d-flex flex-column align-items-center mb-3">
-                            <label for="mensaje" class="col-md-4 col-form-label">{{ __('Mensaje') }}</label>
+                            <label for="mensaje" class="col-md-4 col-form-label">Mensaje</label>
                             <div class="col-md-6">
                                     <textarea id="mensaje" type="textarea" class="textarea-form form-control @error('mensaje') is-invalid @enderror" name="mensaje" value="{{ old('mensaje') }}" required autocomplete="mensaje"></textarea>
 
@@ -143,8 +143,9 @@
                             </div>
 
                             <div class="d-flex flex-column align-items-center mb-3">
-                                    <a class="btn-default" href="">Enviar</a>
+                                    <a class="btn-default" href="mailto:mrs121@gcloud.ua.es">Enviar</a>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>

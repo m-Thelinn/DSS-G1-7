@@ -19,6 +19,17 @@ class Userstat extends Seeder
         DB::table('userstats')->delete();
         DB::table('userstats')->insert([
             [
+            //ADMIN
+            'kills' => 0,
+            'assists' => 0,
+            'deaths' => 0,
+            'times_mvp' => 0,
+            'win_rate' => 0,
+            'adr'=> 0,
+            'user_id' => DB::table('users')->where('nickname','admin')->first()->id,
+            ],
+
+            [
             //USUARIOS FNATIC
             //JUGADOR1
             'kills' => 1247,
