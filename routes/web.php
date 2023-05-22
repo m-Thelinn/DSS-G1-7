@@ -63,8 +63,6 @@ Route::patch('updateUser/{user}', [UsersController::class, 'updateUser'])->middl
 
 
 //------------------EQUIPOS------------------
-Route::get('teams/{orderBy?}', [TeamsController::class, 'showAllTeams'])
-    ->name('team.showAllTeams');
 
 Route::post('/teams/searchByName', [TeamsController::class, 'searchTeamName'])
     ->name('team.searchByName');
@@ -77,6 +75,9 @@ Route::get('teams/createteam' , [TeamsController::class, 'createTeam'])->middlew
 
 Route::post('addTeam', [TeamsController::class, 'addTeam'])->middleware('isAdmin')
     ->name('team.addTeam');
+
+Route::get('teams/{orderBy?}', [TeamsController::class, 'showAllTeams'])
+    ->name('team.showAllTeams');
        
 Route::delete('deleteTeam/{id}', [TeamsController::class, 'deleteTeam'])->middleware('isAdmin')
     ->name('team.deleteTeam');
