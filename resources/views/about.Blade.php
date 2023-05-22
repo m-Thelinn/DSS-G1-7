@@ -57,5 +57,24 @@
 </section>
 
 
+<section>
+        <div class="container">
+            <div class="text">
+                <p class="home-p">
+                 Explora nuestras secciones dedicadas a los resultados de los torneos más recientes, los perfiles de los jugadores más talentosos y los equipos más destacados. Además, podrás consultar detalladas estadísticas de rendimiento individual y colectivo, permitiéndote analizar y comparar datos para tener una visión más completa del juego.
+                </p>
+            </div>
+        </div>
+</section>
 
+<section>
+        <div class="container">
+            <div class="text">
+                <p class="home-p">
+                No importa si estás buscando información competitiva, consejos estratégicos o simplemente quieres mantenerte informado sobre las últimas novedades de Valorant, nuestra página web es tu recurso definitivo.
+                </p>
+                <p class="home-subtitle mb-5"> ¡Únete a nosotros y sumérgete en el fascinante mundo de Valorant ahora mismo!</p>
+            </div>
+        </div>
+</section>
 @endsection
