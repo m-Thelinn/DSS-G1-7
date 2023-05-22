@@ -55,7 +55,7 @@
             <td>{{ $team->division }}</td>   
                         
             <td>     
-                <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-admin">Ver</a>
+                <a href="{{ route('team.teamData',  ['id' => $team->id]) }}" class="btn-profile">Ver más</a>
                 
                 @if (optional(auth()->user())->rol === 0) 
                 <a href="{{ route('team.modifyTeam', $team) }}" class="btn-update">Actualizar</a>

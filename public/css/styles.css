@@ -244,6 +244,26 @@ body{
     transform: translateY(-3%);
 }
 
+.btn-profile{
+    display: block;
+    padding: 5px 10px;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 6px;
+}
+
+.btn-profile:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
 .options-title{
     color: var(--main-color);
     font-size: 40px;

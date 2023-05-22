@@ -80,7 +80,7 @@
                 @guest
                     <a class="btn-default" href="{{ route('register') }}">Unirse a la comunidad</a>
                 @else
-                    <a class="btn-default" href="#options">Empezar a explorar</a>
+                    <a class="btn-default" href="/#options">Empezar a explorar</a>
                 @endguest
         </div>
 </section>

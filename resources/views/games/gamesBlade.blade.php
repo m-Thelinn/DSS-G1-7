@@ -60,7 +60,7 @@
             <td>{{ $game->visitante->name}}</td>   
             <td>
                 
-                <a href="https://www.twitch.tv/" target="_blank" class="btn-admin">Ver partido</a>
+                <a href="https://www.twitch.tv/" target="_blank" class="btn-profile">Ver partido</a>
                 @if (optional(auth()->user())->rol === 0)                                   
                     <a href="{{ route('game.modifyGame', $game) }}" class="btn-update">Actualizar</a>
                     
