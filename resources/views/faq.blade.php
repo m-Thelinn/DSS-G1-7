@@ -75,6 +75,25 @@
             </div>
             
             <!-- Agrega más preguntas y respuestas aquí siguiendo el formato :) -->
+            <div class="faq-item">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(6)">
+                    ¿Es segura la aplicación y la privacidad de mis datos?
+                </h2><br>
+                <p class="text" id="answer6" style="display: none;">
+                    Nos tomamos muy en serio la seguridad y privacidad de tus datos. Utilizamos medidas de seguridad avanzadas para proteger 
+                    tu información personal y nos adherimos a las mejores prácticas en cuanto a privacidad. Puedes estar tranquilo sabiendo que tus datos están en buenas manos
+                </p><br>
+            </div>
+
+            <div class="faq-item">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(7)">
+                    ¿Hay alguna sección dedicada a las noticias y novedades de Valorant?
+                </h2><br>
+                <p class="text" id="answer7" style="display: none;">
+                    Actualmente, no contamos con una sección dedicada a las noticias y novedades de Valorant. Sin embargo, valoramos todos los comentarios y sugerencias, 
+                    y estamos trabajando constantemente en mejorar nuestra página web. Tomamos en cuenta vuestros intereses en noticias y novedades, y consideraremos implementar 
+                    una sección dedicada en futuras versiones de nuestro sitio. 
+            </div>
 
         </div>
     </div>
