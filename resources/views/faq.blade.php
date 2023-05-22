@@ -21,9 +21,8 @@
 </section>
 
 <section>
-    <div class="row justify-content-center">
-        <div class="container">
-            
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="faq-item">
                 <h2 class="faq-title-questions" onclick="toggleAnswer(1)">
                     ¿Qué es Valorant?
@@ -51,6 +50,16 @@
                 <p class="text" id="answer3" style="display: none;">
                     Puedes buscar información sobre un jugador específico utilizando la función de búsqueda dentro del apartado de Jugadores en nuestro sitio web. 
                     Simplemente busca el nombre del jugador que necesitas la información y se mostrarán los resultados correspondientes.
+                </p><br>
+            </div>
+
+            <div class="faq-item">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(4)">
+                ¿Como puedo crear un equipo en ValCheck?
+                </h2><br>
+                <p class="text" id="answer4" style="display: none;">
+                    Primero de todo debes de contactar con un administrador a través nuestra página de contacto y el se encargará de verificar y tramitar
+                    todo el proceso de la creación del equipo. Una vez este todo listo, se te notificará y podrás formar parte de tu equipo ya creado.
                 </p><br>
             </div>
 
