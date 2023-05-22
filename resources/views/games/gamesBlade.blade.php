@@ -56,11 +56,19 @@
             @else
                 <td>Gana equipo visitante</td>
             @endif  
-            <td>{{ $game->local->name }}</td>                
-            <td>{{ $game->visitante->name}}</td>   
+            <td>
+                <a href="{{ route('team.teamData',  ['id' => $game->local]) }}">
+                    <img src="{{ $game->local->picture}}" width="50" height="50">
+                </a>
+            </td>                
+            <td>
+                <a href="{{ route('team.teamData',  ['id' => $game->visitante]) }}">
+                    <img src="{{ $game->visitante->picture}}" width="50" height="50">
+                </a>
+            </td>
             <td>
                 
-                <a href="https://www.twitch.tv/" target="_blank" class="btn-admin">Ver partido</a>
+                <a href="https://www.twitch.tv/" target="_blank" class="btn-profile">Ver partido</a>
                 @if (optional(auth()->user())->rol === 0)                                   
                     <a href="{{ route('game.modifyGame', $game) }}" class="btn-update">Actualizar</a>
                     

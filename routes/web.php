@@ -94,14 +94,12 @@ Route::patch('updateTeam/{team}', [TeamsController::class, 'updateTeam'])->middl
 
 
 //------------------GAMES------------------
-Route::get('games/{orderBy?}', [GamesController::class, 'showAllGames'])
-    ->name('game.showAllGames');
-
 Route::get('games/creategame' , [GamesController::class, 'createGame'])->middleware('isAdmin')
     ->name('game.createGame');
 
 Route::post('addGame', [GamesController::class, 'addGame'])->middleware('isAdmin')
     ->name('game.addGame');
+
 
 Route::delete('deletegame/{id}', [GamesController::class, 'deleteGame'])->middleware('isAdmin')
     ->name('game.deleteGame');
@@ -112,15 +110,18 @@ Route::get('games/modifygame/{id}' , [GamesController::class, 'modifyGame'])->mi
 Route::patch('updateGame/{game}', [GamesController::class, 'updateGame'])->middleware('isAdmin')
     ->name('game.updateGame');
 
-//------------------TEAMSTATS------------------
-Route::get('teamstats/{orderBy?}', [TeamstatsController::class, 'showAllteamstats'])->middleware('isAdmin')
-    ->name('teamstats.showAllteamstats');
+Route::get('games/{orderBy?}', [GamesController::class, 'showAllGames'])
+    ->name('game.showAllGames');
 
+//------------------TEAMSTATS------------------
 Route::get('teamstats/createteamstats' , [TeamstatsController::class, 'createTeamstats'])->middleware('isAdmin')
     ->name('teamstats.createTeamstats'); 
 
 Route::post('addTeamstats', [TeamstatsController::class, 'addTeamstats'])->middleware('isAdmin')
     ->name('teamstats.addTeamstats');
+
+Route::get('teamstats/{orderBy?}', [TeamstatsController::class, 'showAllteamstats'])->middleware('isAdmin')
+    ->name('teamstats.showAllteamstats');
     
 Route::delete('deleteteamstats/{id}', [TeamstatsController::class, 'deleteTeamstats'])->middleware('isAdmin')
     ->name('teamstats.deleteTeamstats');
@@ -132,8 +133,6 @@ Route::patch('updateTeamstats/{teamstats}', [TeamstatsController::class, 'update
     ->name('teamstats.updateTeamstats');
 
 //------------------USERSTATS------------------
-Route::get('userstats/{orderBy?}', [UserstatsController::class, 'showAlluserstats'])->middleware('isAdmin')
-    ->name('userstats.showAlluserstats');
 
 Route::get('userstats/createuserstats' , [UserstatsController::class, 'createUserstats'])->middleware('isAdmin')
     ->name('userstats.createUserstats'); 
@@ -145,7 +144,10 @@ Route::delete('deleteuserstats/{id}', [UserstatsController::class, 'deleteUserst
     ->name('userstats.deleteUserstats');
 
 Route::get('userstats/modifyuserstats/{id}' , [UserstatsController::class, 'modifyUserstats'])->middleware('isAdmin')
-    ->name('userstats.modifyUserstats');   
+    ->name('userstats.modifyUserstats');
+    
+Route::get('userstats/{orderBy?}', [UserstatsController::class, 'showAlluserstats'])->middleware('isAdmin')
+    ->name('userstats.showAlluserstats');   
 
 Route::patch('updateUserstats/{userstats}', [UserstatsController::class, 'updateUserstats'])->middleware('isAdmin')
     ->name('userstats.updateUserstats');
