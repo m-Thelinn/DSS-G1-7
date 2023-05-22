@@ -13,14 +13,6 @@
                     Nos enorgullece ser el mejor recurso para la comunidad de Valorant y mantener a los fanáticos actualizados sobre 
                     los últimos acontecimientos en el mundo de los Esports de Valorant.
                 </p>
-                <br><br>
-                <p class="home-p">
-                    ¿Necesitas ayuda?
-                </p>
-                <div>
-                <p class="home-p">¡¡No dudes en clicar ese botón y contactarnos!!</p>
-                    <a class="btn-default" href="#contact">Pedir ayuda</a>
-                </div>
             </div>
         </div>
     </div>
@@ -140,7 +132,7 @@
                             <div class="d-flex flex-column align-items-center mb-3">
                             <label for="mensaje" class="col-md-4 col-form-label">{{ __('Mensaje') }}</label>
                             <div class="col-md-6">
-                                    <textarea id="mensaje" type="textarea" class="login-register-form form-control @error('mensaje') is-invalid @enderror" name="mensaje" value="{{ old('mensaje') }}" required autocomplete="mensaje"></textarea>
+                                    <textarea id="mensaje" type="textarea" class="textarea-form form-control @error('mensaje') is-invalid @enderror" name="mensaje" value="{{ old('mensaje') }}" required autocomplete="mensaje"></textarea>
 
                                     @error('asunto')
                                         <span class="invalid-feedback" role="alert">
