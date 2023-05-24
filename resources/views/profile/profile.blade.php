@@ -40,7 +40,7 @@
         <p class="col-sm-3 profile-text">{{ $user->country }}</p>
     </div>
 
-    <div class="mt-5 text">
+    <div class="mt-5 text btn-respon">
         <a href="/" class="btn-admin">Volver al inicio</a>
         <a href="{{ route('profile.modifyProfile') }}" class="btn-admin">Modificar perfil</a>
     </div>

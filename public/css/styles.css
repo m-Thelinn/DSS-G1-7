@@ -192,12 +192,12 @@ body{
 .contact-email-text a{
     text-align: center;
     display: flex;
+    justify-content: center;
     color: var(--main-color);
     font-size: 15px;
     font-style: italic;
     font-family: var(--text-font);
     margin-top: -30px;
-    margin-left: 80px;
 }
 .section-title-contact{
     color: var(--main-color);
@@ -439,7 +439,6 @@ body{
 
 .form-profile{
     background-color: var(--bg-color-2);
-    width: 250px;
     color: var(--second-color);
     border: none;
     border-radius: 10px;
@@ -584,6 +583,168 @@ footer{
     text-align: center;
 }
 
+.admin-title {
+    color: var(--main-color);
+    font-size: 60px;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    text-align: center;
+    cursor: default;
+}
+
+.admin-subtitle {
+    color: var(--second-color);
+    font-size: 30px;
+    font-family: var(--title-font);
+    text-transform: uppercase;
+    text-align: center;
+    cursor: default;
+}
+
+.admin-back{
+    color: var(--second-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.admin-back:hover{
+    color: var(--main-color);
+}
+
+.btn-admin{
+    padding: 5px 10px;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+
+.btn-admin:hover{
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+.btn-admin-panel{
+    padding: 50px 50px;
+    color: var(--second-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+
+.btn-admin-panel:hover{
+    transform: translateY(-3%);
+    color: var(--second-color);
+}
+
+.adm-search{
+    background-color: var(--bg-color-2);
+    color: var(--second-color);
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-delete{
+    display: block;
+    padding: 5px 3px;
+    background-color: red;
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-delete:hover{
+    color: red;
+    background-color: var(--second-color);
+}
+
+.btn-update{
+    display: block;
+    padding: 5px 5px;
+    background-color: cornflowerblue;
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-update:hover{
+    color: cornflowerblue;
+    background-color: var(--second-color);
+}
+
+.form-admin{
+    background-color: var(--second-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    padding: 5px 5px;
+}
+
+.form-admin-black{
+    background-color: var(--bg-color-2);
+    color: var(--second-color);
+    border: none;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+.btn-previous{
+    width: 110px;
+    padding: 5px 3px;
+    background-color: gray;
+    color: var(--second-color);
+    text-decoration: none;
+    border:none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    margin-right: 10px;
+}
+
+.img-about{
+    width: 285px;
+    height: 285px;
+}
+
+.btn-previous:disabled{
+    background-color: darkgrey;
+    color: var(--second-color);
+}
+
+.btn-previous:hover{
+    background-color: var(--second-color);
+    color: gray;
+}
+
+
 ::-webkit-scrollbar{
     width: 7px;
     background-color: var(--bg-color-2);
@@ -594,9 +755,166 @@ footer{
     border-radius: 10px;
 }
 
-@media (min-width: 768px){
-    .col-md-2 {
-        flex: 0 0 auto;
-        width: 30%;
-    }    
+@media screen and (max-width: 280px){
+    .home-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .btn-default{
+        width: 250px;
+    }
+
+    .contact-button{
+        width: 200px;
+    }
+
+    .contact-button:hover{
+        width: 200px;
+    }
+    .admin-title {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (max-width: 567px){
+    .home-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .btn-admin-panel{
+        margin-bottom: 10px;
+        padding: 25px 30px;
+    }
+
+    .home-title{
+        font-size: 50px;
+    }
+
+    .options-area{
+        margin-bottom: 50px;
+    }
+
+    .contact-button:hover{
+        width: 200px;
+    }
+
+    .options-img{
+        width: 250px;
+    }
+
+    .options-title{
+        font-size: 35px;
+    }
+
+    .footer-flex{
+        flex-direction: column;
+    }
+
+    .about-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .about-title {
+        font-size: 45px;
+    }
+
+    .text-about{
+        margin-bottom: 40px;
+        margin-top: 5px;
+        width: auto;
+    }
+
+    .img-about{
+        width: 230px;
+        height: 230px;
+    }
+
+    .d-flex{
+        flex-direction: column;
+    }
+
+    .section-title-contact{
+        font-size: 27px;
+    }
+
+    .faq-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .faq-title-questions{
+        font-size: 21px;
+    }
+
+    .profile-title{
+        text-align: center;
+    }
+
+    .profile-text{
+        text-align: center;
+    }
+
+    .profile-data{
+        text-align: center;
+    }
+
+    .btn-respon{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 567px){
+    .home-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .btn-admin-panel{
+        padding: 25px 30px;
+    }
+
+    .options-img{
+        width: 210px;
+    }
+
+    
+    .img-about{
+        width: 240px;
+        height: 240px;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    .home-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .options-img{
+        width: 290px;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .home-bg{
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+    }
+
+    .options-img{
+        width: 400px;
+    }
 }
