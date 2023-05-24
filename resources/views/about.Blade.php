@@ -18,11 +18,11 @@
                 <div class = "w-auto d-flex flex-column justify-content-center " >
                     <h2 > EQUIPOS</h2>
                     <div >
-                        <img src="img/equipos.jpg" width="285" height = "285">
+                        <img class="img-about" src="img/equipos.jpg">
                     </div>
 
-                    <p class = "text-about ">En nuestra pagina web podemos
-                        observar todos los equipos, asi como sus estadisticas.
+                    <p class = "text-about">En esta pagina web puedes
+                       ver todos los equipos, asi como sus estadisticas.
                         </p>
                 </div>
                 
@@ -30,9 +30,9 @@
                 <div class= "w-auto d-flex flex-column justify-content-center " >
                     <h2 > JUGADORES</h2>
                     <div >
-                        <img src= "img/jugador2.jpeg" width="285" height = "285">
+                        <img class="img-about" src= "img/jugador2.jpeg">
                     </div>
-                    <p class = "text-about "> Además de los equipos, podremos ver
+                    <p class = "text-about"> Además de los equipos, podremos ver
                         los jugadores que componen cada equipo
                         y sus estadisticas.
                         </p>
@@ -42,9 +42,9 @@
                 <div class= "w-auto d-flex flex-column justify-content-center ">
                     <h2 > PARTIDOS</h2>
                     <div >
-                        <img src= "img/partidos.jpg" width="285" height = "285">
+                        <img class="img-about" src= "img/partidos.jpg">
                     </div>
-                    <p class = "text-about "> Por último tenemos la posibilidad de 
+                    <p class = "text-about"> Por último tenemos la posibilidad de 
                          ver los resultados de los partidos que se
                          han disputado.
                         </p>

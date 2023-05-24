@@ -64,16 +64,6 @@
             </div>
 
             <div class="faq-item">
-                <h2 class="faq-title-questions" onclick="toggleAnswer(4)">
-                ¿Cuál es la fuente de los datos en ValCheck?
-                </h2><br>
-                <p class="text" id="answer4" style="display: none;">
-                    Recopilamos nuestros datos de fuentes confiables y oficiales, como plataformas de juego y organizadores de torneos. 
-                    Nos esforzamos por proporcionar información precisa y actualizada para brindar una experiencia confiable a nuestros usuarios.
-                </p><br>
-            </div>
-
-            <div class="faq-item">
                 <h2 class="faq-title-questions" onclick="toggleAnswer(5)">
                     ¿Puedo participar en competiciones a través de ValCheck?
                 </h2><br>
@@ -102,6 +92,17 @@
                     Actualmente, no contamos con una sección dedicada a las noticias y novedades de Valorant. Sin embargo, valoramos todos los comentarios y sugerencias, 
                     y estamos trabajando constantemente en mejorar nuestra página web. Tomamos en cuenta vuestros intereses en noticias y novedades, y consideraremos implementar 
                     una sección dedicada en futuras versiones de nuestro sitio. 
+            </div>
+
+            
+            <div class="faq-item">
+                <h2 class="faq-title-questions" onclick="toggleAnswer(8)">
+                ¿Cuál es la fuente de los datos en ValCheck?
+                </h2><br>
+                <p class="text" id="answer8" style="display: none;">
+                    Recopilamos nuestros datos de fuentes confiables y oficiales, como plataformas de juego y organizadores de torneos. 
+                    Nos esforzamos por proporcionar información precisa y actualizada para brindar una experiencia confiable a nuestros usuarios.
+                </p><br>
             </div>
         </div>
     </div>
