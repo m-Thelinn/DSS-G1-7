@@ -25,6 +25,19 @@ class User extends Seeder
             [
             //USUARIOS FNATIC
             //JUGADOR1            
+            'nickname' => 'admin',
+            'name' => 'admin',
+            'lastname' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'admin1234',
+            'country' => 'Spain',
+            'rol' => 0,
+            'phone' => '667876234',
+            'team_id' => DB::table('teams')->where('name','Sin equipo')->first()->id
+            ],
+            [
+            //USUARIOS FNATIC
+            //JUGADOR1            
             'nickname' => 'Leo',
             'name' => 'Leo',
             'lastname' => 'Jannesson',

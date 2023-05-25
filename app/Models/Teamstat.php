@@ -20,6 +20,7 @@ class Teamstat extends Model
         'ranking_position',
         'win_rate',
         'lose_rate',
+        'team_id',
     ];
 
     

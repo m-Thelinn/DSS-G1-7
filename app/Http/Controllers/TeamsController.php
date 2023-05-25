@@ -10,11 +10,10 @@ use App\Models\Teamstat;
 use App\Models\Userstat;
 
 class TeamsController extends Controller
-{
-    //      
+{      
     public function showAllTeams(Request $request){        
-        $orderBy = $request->input('orderBy', 'id');//por defecto ordena por id si no se introce parametro
-        $teams = Team::orderBy($orderBy)->paginate(3);
+        $orderBy = $request->input('orderBy', 'id'); // por defecto ordena por id si no se introduce un parámetro
+        $teams = Team::where('id', '!=', 2)->orderBy($orderBy)->paginate(3);
         return view('teams.teamsBlade', compact('teams', 'orderBy'));
     }
 
@@ -60,6 +59,17 @@ class TeamsController extends Controller
 
         $team->save();
         
+        $teamstat = Teamstat::create([
+            'wins' => 0,
+            'losses' => 0,
+            'ranking_position' => 0,
+            'win_rate' => 0,
+            'lose_rate' => 0,
+            'team_id' => $team->id,
+        ]);
+
+        $teamstat->save();
+        
         return redirect()->route('team.showAllTeams');
     }
 
@@ -83,6 +93,17 @@ class TeamsController extends Controller
         $team->delete();
         
         return redirect()->route('team.showAllTeams');
+    }
+
+    public function showTeamData($id){
+        $team = Team::findOrFail($id);
+        $teamstat = Teamstat::where('team_id', $id)->first();
+        $users = User::where('team_id', $id)->get();
+        return view('teams.teamsProfileBlade', [
+            'team' => $team,
+            'teamstat' => $teamstat,
+            'users' => $users
+        ]);
     }
 
 

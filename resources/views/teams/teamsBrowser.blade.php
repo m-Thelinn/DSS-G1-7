@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 @extends('layouts.app')
-    <body>
 
+@section('content')
     <h1>Equipos</h1>  
         
     <table>
@@ -40,5 +39,4 @@
     </table>
     <a href="{{ route('team.showAllTeams') }}"><input type="button" value="Atrás"></a>
     
-    </body>
-</html>
+@endsection
